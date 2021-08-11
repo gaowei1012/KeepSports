@@ -1,48 +1,22 @@
 import React from 'react'
-import { SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View } from 'react-native'
+import { SafeAreaView, StatusBar, StyleSheet, Text, useColorScheme, View } from 'react-native'
 
-import { Colors, DebugInstructions, Header, LearnMoreLinks, ReloadInstructions } from 'react-native/Libraries/NewAppScreen'
-
-const Section = (props: {title: string, children: React.ReactElement}): any => {
-  const {title, children} = props
-  const isDarkMode = useColorScheme() === 'dark'
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black
-          }
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark
-          }
-        ]}>
-        {children}
-      </Text>
-    </View>
-  )
-}
+import { Colors } from 'react-native/Libraries/NewAppScreen'
 
 const App: () => any = () => {
   const isDarkMode = useColorScheme() === 'dark'
 
   const backgroundStyle = {
+    height: '100%',
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter
   }
 
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView contentInsetAdjustmentBehavior='automatic' style={backgroundStyle}>
-        <Header />
-      </ScrollView>
+      <View>
+        <Text>app</Text>
+      </View>
     </SafeAreaView>
   )
 }
