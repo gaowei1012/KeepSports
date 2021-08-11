@@ -1,5 +1,5 @@
 import React from 'react'
-import { BackHandler, Platform, ToastAndroid } from 'react-native'
+import { BackHandler, Platform, ToastAndroid, SafeAreaView } from 'react-native'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import DynamicTabNavigator from '../../navigation/DynamicTabNavigator'
 
@@ -32,7 +32,7 @@ class Index extends React.Component<any, any> {
   render() {
     // 保存 navigation
     NavigationUtil.navigation = this.props.navigation
-    return <DynamicTabNavigator />
+    return  <DynamicTabNavigator />
   }
 }
 
