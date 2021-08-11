@@ -2,9 +2,11 @@
 KeepSports
 
 
-> 所需要的第三方库
+### 所需要的第三方库
 
-- [图表库](https://github.com/indiespirit/react-native-chart-kit)
+> 图表库
+
+- [charts](https://github.com/indiespirit/react-native-chart-kit)
 
 > 地图组件
 
@@ -21,4 +23,9 @@ KeepSports
 - [友盟官网](https://developer.umeng.com/docs/66632/detail/67587)
 - [友盟SDK](https://github.com/yolinsoft/react-native-dk-umeng)
 
+> 相关资料
+
+- [聊天室功能实现](https://blog.csdn.net/lxyoucan/article/details/110390464)
+
+- [聊天室功能案例](https://fechat.org/topics/94)
 
