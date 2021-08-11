@@ -3,6 +3,7 @@ import { createStackNavigator, createAppContainer, createSwitchNavigator } from 
 import { createReactNavigationReduxMiddleware, reduxifyNavigator } from 'react-navigation-redux-helpers'
 
 import Welcome from '../pages/welcome'
+import Index from '../pages/index'
 import Home from '../pages/home'
 import Discovery from '../pages/discovery'
 import Information from '../pages/information'
@@ -20,6 +21,12 @@ const InitNavigator = createSwitchNavigator({
 })
 
 const MainNavigator = createStackNavigator({
+  Index: {
+    screen: Index,
+    navigationOptions: {
+      header: null
+    }
+  },
   Home: {
     screen: Home,
     navigationOptions: {
