@@ -46,7 +46,7 @@ const MainNavigator = createStackNavigator({
   }
 })
 
-export const RootNavigation = createAppContainer(
+export const RootNavigation: any = createAppContainer(
   createSwitchNavigator({
     Init: InitNavigator,
     Main: MainNavigator
