@@ -1,10 +1,6 @@
-import React from 'react'
 import AppNavigation from './navigation/AppNavigation'
 import store from './redux/store'
 import { Provider } from 'react-redux'
-import { SafeAreaView } from 'react-native'
-
-import { Colors } from 'react-native/Libraries/NewAppScreen'
 
 const App = () => {
   return (
