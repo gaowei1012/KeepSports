@@ -1,14 +1,14 @@
 import React from 'react'
 import { View, Text, SafeAreaView } from 'react-native'
 
-const Dynamic = () => {
+const Mine = () => {
   return (
     <SafeAreaView>
       <View>
-        <Text>动态</Text>
+        <Text>我的</Text>
       </View>
     </SafeAreaView>
   )
 }
 
-export default Dynamic
+export default Mine
