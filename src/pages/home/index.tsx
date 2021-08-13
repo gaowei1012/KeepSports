@@ -1,13 +1,12 @@
 import React from 'react'
-import { LineChart } from '../../containers/charts'
-import { View, Text, SafeAreaView } from 'react-native'
+import { View, Text, SafeAreaView, Image } from 'react-native'
+import { styles } from '../../styles/view-style/home'
 
 const Home = () => {
   return (
-    <SafeAreaView>
-      <View>
-        <Text>首页</Text>
-        <LineChart />
+    <SafeAreaView style={styles.container}>
+      <View style={styles.home_bg__container}>
+        <Image style={styles.bg_flow__container} source={require('../../assets/pages/home/home_bg.png')}/>
       </View>
     </SafeAreaView>
   )
