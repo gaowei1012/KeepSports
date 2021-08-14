@@ -12,6 +12,6 @@ export const styles = StyleSheet.create({
   },
   text: {
     color: '#fff',
-    fontSize: px2dp(10)
+    fontSize: px2dp(10),
   }
 })
