@@ -49,9 +49,13 @@ export const styles = StyleSheet.create({
     color: '#fff'
   },
   swipple__flow: {
-    width: 345,
-    height: 153,
+    width: px2dp(345),
+    height: px2dp(153),
     alignSelf: 'center',
     marginTop: px2dp(20)
+  },
+  swipple_image: {
+    width: px2dp(345),
+    height: px2dp(153)
   }
 })

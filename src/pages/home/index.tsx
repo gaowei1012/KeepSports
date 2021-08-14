@@ -3,6 +3,7 @@ import { View, Text, SafeAreaView, Image, ImageBackground } from 'react-native'
 import { styles } from '../../styles/view-style/home'
 import { Bottom } from '../../components/index'
 import { px2dp } from '../../utils/px2dp'
+import Swiper from 'react-native-swiper'
 
 const Home = () => {
   return (
@@ -25,9 +26,19 @@ const Home = () => {
           />
         </View>
         {/* banner */}
-        <View style={styles.swipple__flow}>
-          <Image style={styles.swipple__flow} source={require('../../assets/pages/home/banner.png')} />
-        </View>
+        <Swiper autoplay paginationStyle={{
+          marginBottom: px2dp(-20)
+        }}>
+          <View style={styles.swipple__flow}>
+            <Image style={styles.swipple_image} source={require('../../assets/pages/home/banner.png')} />
+          </View>
+          <View style={styles.swipple__flow}>
+            <Image style={styles.swipple_image} source={require('../../assets/pages/home/banner.png')} />
+          </View>
+          <View style={styles.swipple__flow}>
+            <Image style={styles.swipple_image} source={require('../../assets/pages/home/banner.png')} />
+          </View>
+        </Swiper>
       </ImageBackground>
     </SafeAreaView>
   )
