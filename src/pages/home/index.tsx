@@ -1,6 +1,8 @@
 import React from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground } from 'react-native'
 import { styles } from '../../styles/view-style/home'
+import { Bottom } from '../../components/index'
+import { px2dp } from '../../utils/px2dp'
 
 const Home = () => {
   return (
@@ -15,6 +17,10 @@ const Home = () => {
             <Text style={styles.title__name}>遗失的美好</Text>
             <Text style={styles.title__desc}>北京运动达人对</Text>
           </View>
+          <Bottom activeOpacity={1} text='高级'  propStyles={{
+            marginLeft: px2dp(21),
+            marginTop: px2dp(-14)
+          }} onPress={()=> {}} />
         </View>
       </ImageBackground>
       {/* <View style={styles.home_bg__container}>
