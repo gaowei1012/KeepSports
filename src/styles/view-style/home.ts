@@ -51,8 +51,7 @@ export const styles = StyleSheet.create({
   swipple__flow: {
     width: 345,
     height: 153,
-    backgroundColor: 'red',
     alignSelf: 'center',
-    marginTop: -150,
+    marginTop: px2dp(20)
   }
 })
