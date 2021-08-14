@@ -5,6 +5,12 @@ import { Bottom } from '../../components/index'
 import { px2dp } from '../../utils/px2dp'
 import Swiper from 'react-native-swiper'
 
+const bannerData: any[] = [
+  {icon: require('../../assets/pages/home/banner.png'), id: 1},
+  {icon: require('../../assets/pages/home/banner.png'), id: 2},
+  {icon: require('../../assets/pages/home/banner.png'), id: 3},
+]
+
 const Home = () => {
   return (
     <SafeAreaView style={styles.container}>
@@ -26,19 +32,15 @@ const Home = () => {
           />
         </View>
         {/* banner */}
-        <Swiper autoplay paginationStyle={{
-          marginBottom: px2dp(-20)
-        }}>
-          <View style={styles.swipple__flow}>
-            <Image style={styles.swipple_image} source={require('../../assets/pages/home/banner.png')} />
-          </View>
-          <View style={styles.swipple__flow}>
-            <Image style={styles.swipple_image} source={require('../../assets/pages/home/banner.png')} />
-          </View>
-          <View style={styles.swipple__flow}>
-            <Image style={styles.swipple_image} source={require('../../assets/pages/home/banner.png')} />
-          </View>
-        </Swiper>
+        <View style={styles.swipple__flow}>
+          <Swiper autoplay paginationStyle={{
+            marginBottom: px2dp(-20)
+          }}>
+            {bannerData.map((item) => (
+              <Image style={styles.swipple_image} source={item.icon} key={item.id}/>
+            ))}
+          </Swiper>
+        </View>
       </ImageBackground>
     </SafeAreaView>
   )

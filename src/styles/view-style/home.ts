@@ -52,7 +52,9 @@ export const styles = StyleSheet.create({
     width: px2dp(345),
     height: px2dp(153),
     alignSelf: 'center',
-    marginTop: px2dp(20)
+    marginTop: px2dp(20),
+    overflow: 'hidden',
+    borderRadius: px2dp(6)
   },
   swipple_image: {
     width: px2dp(345),
