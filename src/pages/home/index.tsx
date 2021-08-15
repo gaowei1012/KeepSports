@@ -42,6 +42,14 @@ const Home = () => {
           </Swiper>
         </View>
       </ImageBackground>
+      <View style={styles.home__content_container}>
+        <View style={styles.home__container_tab}>
+          <Text>switch tab</Text>
+        </View>
+        <ImageBackground style={styles.home__sport_container} source={require('../../assets/pages/home/sports.png')}>
+          <Text>hello</Text>
+        </ImageBackground>
+      </View>
     </SafeAreaView>
   )
 }

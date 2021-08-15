@@ -12,6 +12,7 @@ import { px2dp, width, height } from '../../utils/px2dp'
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#F7F7F7'
   },
   home_bg__container: {
     height: px2dp(249),
@@ -59,5 +60,17 @@ export const styles = StyleSheet.create({
   swipple_image: {
     width: px2dp(345),
     height: px2dp(153)
+  },
+  home__content_container: {
+    marginTop: px2dp(28),
+    width: px2dp(345),
+    alignSelf: 'center'
+  },
+  home__container_tab: {
+    height: px2dp(40)
+  },
+  home__sport_container: {
+    height: px2dp(185),
+    backgroundColor: 'red'
   }
 })
