@@ -1,13 +1,13 @@
 /*
  * @Author: 执念
  * @Date: 2021-08-11 13:46:28
- * @LastEditTime: 2021-08-16 17:10:26
+ * @LastEditTime: 2021-08-16 19:23:22
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /KeepSports/src/pages/home/index.tsx
  */
 import React from 'react'
-import { View, Text, SafeAreaView, Image, ImageBackground } from 'react-native'
+import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity } from 'react-native'
 import { styles } from '../../styles/view-style/home'
 import { Bottom } from '../../components/index'
 import { px2dp } from '../../utils/px2dp'
@@ -65,6 +65,9 @@ const Home = () => {
               <Text style={styles.toady_step_num}>1221</Text>
             </View>
           </View>
+          <TouchableOpacity activeOpacity={1} style={styles.start_exercise}>
+            <Text style={styles.start_exercise__text}>开始运动</Text>
+          </TouchableOpacity>
         </ImageBackground>
       </View>
     </SafeAreaView>

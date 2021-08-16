@@ -1,7 +1,7 @@
 /*
  * @Author: 执念
  * @Date: 2021-08-13 21:35:50
- * @LastEditTime: 2021-08-16 17:12:12
+ * @LastEditTime: 2021-08-16 19:23:43
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /KeepSports/src/styles/view-style/home.ts
@@ -96,5 +96,20 @@ export const styles = StyleSheet.create({
   },
   sport__right: {
     alignItems: 'center'
+  },
+  start_exercise: {
+    backgroundColor: '#5FC38E',
+    alignItems: 'center',
+    height: px2dp(38),
+    width: px2dp(255),
+    alignSelf: 'center',
+    marginTop: px2dp(20),
+    borderRadius: px2dp(18),
+    justifyContent: 'center'
+  },
+  start_exercise__text: {
+    color: '#fff',
+    fontSize: px2dp(15),
+    fontWeight: 'bold'
   }
 })
