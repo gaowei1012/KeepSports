@@ -1,7 +1,7 @@
 /*
  * @Author: 执念
  * @Date: 2021-08-13 21:35:50
- * @LastEditTime: 2021-08-16 20:54:13
+ * @LastEditTime: 2021-08-16 21:26:11
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /KeepSports/src/styles/view-style/home.ts
@@ -147,5 +147,50 @@ export const styles = StyleSheet.create({
   line: {
     height: px2dp(10),
     marginVertical: px2dp(1)
+  },
+  history_data_container: {
+    width: px2dp(345),
+    alignSelf: 'center'
+  },
+  history_data_bg: {
+    height: px2dp(296)
+  },
+  city__container: {
+    backgroundColor: '#fff',
+    height: px2dp(502),
+    width: px2dp(345),
+    alignSelf: 'center',
+    borderTopRightRadius: px2dp(10),
+    borderTopLeftRadius: px2dp(10),
+  },
+  city__top_title: {
+    marginLeft: px2dp(22),
+    marginTop: px2dp(19.5),
+    marginRight: px2dp(15),
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  },
+  city_top_text: {
+    color: '#333',
+    fontSize: px2dp(18),
+    fontWeight: 'bold'
+  },
+  city_sle: {
+    width: px2dp(49),
+    height: px2dp(26),
+    marginTop: px2dp(8),
+    marginLeft: px2dp(4)
+  },
+  arrow_container: {
+    flexDirection: 'row',
+    alignItems:'center'
+  },
+  arrow_text: {
+    color: '#666'
+  },
+  arrow: {
+    // width: '100%',
+    // height: '100%'
   }
 })
