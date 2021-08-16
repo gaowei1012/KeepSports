@@ -1,7 +1,7 @@
 /*
  * @Author: 执念
  * @Date: 2021-08-11 13:46:28
- * @LastEditTime: 2021-08-16 21:25:35
+ * @LastEditTime: 2021-08-16 21:27:59
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /KeepSports/src/pages/home/index.tsx
@@ -118,6 +118,67 @@ const Home = () => {
             <View style={styles.arrow_container}>
               <Text style={styles.arrow_text}>更多</Text>
               <Image resizeMode='center' style={styles.arrow} source={require('../../assets/pages/home/arrow.png')}/>
+            </View>
+          </View>
+          {/* content */}
+          <View style={styles.city_content_container}>
+            <View style={styles.c_l_flow}>
+              <Image  style={styles.l_c_icon} source={require('../../assets/pages/home/icon.png')}/>
+              <View style={styles.l_c_flow}>
+                <Text style={styles.l_c_top_t}>拯救地球李小姐</Text>
+                <Text style={styles.l_c_l_c}>有约着一起去爬山的吗？</Text>
+                <ImageBackground resizeMode='center' style={styles.l_jl_bg} source={require('../../assets/pages/home/jl.png')} >
+                  <Text style={styles.l_jl_text}>36km</Text>
+                </ImageBackground>
+              </View>
+            </View>
+            <View style={styles.r_c_date}>
+              <Text style={styles.r_c_text}>2分钟前</Text>
+            </View>
+          </View>
+          <View style={styles.city_content_container}>
+            <View style={styles.c_l_flow}>
+              <Image  style={styles.l_c_icon} source={require('../../assets/pages/home/icon.png')}/>
+              <View style={styles.l_c_flow}>
+                <Text style={styles.l_c_top_t}>拯救地球李小姐</Text>
+                <Text style={styles.l_c_l_c}>有约着一起去爬山的吗？</Text>
+                <ImageBackground resizeMode='center' style={styles.l_jl_bg} source={require('../../assets/pages/home/jl.png')} >
+                  <Text style={styles.l_jl_text}>36km</Text>
+                </ImageBackground>
+              </View>
+            </View>
+            <View style={styles.r_c_date}>
+              <Text style={styles.r_c_text}>2分钟前</Text>
+            </View>
+          </View>
+          <View style={styles.city_content_container}>
+            <View style={styles.c_l_flow}>
+              <Image  style={styles.l_c_icon} source={require('../../assets/pages/home/icon.png')}/>
+              <View style={styles.l_c_flow}>
+                <Text style={styles.l_c_top_t}>拯救地球李小姐</Text>
+                <Text style={styles.l_c_l_c}>有约着一起去爬山的吗？</Text>
+                <ImageBackground resizeMode='center' style={styles.l_jl_bg} source={require('../../assets/pages/home/jl.png')} >
+                  <Text style={styles.l_jl_text}>36km</Text>
+                </ImageBackground>
+              </View>
+            </View>
+            <View style={styles.r_c_date}>
+              <Text style={styles.r_c_text}>2分钟前</Text>
+            </View>
+          </View>
+          <View style={styles.city_content_container}>
+            <View style={styles.c_l_flow}>
+              <Image  style={styles.l_c_icon} source={require('../../assets/pages/home/icon.png')}/>
+              <View style={styles.l_c_flow}>
+                <Text style={styles.l_c_top_t}>拯救地球李小姐</Text>
+                <Text style={styles.l_c_l_c}>有约着一起去爬山的吗？</Text>
+                <ImageBackground resizeMode='center' style={styles.l_jl_bg} source={require('../../assets/pages/home/jl.png')} >
+                  <Text style={styles.l_jl_text}>36km</Text>
+                </ImageBackground>
+              </View>
+            </View>
+            <View style={styles.r_c_date}>
+              <Text style={styles.r_c_text}>2分钟前</Text>
             </View>
           </View>
         </View>

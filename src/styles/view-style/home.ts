@@ -157,11 +157,11 @@ export const styles = StyleSheet.create({
   },
   city__container: {
     backgroundColor: '#fff',
-    height: px2dp(502),
-    width: px2dp(345),
+    width: width,
     alignSelf: 'center',
     borderTopRightRadius: px2dp(10),
     borderTopLeftRadius: px2dp(10),
+    paddingBottom: px2dp(20)
   },
   city__top_title: {
     marginLeft: px2dp(22),
@@ -192,5 +192,53 @@ export const styles = StyleSheet.create({
   arrow: {
     // width: '100%',
     // height: '100%'
+  },
+  city_content_container: {
+    alignSelf: 'center',
+    width: px2dp(345),
+    marginTop: px2dp(21.5),
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderBottomColor: '#EEEEEE',
+    borderBottomWidth: px2dp(1),
+    paddingBottom: px2dp(20)
+  },
+  c_l_flow: {
+    flexDirection: 'row',
+  },
+  l_c_icon: {
+    width: px2dp(82),
+    height: px2dp(70)
+  },
+  l_c_flow: {
+    marginLeft: px2dp(11),
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+  },
+  l_c_top_t: {
+    marginTop: px2dp(6),
+    fontSize: px2dp(14),
+    color: '#333'
+  },
+  l_c_l_c: {
+    color: '#666666',
+    fontSize: px2dp(11)
+  },
+  l_jl_bg: {
+    width: px2dp(44),
+    height: px2dp(16),
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  l_jl_text: {
+    color: '#FF951F'
+  },
+  r_c_date: {
+    flexDirection: 'column',
+    justifyContent: 'flex-end'
+  },
+  r_c_text: {
+    color: '#999999',
+    fontSize: px2dp(11)
   }
 })
