@@ -1,7 +1,7 @@
 /*
  * @Author: 执念
  * @Date: 2021-08-13 21:35:50
- * @LastEditTime: 2021-08-16 19:23:43
+ * @LastEditTime: 2021-08-16 20:54:13
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /KeepSports/src/styles/view-style/home.ts
@@ -111,5 +111,41 @@ export const styles = StyleSheet.create({
     color: '#fff',
     fontSize: px2dp(15),
     fontWeight: 'bold'
+  },
+  home_leaderboard__container: {
+    width: px2dp(345),
+    alignSelf: 'center',
+    flexDirection: 'row'
+  },
+  leaderboard__image__bg: {
+    width: px2dp(115),
+    height: px2dp(122),
+    alignItems: 'center'
+  },
+  l_icon__bg: {
+    marginTop: px2dp(13),
+    width: px2dp(37),
+    height: px2dp(47),
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  l_icon_min: {
+    marginTop: px2dp(6),
+    width: px2dp(18),
+    height: px2dp(15)
+  },
+  p_num: {
+    color: '#333',
+    fontSize:px2dp(20),
+    fontWeight: 'bold',
+    marginTop: px2dp(3)
+  },
+  p_text: {
+    color: '#666',
+    fontSize: px2dp(12)
+  },
+  line: {
+    height: px2dp(10),
+    marginVertical: px2dp(1)
   }
 })

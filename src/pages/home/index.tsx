@@ -1,7 +1,7 @@
 /*
  * @Author: 执念
  * @Date: 2021-08-11 13:46:28
- * @LastEditTime: 2021-08-16 19:23:22
+ * @LastEditTime: 2021-08-16 20:54:47
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /KeepSports/src/pages/home/index.tsx
@@ -14,9 +14,9 @@ import { px2dp } from '../../utils/px2dp'
 import Swiper from 'react-native-swiper'
 
 const bannerData: any[] = [
-  {icon: require('../../assets/pages/home/banner.png'), id: 1},
-  {icon: require('../../assets/pages/home/banner.png'), id: 2},
-  {icon: require('../../assets/pages/home/banner.png'), id: 3},
+  { icon: require('../../assets/pages/home/banner.png'), id: 1 },
+  { icon: require('../../assets/pages/home/banner.png'), id: 2 },
+  { icon: require('../../assets/pages/home/banner.png'), id: 3 }
 ]
 
 const Home = () => {
@@ -41,11 +41,13 @@ const Home = () => {
         </View>
         {/* banner */}
         <View style={styles.swipple__flow}>
-          <Swiper autoplay paginationStyle={{
-            marginBottom: px2dp(-20)
-          }}>
+          <Swiper
+            autoplay
+            paginationStyle={{
+              marginBottom: px2dp(-20)
+            }}>
             {bannerData.map((item) => (
-              <Image style={styles.swipple_image} source={item.icon} key={item.id}/>
+              <Image style={styles.swipple_image} source={item.icon} key={item.id} />
             ))}
           </Swiper>
         </View>
@@ -68,6 +70,33 @@ const Home = () => {
           <TouchableOpacity activeOpacity={1} style={styles.start_exercise}>
             <Text style={styles.start_exercise__text}>开始运动</Text>
           </TouchableOpacity>
+        </ImageBackground>
+      </View>
+      {/* 排行榜 */}
+      <View style={styles.home_leaderboard__container}>
+        <ImageBackground style={styles.leaderboard__image__bg} source={require('../../assets/pages/home/leaderboard.png')}>
+          <ImageBackground style={styles.l_icon__bg} source={require('../../assets/pages/home/buddy.png')}>
+            <Image style={styles.l_icon_min} source={require('../../assets/pages/home/p.png')} />
+          </ImageBackground>
+          <Text style={styles.p_num}>120</Text>
+          <Image style={styles.line} source={require('../../assets/pages/home/line.png')} />
+          <Text style={styles.p_text}>好友排名</Text>
+        </ImageBackground>
+        <ImageBackground style={styles.leaderboard__image__bg} source={require('../../assets/pages/home/leaderboard.png')}>
+          <ImageBackground style={styles.l_icon__bg} source={require('../../assets/pages/home/buddy.png')}>
+            <Image style={styles.l_icon_min} source={require('../../assets/pages/home/p.png')} />
+          </ImageBackground>
+          <Text style={styles.p_num}>120</Text>
+          <Image style={styles.line} source={require('../../assets/pages/home/line.png')} />
+          <Text style={styles.p_text}>好友排名</Text>
+        </ImageBackground>
+        <ImageBackground style={styles.leaderboard__image__bg} source={require('../../assets/pages/home/leaderboard.png')}>
+          <ImageBackground style={styles.l_icon__bg} source={require('../../assets/pages/home/buddy.png')}>
+            <Image style={styles.l_icon_min} source={require('../../assets/pages/home/p.png')} />
+          </ImageBackground>
+          <Text style={styles.p_num}>120</Text>
+          <Image style={styles.line} source={require('../../assets/pages/home/line.png')} />
+          <Text style={styles.p_text}>好友排名</Text>
         </ImageBackground>
       </View>
     </SafeAreaView>
