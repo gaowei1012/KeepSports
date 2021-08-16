@@ -12,6 +12,7 @@ import { styles } from '../../styles/view-style/home'
 import { Bottom } from '../../components/index'
 import { px2dp } from '../../utils/px2dp'
 import Swiper from 'react-native-swiper'
+import { LineChart } from '../../containers/charts'
 
 const bannerData: any[] = [
   { icon: require('../../assets/pages/home/banner.png'), id: 1 },
@@ -106,6 +107,7 @@ const Home = () => {
             <View>
               <Text>历史数据</Text>
             </View>
+            <LineChart/>
           </ImageBackground>
         </View>
         {/* 同城动态 */}

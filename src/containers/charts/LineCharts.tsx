@@ -1,6 +1,6 @@
 import React from 'react'
 import { View } from 'react-native'
-import { width } from '../../utils/px2dp'
+import { px2dp, width } from '../../utils/px2dp'
 import { LineChart } from 'react-native-chart-kit'
 
 const data = {
@@ -17,7 +17,7 @@ const KeepLineChart = () => {
     <View>
       <LineChart
         data={data}
-        width={width} // from react-native
+        width={px2dp(345)} // from react-native
         height={220}
         // yAxisLabel='$'
         // yAxisSuffix='k'
