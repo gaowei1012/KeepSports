@@ -1,3 +1,11 @@
+/*
+ * @Author: 执念
+ * @Date: 2021-08-11 13:46:28
+ * @LastEditTime: 2021-08-16 17:10:26
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /KeepSports/src/pages/home/index.tsx
+ */
 import React from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground } from 'react-native'
 import { styles } from '../../styles/view-style/home'
@@ -47,7 +55,16 @@ const Home = () => {
           <Text>switch tab</Text>
         </View>
         <ImageBackground style={styles.home__sport_container} source={require('../../assets/pages/home/sports.png')}>
-          <Text>hello</Text>
+          <View style={styles.sport__flow}>
+            <View style={styles.sport__left}>
+              <Text style={styles.today_step_count}>今日步数(步)</Text>
+              <Text style={styles.toady_step_num}>1213</Text>
+            </View>
+            <View style={styles.sport__right}>
+              <Text style={styles.today_step_count}>今日目标(公里)</Text>
+              <Text style={styles.toady_step_num}>1221</Text>
+            </View>
+          </View>
         </ImageBackground>
       </View>
     </SafeAreaView>
