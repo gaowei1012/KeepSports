@@ -86,5 +86,39 @@ export const styles = StyleSheet.create({
   info_tips_text: {
     color: '#fff',
     fontSize: px2dp(10)
+  },
+  // 消息通知
+  user_info_container: {
+    flex: 1
+  },
+  user_info_wrapper: {
+    width: px2dp(345),
+    alignSelf: 'center',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  user_info_image: {
+    width: px2dp(41),
+    height: px2dp(41)
+  },
+  info_content: {
+    width: '88%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginLeft: px2dp(5),
+    paddingVertical: px2dp(10),
+    borderBottomColor: '#DCDCDC',
+    borderBottomWidth: px2dp(1),
+    // paddingBottom: px2dp(10),
+  },
+  info_content_flow: {
+
+  },
+  title_text: {
+    color: '#333',
+    fontSize: px2dp(14),
+    fontWeight: 'bold',
+    marginBottom: px2dp(10)
   }
 })
