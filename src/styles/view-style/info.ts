@@ -30,7 +30,6 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    // marginBottom: px2dp(17),
     marginTop: px2dp(10),
     width: px2dp(345)
   },
