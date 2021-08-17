@@ -65,7 +65,7 @@ const Information = () => {
       />
       <View style={styles.info_container}>
         {informationData.map((item: { icon: any; title: string; desc: string; updateAt: string; message: number; id: number }) => (
-          <TouchableOpacity style={styles.info_wrapper} onPress={() => go_to_page(item)}>
+          <TouchableOpacity style={styles.info_wrapper} activeOpacity={1} onPress={() => go_to_page(item)}>
             <View style={styles.info_avatar__title}>
               <Image style={styles.info_icon} source={item.icon} />
               <View style={styles.info_content_wrapper}>
