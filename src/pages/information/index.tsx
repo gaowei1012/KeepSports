@@ -9,10 +9,12 @@
 import React from 'react'
 import { View, Text, SafeAreaView, Image, TouchableOpacity } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
+import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/info'
 
 const informationData: any = [
   {
+    id: 1,
     icon: require('../../assets/pages/info/sys_info.png'),
     title: '系统通知',
     desc: '软件已更新至最新版本',
@@ -20,6 +22,7 @@ const informationData: any = [
     message: 11
   },
   {
+    id: 2,
     icon: require('../../assets/pages/info/kf.png'),
     title: '官方助手',
     desc: '',
@@ -33,6 +36,16 @@ const Information = () => {
     backgroundColor: '#ffffff',
     barStyle: 'dark-content'
   }
+
+  const go_to_page = (item: {id: number}) => {
+    console.log('item', item)
+    if (item.id == 1) {
+      NavigationUtil.goPage({}, "UserInformation")
+    } else {
+      NavigationUtil.goPage({}, "OfficialInformation")
+    }
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <TopNavigationBar
@@ -51,8 +64,8 @@ const Information = () => {
         }
       />
       <View style={styles.info_container}>
-        {informationData.map((item: { icon: any; title: string; desc: string; updateAt: string; message: number }) => (
-          <TouchableOpacity style={styles.info_wrapper}>
+        {informationData.map((item: { icon: any; title: string; desc: string; updateAt: string; message: number; id: number }) => (
+          <TouchableOpacity style={styles.info_wrapper} onPress={() => go_to_page(item)}>
             <View style={styles.info_avatar__title}>
               <Image style={styles.info_icon} source={item.icon} />
               <View style={styles.info_content_wrapper}>

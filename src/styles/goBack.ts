@@ -5,6 +5,10 @@ const styles = StyleSheet.create({
   leftGoBackIcon: {
     padding: 5,
     marginRight: 10
+  },
+  icon: {
+    width: 9,
+    height: 16
   }
 })
 

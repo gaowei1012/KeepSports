@@ -1,19 +1,19 @@
 import React from 'react'
 import styles from '../styles/goBack'
-import { View, TouchableOpacity } from 'react-native'
-import NavigationUtil from '../navigation/NavigationUtil'
-const Navigate = require('/assets/svg/navigate.svg')
+import { View, TouchableOpacity, Image } from 'react-native'
+import { NavigationUtil } from '../navigation/NavigationUtil'
+const Navigate = require('../assets/base/back.png')
 
 const GoBack = (props: { navigation: any }) => {
   return (
     <View style={styles.leftWrapContainer}>
       <TouchableOpacity activeOpacity={1} onPress={() => NavigationUtil.goBack(props.navigation)}>
         <View style={styles.leftGoBackIcon}>
-          <Navigate width={20} height={20} />
+          <Image style={styles.icon} source={Navigate} />
         </View>
       </TouchableOpacity>
     </View>
   )
 }
 
-export default GoBack
+export { GoBack }

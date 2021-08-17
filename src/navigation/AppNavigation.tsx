@@ -9,6 +9,8 @@ import Discovery from '../pages/discovery'
 import Information from '../pages/information'
 import Dynamic from '../pages/dynamic'
 import Mine from '../pages/mine'
+import OfficialInformation from '../pages/information/official'
+import UserInformation from '../pages/information/user'
 
 export const rootCom: string = 'Init'
 
@@ -54,6 +56,18 @@ const MainNavigator = createStackNavigator({
   },
   Mine: {
     screen: Mine,
+    navigationOptions: {
+      header: null
+    }
+  },
+  UserInformation: {
+    screen: UserInformation,
+    navigationOptions: {
+      header: null
+    }
+  },
+  OfficialInformation: {
+    screen: OfficialInformation,
     navigationOptions: {
       header: null
     }
