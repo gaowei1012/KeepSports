@@ -120,5 +120,29 @@ export const styles = StyleSheet.create({
     fontSize: px2dp(14),
     fontWeight: 'bold',
     marginBottom: px2dp(10)
+  },
+  // 官方消息
+  official_container: {
+    flex: 1
+  },
+  official_container_flow: {
+    width: px2dp(345),
+    alignSelf: 'center'
+  },
+  official_icon: {
+    width: px2dp(48),
+    height: px2dp(48)
+  },
+  official_content: {
+    marginVertical: px2dp(49/2),
+    flexDirection:'row',
+    alignItems:'center'
+  },
+  official_text: {
+    paddingHorizontal: px2dp(13),
+    paddingVertical: px2dp(11)
+  },
+  official_bg: {
+    marginLeft: px2dp(12),
   }
 })
