@@ -25,5 +25,67 @@ export const styles = StyleSheet.create({
   info_container: {
     width: px2dp(345),
     alignSelf: 'center'
+  },
+  info_wrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    // marginBottom: px2dp(17),
+    marginTop: px2dp(10),
+    width: px2dp(345)
+  },
+  info_avatar__title: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  info_content_wrapper: {
+    flexDirection: 'column',
+    width: px2dp(298),
+    borderBottomColor: '#DCDCDC',
+    borderBottomWidth: px2dp(1),
+    paddingBottom: px2dp(15)
+  },
+  info_title_flow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginLeft: px2dp(14),
+    marginTop: px2dp(5)
+  },
+  info_icon: {
+    width: px2dp(48),
+    height: px2dp(48)
+  },
+  info_btn_flow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent:'space-between',
+    marginLeft: px2dp(14),
+    marginTop: px2dp(11),
+  },
+  info_title_text: {
+    color: '#333',
+    fontSize: px2dp(14),
+    fontWeight: 'bold'
+  },
+  info_date: {
+    fontSize: px2dp(11),
+    color: '#9A9FAD'
+  },
+  info_desc: {
+    fontSize: px2dp(11),
+    color: '#9A9FAD'
+  },
+  info_tips: {
+    width: px2dp(16),
+    height: px2dp(16),
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: px2dp(8),
+    backgroundColor: '#E60012'
+  },
+  info_tips_text: {
+    color: '#fff',
+    fontSize: px2dp(10)
   }
 })

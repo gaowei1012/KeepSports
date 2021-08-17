@@ -11,6 +11,23 @@ import { View, Text, SafeAreaView, Image, TouchableOpacity } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { styles } from '../../styles/view-style/info'
 
+const informationData: any = [
+  {
+    icon: require('../../assets/pages/info/sys_info.png'),
+    title: '系统通知',
+    desc: '软件已更新至最新版本',
+    updateAt: '凌晨：034',
+    message: 11
+  },
+  {
+    icon: require('../../assets/pages/info/kf.png'),
+    title: '官方助手',
+    desc: '',
+    updateAt: '08/12',
+    message: null
+  }
+]
+
 const Information = () => {
   const statusbar = {
     backgroundColor: '#ffffff',
@@ -34,7 +51,27 @@ const Information = () => {
         }
       />
       <View style={styles.info_container}>
-        <Text>消息</Text>
+        {informationData.map((item: { icon: any; title: string; desc: string; updateAt: string; message: number }) => (
+          <TouchableOpacity style={styles.info_wrapper}>
+            <View style={styles.info_avatar__title}>
+              <Image style={styles.info_icon} source={item.icon} />
+              <View style={styles.info_content_wrapper}>
+                <View style={styles.info_title_flow}>
+                  <Text style={styles.info_title_text}>{item.title}</Text>
+                  <Text style={styles.info_date}>{item.updateAt}</Text>
+                </View>
+                <View style={styles.info_btn_flow}>
+                  <Text style={styles.info_desc}>{item.desc}</Text>
+                  {item.message !== null ? (
+                    <View style={styles.info_tips}>
+                      <Text style={styles.info_tips_text}>{item.message}</Text>
+                    </View>
+                  ) : null}
+                </View>
+              </View>
+            </View>
+          </TouchableOpacity>
+        ))}
       </View>
     </SafeAreaView>
   )
