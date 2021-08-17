@@ -1,3 +1,11 @@
+/*
+ * @Author: 执念
+ * @Date: 2021-08-11 15:26:52
+ * @LastEditTime: 2021-08-17 19:52:08
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /KeepSports/src/pages/information/index.tsx
+ */
 import React from 'react'
 import { View, Text, SafeAreaView, Image, TouchableOpacity } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
@@ -25,7 +33,7 @@ const Information = () => {
           </TouchableOpacity>
         }
       />
-      <View>
+      <View style={styles.info_container}>
         <Text>消息</Text>
       </View>
     </SafeAreaView>
