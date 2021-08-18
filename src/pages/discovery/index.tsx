@@ -55,11 +55,13 @@ const Discovery = () => {
         </View>
         <View style={styles.bottom_content}>
           {DiscoveryContentData.map((item: { icon: any; icon_b: any; desc: string }) => (
-            <ImageBackground style={styles.bottom_content_flow} source={item.icon}>
-              <ImageBackground style={styles.bottom_content_c} source={item.icon_b}>
-                <Text style={styles.b_c_desc}>{item.desc}</Text>
+            <TouchableOpacity>
+              <ImageBackground style={styles.bottom_content_flow} source={item.icon}>
+                <ImageBackground style={styles.bottom_content_c} source={item.icon_b}>
+                  <Text style={styles.b_c_desc}>{item.desc}</Text>
+                </ImageBackground>
               </ImageBackground>
-            </ImageBackground>
+            </TouchableOpacity>
           ))}
         </View>
       </ScrollView>
