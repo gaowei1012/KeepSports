@@ -171,6 +171,38 @@ export const styles = StyleSheet.create({
   history_data_bg: {
     height: px2dp(296)
   },
+  history_data_charts_title: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: px2dp(38),
+    paddingLeft: px2dp(10),
+    paddingRight: px2dp(10)
+  },
+  history_dw_text: {
+    color: '#999999',
+    fontSize: px2dp(12)
+  },
+  history_title_text: {
+    fontSize: px2dp(15),
+    color: '#333',
+    fontWeight: 'bold'
+  },
+  history_date_wrapper: {
+    width: px2dp(70),
+    height: px2dp(21),
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around'
+  },
+  history_date_text: {
+    color: '#FFFFFF',
+    fontSize: px2dp(11)
+  },
+  history_date_text_r: {
+    color: '#24C789',
+    fontSize: px2dp(11)
+  },
   city__container: {
     backgroundColor: '#fff',
     width: width,

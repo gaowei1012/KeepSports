@@ -143,8 +143,14 @@ const Home = () => {
         {/* 历史数据 */}
         <View style={styles.history_data_container}>
           <ImageBackground style={styles.history_data_bg} source={require('../../assets/pages/home/history_data.png')}>
-            <View>
-              <Text>历史数据</Text>
+            <View style={styles.history_data_charts_title}>
+              <Text style={styles.history_dw_text}>单位/km</Text>
+              <Text style={styles.history_title_text}>历史数据</Text>
+              <ImageBackground style={styles.history_date_wrapper} source={require('../../assets/pages/home/date.png')}>
+                <Text style={styles.history_date_text}>周</Text>
+                <Text style={styles.history_date_text_r}>月</Text>
+                <Text style={styles.history_date_text_r}>年</Text>
+              </ImageBackground>
             </View>
             {/* <LineChart/> */}
           </ImageBackground>
