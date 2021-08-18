@@ -20,6 +20,41 @@ const bannerData: any[] = [
   { icon: require('../../assets/pages/home/banner.png'), id: 3 }
 ]
 
+const dData = [
+  {
+    title: '拯救地球李小姐',
+    desc: '有约着一起去爬山的吗？',
+    date: '2分钟前',
+    km: '36km',
+    grade: '初级',
+    icon: require('../../assets/pages/home/icon.png')
+  },
+  {
+    title: '凡凡最帅',
+    desc: '今天去跑不了，跑了5公里，满足。',
+    date: '刚刚',
+    km: '18km',
+    grade: '高级',
+    icon: require('../../assets/pages/home/icon.png')
+  },
+  {
+    title: '小柠檬精',
+    desc: '今天要去爬华山，有没有要一起哒!',
+    date: '3小时前',
+    km: '36km',
+    grade: '高级',
+    icon: require('../../assets/pages/home/icon.png')
+  },
+  {
+    title: '王者归来',
+    desc: '去健身馆锻炼下真心不错，整个人都有精神了。',
+    date: '06/11',
+    km: '21km',
+    grade: '高级',
+    icon: require('../../assets/pages/home/icon.png')
+  }
+]
+
 const Home = () => {
   return (
     <SafeAreaView style={styles.container}>
@@ -70,7 +105,7 @@ const Home = () => {
               </View>
             </View>
             <TouchableOpacity activeOpacity={1} style={styles.start_exercise}>
-              <Image style={styles.start_exercise_icon} source={require('../../assets/pages/home/yd.png')}/>
+              <Image style={styles.start_exercise_icon} source={require('../../assets/pages/home/yd.png')} />
               <Text style={styles.start_exercise__text}>开始运动</Text>
             </TouchableOpacity>
           </ImageBackground>
@@ -116,73 +151,31 @@ const Home = () => {
           <View style={styles.city__top_title}>
             <View>
               <Text style={styles.city_top_text}>同城动态</Text>
-              <Image style={styles.city_sle} source={require('../../assets/pages/home/sle.png')} resizeMode='center'/>
+              <Image  style={styles.city_sle} source={require('../../assets/pages/home/sle.png')} resizeMode='center' />
             </View>
             <View style={styles.arrow_container}>
               <Text style={styles.arrow_text}>更多</Text>
-              <Image resizeMode='center' style={styles.arrow} source={require('../../assets/pages/home/arrow.png')}/>
+              <Image resizeMode='center' style={styles.arrow} source={require('../../assets/pages/home/arrow.png')} />
             </View>
           </View>
-          {/* content */}
-          <View style={styles.city_content_container}>
-            <View style={styles.c_l_flow}>
-              <Image  style={styles.l_c_icon} source={require('../../assets/pages/home/icon.png')}/>
-              <View style={styles.l_c_flow}>
-                <Text style={styles.l_c_top_t}>拯救地球李小姐</Text>
-                <Text style={styles.l_c_l_c}>有约着一起去爬山的吗？</Text>
-                <ImageBackground resizeMode='center' style={styles.l_jl_bg} source={require('../../assets/pages/home/jl.png')} >
-                  <Text style={styles.l_jl_text}>36km</Text>
-                </ImageBackground>
-              </View>
-            </View>
-            <View style={styles.r_c_date}>
-              <Text style={styles.r_c_text}>2分钟前</Text>
-            </View>
-          </View>
-          <View style={styles.city_content_container}>
-            <View style={styles.c_l_flow}>
-              <Image  style={styles.l_c_icon} source={require('../../assets/pages/home/icon.png')}/>
-              <View style={styles.l_c_flow}>
-                <Text style={styles.l_c_top_t}>拯救地球李小姐</Text>
-                <Text style={styles.l_c_l_c}>有约着一起去爬山的吗？</Text>
-                <ImageBackground resizeMode='center' style={styles.l_jl_bg} source={require('../../assets/pages/home/jl.png')} >
-                  <Text style={styles.l_jl_text}>36km</Text>
-                </ImageBackground>
-              </View>
-            </View>
-            <View style={styles.r_c_date}>
-              <Text style={styles.r_c_text}>2分钟前</Text>
-            </View>
-          </View>
-          <View style={styles.city_content_container}>
-            <View style={styles.c_l_flow}>
-              <Image  style={styles.l_c_icon} source={require('../../assets/pages/home/icon.png')}/>
-              <View style={styles.l_c_flow}>
-                <Text style={styles.l_c_top_t}>拯救地球李小姐</Text>
-                <Text style={styles.l_c_l_c}>有约着一起去爬山的吗？</Text>
-                <ImageBackground resizeMode='center' style={styles.l_jl_bg} source={require('../../assets/pages/home/jl.png')} >
-                  <Text style={styles.l_jl_text}>36km</Text>
-                </ImageBackground>
-              </View>
-            </View>
-            <View style={styles.r_c_date}>
-              <Text style={styles.r_c_text}>2分钟前</Text>
-            </View>
-          </View>
-          <View style={styles.city_content_container}>
-            <View style={styles.c_l_flow}>
-              <Image  style={styles.l_c_icon} source={require('../../assets/pages/home/icon.png')}/>
-              <View style={styles.l_c_flow}>
-                <Text style={styles.l_c_top_t}>拯救地球李小姐</Text>
-                <Text style={styles.l_c_l_c}>有约着一起去爬山的吗？</Text>
-                <ImageBackground resizeMode='center' style={styles.l_jl_bg} source={require('../../assets/pages/home/jl.png')} >
-                  <Text style={styles.l_jl_text}>36km</Text>
-                </ImageBackground>
-              </View>
-            </View>
-            <View style={styles.r_c_date}>
-              <Text style={styles.r_c_text}>2分钟前</Text>
-            </View>
+          <View>
+            {dData.map((d: any) => (
+              <TouchableOpacity activeOpacity={1} style={styles.city_content_container}>
+                <View style={styles.c_l_flow}>
+                  <Image style={styles.l_c_icon} source={d.icon} />
+                  <View style={styles.l_c_flow}>
+                    <Text style={styles.l_c_top_t}>{d.title}</Text>
+                    <Text style={styles.l_c_l_c}>{d.desc}</Text>
+                    <ImageBackground resizeMode='center' style={styles.l_jl_bg} source={require('../../assets/pages/home/jl.png')}>
+                      <Text style={styles.l_jl_text}>{d.km}</Text>
+                    </ImageBackground>
+                  </View>
+                </View>
+                <View style={styles.r_c_date}>
+                  <Text style={styles.r_c_text}>{d.date}</Text>
+                </View>
+              </TouchableOpacity>
+            ))}
           </View>
         </View>
       </ScrollView>
