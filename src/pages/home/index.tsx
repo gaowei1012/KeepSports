@@ -1,7 +1,7 @@
 /*
  * @Author: 执念
  * @Date: 2021-08-11 13:46:28
- * @LastEditTime: 2021-08-16 21:27:59
+ * @LastEditTime: 2021-08-18 21:42:19
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /KeepSports/src/pages/home/index.tsx
@@ -62,14 +62,15 @@ const Home = () => {
             <View style={styles.sport__flow}>
               <View style={styles.sport__left}>
                 <Text style={styles.today_step_count}>今日步数(步)</Text>
-                <Text style={styles.toady_step_num}>1213</Text>
+                <Text style={styles.toady_step_num}>9050</Text>
               </View>
               <View style={styles.sport__right}>
                 <Text style={styles.today_step_count}>今日目标(公里)</Text>
-                <Text style={styles.toady_step_num}>1221</Text>
+                <Text style={styles.toady_step_num}>30090</Text>
               </View>
             </View>
             <TouchableOpacity activeOpacity={1} style={styles.start_exercise}>
+              <Image style={styles.start_exercise_icon} source={require('../../assets/pages/home/yd.png')}/>
               <Text style={styles.start_exercise__text}>开始运动</Text>
             </TouchableOpacity>
           </ImageBackground>
@@ -88,17 +89,17 @@ const Home = () => {
             <ImageBackground style={styles.l_icon__bg} source={require('../../assets/pages/home/buddy.png')}>
               <Image style={styles.l_icon_min} source={require('../../assets/pages/home/p.png')} />
             </ImageBackground>
-            <Text style={styles.p_num}>120</Text>
+            <Text style={styles.p_num}>620</Text>
             <Image style={styles.line} source={require('../../assets/pages/home/line.png')} />
-            <Text style={styles.p_text}>好友排名</Text>
+            <Text style={styles.p_text}>同城排名</Text>
           </ImageBackground>
           <ImageBackground style={styles.leaderboard__image__bg} source={require('../../assets/pages/home/leaderboard.png')}>
             <ImageBackground style={styles.l_icon__bg} source={require('../../assets/pages/home/buddy.png')}>
               <Image style={styles.l_icon_min} source={require('../../assets/pages/home/p.png')} />
             </ImageBackground>
-            <Text style={styles.p_num}>120</Text>
+            <Text style={styles.p_num}>2061</Text>
             <Image style={styles.line} source={require('../../assets/pages/home/line.png')} />
-            <Text style={styles.p_text}>好友排名</Text>
+            <Text style={styles.p_text}>全国排名</Text>
           </ImageBackground>
         </View>
         {/* 历史数据 */}
@@ -107,7 +108,7 @@ const Home = () => {
             <View>
               <Text>历史数据</Text>
             </View>
-            <LineChart/>
+            {/* <LineChart/> */}
           </ImageBackground>
         </View>
         {/* 同城动态 */}
