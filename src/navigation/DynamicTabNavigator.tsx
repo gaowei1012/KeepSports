@@ -1,7 +1,7 @@
 /*
  * @Author: 执念
  * @Date: 2021-08-11 13:40:03
- * @LastEditTime: 2021-08-13 21:21:52
+ * @LastEditTime: 2021-08-18 19:16:41
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /KeepSports/src/navigation/DynamicTabNavigator.tsx
@@ -59,7 +59,7 @@ const TABS = {
     navigationOptions: {
       tabBarLabel: '我的',
       tabBarIcon: ({ tintColor, focused }) => {
-        return <TabBarItem tintColor={tintColor} focused={focused} normalImage={require('../assets/tab/message.png')} selectedImage={require('../assets/tab/ac_message.png')} />
+        return <TabBarItem tintColor={tintColor} focused={focused} normalImage={require('../assets/tab/fitness.png')} selectedImage={require('../assets/tab/ac_fitness.png')} />
       }
     }
   }
