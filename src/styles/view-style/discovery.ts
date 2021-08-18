@@ -84,6 +84,7 @@ export const styles = StyleSheet.create({
     height: px2dp(10)
   },
   bottom_content: {
+    marginTop: px2dp(30),
     backgroundColor:'#fff',
     alignItems: 'center'
   },
