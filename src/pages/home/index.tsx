@@ -100,7 +100,10 @@ const Home = () => {
                 <Text style={styles.toady_step_num}>9050</Text>
               </View>
               <View style={styles.sport__right}>
-                <Text style={styles.today_step_count}>今日目标(公里)</Text>
+                <View style={styles.toady_step_wrapper}>
+                  <Text style={styles.today_step_count}>今日目标(公里)</Text>
+                  <Image style={styles.toady_step_edit} source={require('../../assets/pages/home/edit.png')} />
+                </View>
                 <Text style={styles.toady_step_num}>30090</Text>
               </View>
             </View>
@@ -151,7 +154,7 @@ const Home = () => {
           <View style={styles.city__top_title}>
             <View>
               <Text style={styles.city_top_text}>同城动态</Text>
-              <Image  style={styles.city_sle} source={require('../../assets/pages/home/sle.png')} resizeMode='center' />
+              <Image style={styles.city_sle} source={require('../../assets/pages/home/sle.png')} resizeMode='center' />
             </View>
             <View style={styles.arrow_container}>
               <Text style={styles.arrow_text}>更多</Text>

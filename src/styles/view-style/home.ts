@@ -88,11 +88,21 @@ export const styles = StyleSheet.create({
     color: '#666666',
     fontSize: px2dp(13),
   },
+  toady_step_wrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   toady_step_num: {
     fontWeight: '600',
     marginTop: px2dp(15),
     fontSize: px2dp(27),
     color: '#333333'
+  },
+  toady_step_edit: {
+    width: px2dp(13),
+    height: px2dp(14),
+    marginLeft: px2dp(7)
   },
   sport__right: {
     alignItems: 'center'
@@ -241,7 +251,7 @@ export const styles = StyleSheet.create({
   },
   r_c_date: {
     flexDirection: 'column',
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
   },
   r_c_text: {
     color: '#999999',
