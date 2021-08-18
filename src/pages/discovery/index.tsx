@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, SafeAreaView, Image, ImageBackground, ScrollView } from 'react-native'
+import { View, Text, SafeAreaView, Image, ImageBackground, ScrollView, TouchableOpacity } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { styles } from '../../styles/view-style/discovery'
 
@@ -27,15 +27,17 @@ const Discovery = () => {
         <View style={styles.discovery_top_container}>
           <View style={styles.discovery_top_flow}>
             {DiscoveryData.map((item: { icon: any; r_icon: any; title: string; desc: string }) => (
-              <ImageBackground style={styles.discovery_top_bg} source={item.icon}>
-                <View style={styles.discovery_content_flow}>
-                  <View>
-                    <Text style={styles.title}>{item.title}</Text>
-                    <Text style={styles.desc}>{item.desc}</Text>
+              <TouchableOpacity style={styles.discovery_top_bg}>
+                <ImageBackground style={styles.discovery_top_bg} source={item.icon}>
+                  <View style={styles.discovery_content_flow}>
+                    <View>
+                      <Text style={styles.title}>{item.title}</Text>
+                      <Text style={styles.desc}>{item.desc}</Text>
+                    </View>
+                    <Image style={styles.icon} source={item.r_icon} />
                   </View>
-                  <Image style={styles.icon} source={item.r_icon} />
-                </View>
-              </ImageBackground>
+                </ImageBackground>
+              </TouchableOpacity>
             ))}
           </View>
         </View>
