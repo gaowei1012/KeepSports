@@ -2,7 +2,7 @@
  * @Author: 一个为高薪头秃的程序媴
  * @Date: 2021-08-18 15:29:17
  * @LastEditors: 一个为高薪头秃的程序猿
- * @LastEditTime: 2021-08-18 17:00:26
+ * @LastEditTime: 2021-08-18 17:23:06
  * @Description: 我的页面样式
  */
 
@@ -156,205 +156,46 @@ export const styles = StyleSheet.create({
     alignItems: 'center'
   },
 
-
-  bg_flow__container: {
-    width: width,
-    height: px2dp(248)
-  },
-  mine_title__container: {
-    width: px2dp(345),
-    height: px2dp(52),
-    marginTop: px2dp(30),
-    flexDirection: 'row',
-    alignSelf: 'center',
-    alignItems: 'center'
-  },
-  title__avatar: {
-    width: px2dp(42),
-    height: px2dp(42)
-  },
-  title__flow: {
-    marginLeft: px2dp(10)
-  },
-  title__name: {
-    // fontFamily: 'SourceHanSansCN-Regular',
-    fontSize: px2dp(14),
-    marginBottom: px2dp(6),
-    fontWeight: '600',
-    color: '#fff'
-  },
-  title__desc: {
-    // fontFamily: 'SourceHanSansCN-Regular',
-    fontSize: px2dp(10),
-    fontWeight: '500',
-    color: '#fff'
-  },
-  swipple__flow: {
-    width: px2dp(345),
-    height: px2dp(153),
-    alignSelf: 'center',
-    marginTop: px2dp(20),
-    overflow: 'hidden',
-    borderRadius: px2dp(6)
-  },
-  swipple_image: {
-    width: px2dp(345),
-    height: px2dp(153)
-  },
-  mine__content_container: {
-    marginTop: px2dp(28),
-    width: px2dp(345),
-    alignSelf: 'center'
-  },
-  mine__container_tab: {
-    height: px2dp(40)
-  },
-  mine__sport_container: {
-    height: px2dp(185)
-  },
-
-  start_exercise: {
-    backgroundColor: '#5FC38E',
-    alignItems: 'center',
-    height: px2dp(38),
-    width: px2dp(255),
-    alignSelf: 'center',
-    marginTop: px2dp(20),
-    borderRadius: px2dp(18),
-    justifyContent: 'center'
-  },
-  start_exercise__text: {
-    color: '#fff',
-    fontSize: px2dp(15),
-    fontWeight: 'bold'
-  },
-  mine_leaderboard__container: {
-    width: px2dp(345),
-    alignSelf: 'center',
-    flexDirection: 'row'
-  },
-  leaderboard__image__bg: {
-    width: px2dp(115),
-    height: px2dp(122),
-    alignItems: 'center'
-  },
-  l_icon__bg: {
-    marginTop: px2dp(13),
-    width: px2dp(37),
-    height: px2dp(47),
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  l_icon_min: {
-    marginTop: px2dp(6),
-    width: px2dp(18),
-    height: px2dp(15)
-  },
-  p_num: {
-    color: '#333',
-    fontSize: px2dp(20),
-    fontWeight: 'bold',
-    marginTop: px2dp(3)
-  },
-  p_text: {
-    color: '#666',
-    fontSize: px2dp(12)
-  },
-  line: {
-    height: px2dp(10),
-    marginVertical: px2dp(1)
-  },
-  history_data_container: {
-    width: px2dp(345),
-    alignSelf: 'center'
-  },
-  history_data_bg: {
-    height: px2dp(296)
-  },
-  city__container: {
-    backgroundColor: '#fff',
-    width: width,
-    alignSelf: 'center',
-    borderTopRightRadius: px2dp(10),
-    borderTopLeftRadius: px2dp(10),
-    paddingBottom: px2dp(20)
-  },
-  city__top_title: {
-    marginLeft: px2dp(22),
-    marginTop: px2dp(19.5),
+  list_box: {
+    marginTop: px2dp(11.5),
+    marginLeft: px2dp(15),
     marginRight: px2dp(15),
+    paddingTop: px2dp(1),
+    paddingRight: px2dp(5),
+    paddingLeft: px2dp(8),
+    paddingBottom: px2dp(16),
+    backgroundColor: '#fff'
+  },
+
+  box: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    paddingTop: px2dp(15),
+    paddingBottom: px2dp(15),
+    borderBottomWidth: px2dp(1),
+    borderBottomColor: '#EEEFF7'
   },
-  city_top_text: {
-    color: '#333',
-    fontSize: px2dp(18),
-    fontWeight: 'bold'
-  },
-  city_sle: {
-    width: px2dp(49),
-    height: px2dp(26),
-    marginTop: px2dp(8),
-    marginLeft: px2dp(4)
-  },
-  arrow_container: {
+
+  list_flex: {
     flexDirection: 'row',
     alignItems: 'center'
   },
-  arrow_text: {
-    color: '#666'
+
+  img: {
+    width: px2dp(20),
+    height: px2dp(20),
+    marginRight: px2dp(11.5)
   },
-  arrow: {
-    // width: '100%',
-    // height: '100%'
-  },
-  city_content_container: {
-    alignSelf: 'center',
-    width: px2dp(345),
-    marginTop: px2dp(21.5),
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    borderBottomColor: '#EEEEEE',
-    borderBottomWidth: px2dp(1),
-    paddingBottom: px2dp(20)
-  },
-  c_l_flow: {
-    flexDirection: 'row'
-  },
-  l_c_icon: {
-    width: px2dp(82),
-    height: px2dp(70)
-  },
-  l_c_flow: {
-    marginLeft: px2dp(11),
-    flexDirection: 'column',
-    justifyContent: 'space-between'
-  },
-  l_c_top_t: {
-    marginTop: px2dp(6),
+
+  desc: {
     fontSize: px2dp(14),
-    color: '#333'
+    fontWeight: '400',
+    color: '#333333'
   },
-  l_c_l_c: {
-    color: '#666666',
-    fontSize: px2dp(11)
-  },
-  l_jl_bg: {
-    width: px2dp(44),
-    height: px2dp(16),
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  l_jl_text: {
-    color: '#FF951F'
-  },
-  r_c_date: {
-    flexDirection: 'column',
-    justifyContent: 'flex-end'
-  },
-  r_c_text: {
-    color: '#999999',
-    fontSize: px2dp(11)
+
+  list_right: {
+    width: px2dp(6),
+    height: px2dp(11)
   }
 })
