@@ -2,7 +2,7 @@
  * @Author: 一个为高薪头秃的程序媴
  * @Date: 2021-08-18 15:10:30
  * @LastEditors: 一个为高薪头秃的程序猿
- * @LastEditTime: 2021-08-18 16:48:02
+ * @LastEditTime: 2021-08-18 16:52:29
  * @Description:
  */
 import React from 'react'
@@ -42,6 +42,17 @@ const Mine = () => {
             <ImageBackground style={styles.right_bgc} source={require('../../assets/pages/mine/right_bgc.png')}>
               <Image style={styles.right} source={require('../../assets/pages/mine/right.png')} />
             </ImageBackground>
+          </View>
+
+          <View style={styles.sports_box}>
+            <View style={styles.sport__left}>
+              <Text style={styles.toady_step_num}>120.90公里</Text>
+              <Text style={styles.toady_step_desc}>累计运动(公里)</Text>
+            </View>
+            <View style={styles.sport__right}>
+              <Text style={styles.toady_step_num}>325.00</Text>
+              <Text style={styles.toady_step_desc}>积分(元)</Text>
+            </View>
           </View>
         </View>
       </ImageBackground>

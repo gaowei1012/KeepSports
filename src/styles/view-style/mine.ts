@@ -2,7 +2,7 @@
  * @Author: 一个为高薪头秃的程序媴
  * @Date: 2021-08-18 15:29:17
  * @LastEditors: 一个为高薪头秃的程序猿
- * @LastEditTime: 2021-08-18 16:48:30
+ * @LastEditTime: 2021-08-18 17:00:26
  * @Description: 我的页面样式
  */
 
@@ -35,13 +35,13 @@ export const styles = StyleSheet.create({
   information_box: {
     alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    marginBottom: px2dp(50)
   },
 
   flex: {
     alignItems: 'center',
-    flexDirection: 'row',
-    // justifyContent: 'space-between'
+    flexDirection: 'row'
   },
 
   avatar_box: {
@@ -127,6 +127,36 @@ export const styles = StyleSheet.create({
     height: px2dp(15)
   },
 
+  sports_box: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingLeft: px2dp(57),
+    paddingRight: px2dp(57)
+  },
+
+  sport__left: {
+    alignItems: 'center'
+  },
+
+  toady_step_desc: {
+    fontSize: px2dp(12),
+    fontWeight: '400',
+    color: '#666'
+  },
+
+  toady_step_num: {
+    fontSize: px2dp(24),
+    color: '#333333',
+    fontWeight: 'bold',
+    marginBottom: px2dp(18)
+  },
+
+  sport__right: {
+    alignItems: 'center'
+  },
+
+
   bg_flow__container: {
     width: width,
     height: px2dp(248)
@@ -182,31 +212,7 @@ export const styles = StyleSheet.create({
   mine__sport_container: {
     height: px2dp(185)
   },
-  sport__flow: {
-    marginTop: px2dp(37),
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingLeft: px2dp(45),
-    paddingRight: px2dp(45)
-  },
-  sport__left: {
-    alignItems: 'center'
-  },
-  today_step_count: {
-    fontWeight: '500',
-    color: '#666666',
-    fontSize: px2dp(13)
-  },
-  toady_step_num: {
-    fontWeight: '800',
-    marginTop: px2dp(15),
-    fontSize: px2dp(27),
-    color: '#333333'
-  },
-  sport__right: {
-    alignItems: 'center'
-  },
+
   start_exercise: {
     backgroundColor: '#5FC38E',
     alignItems: 'center',
