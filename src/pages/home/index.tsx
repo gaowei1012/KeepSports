@@ -61,10 +61,20 @@ const tabs = [
   { id: 2, type: 2, name: '健身' }
 ]
 
+const dateData = [
+  {id: 1, type: 1, name: '周'},
+  {id: 2, type: 2, name: '月'},
+  {id: 3, type: 3, name: '年'}
+]
+
 const Home = () => {
   const [top_menu, setTableMenu] = useState<number>(1)
+  const [date, setDate] = useState<number>(1)
   const switchTabs = (name: string, type: number) => {
     setTableMenu(type)
+  }
+  const switchDateTabs = (date: number) => {
+    setDate(date)
   }
 
   return (
@@ -168,12 +178,15 @@ const Home = () => {
             <View style={styles.history_data_charts_title}>
               <Text style={styles.history_dw_text}>单位/km</Text>
               <Text style={styles.history_title_text}>历史数据</Text>
-              <ImageBackground style={styles.history_date_wrapper} source={require('../../assets/pages/home/date.png')}>
-                <Text style={styles.history_date_text}>周</Text>
-                <Text style={styles.history_date_text_r}>月</Text>
-                <Text style={styles.history_date_text_r}>年</Text>
-              </ImageBackground>
+              <View style={styles.history_date_wrapper}>
+                {dateData.map((d: {type: number}) => (
+                  <TouchableOpacity activeOpacity={1} onPress={() => switchDateTabs(d.type)} style={[date !== d.type ? styles.date_wrapper : styles.no_date_wrapper]}>
+                    <Text style={[date !== d.type ? styles.date_text : styles.no_date_text]}>{d.type}</Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
             </View>
+            {console.log([1, 2, 3][date])}
             {/* <LineChart/> */}
           </ImageBackground>
         </View>

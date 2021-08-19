@@ -201,7 +201,10 @@ export const styles = StyleSheet.create({
     height: px2dp(21),
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    backgroundColor: '#24C789',
+    borderRadius: px2dp(11),
+    overflow: 'hidden',
   },
   history_date_text: {
     color: '#FFFFFF',
@@ -210,6 +213,30 @@ export const styles = StyleSheet.create({
   history_date_text_r: {
     color: '#24C789',
     fontSize: px2dp(11)
+  },
+  date_wrapper: {
+    width: px2dp(20),
+    height: px2dp(20),
+    backgroundColor: '#fff',
+    alignItems:'center',
+    justifyContent: 'center'
+  },
+  no_date_wrapper: {
+    width: px2dp(20),
+    height: px2dp(20),
+    backgroundColor: '#24C789',
+    alignItems:'center',
+    justifyContent: 'center'
+  },
+  date_text: {
+    color: '#24C789',
+    fontSize: px2dp(11),
+    fontWeight: '600'
+  },
+  no_date_text: {
+    color: '#fff',
+    fontSize: px2dp(11),
+    fontWeight: '600'
   },
   city__container: {
     backgroundColor: '#fff',
