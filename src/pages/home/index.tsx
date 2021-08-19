@@ -109,25 +109,31 @@ const Home = () => {
               </TouchableOpacity>
             ))}
           </View>
-          <ImageBackground style={styles.home__sport_container} source={require('../../assets/pages/home/sports.png')}>
-            <View style={styles.sport__flow}>
-              <View style={styles.sport__left}>
-                <Text style={styles.today_step_count}>今日步数(步)</Text>
-                <Text style={styles.toady_step_num}>9050</Text>
-              </View>
-              <View style={styles.sport__right}>
-                <View style={styles.toady_step_wrapper}>
-                  <Text style={styles.today_step_count}>今日目标(公里)</Text>
-                  <Image style={styles.toady_step_edit} source={require('../../assets/pages/home/edit.png')} />
+          {top_menu == 1 ? (
+            <ImageBackground style={styles.home__sport_container} source={require('../../assets/pages/home/sports.png')}>
+              <View style={styles.sport__flow}>
+                <View style={styles.sport__left}>
+                  <Text style={styles.today_step_count}>今日步数(步)</Text>
+                  <Text style={styles.toady_step_num}>9050</Text>
                 </View>
-                <Text style={styles.toady_step_num}>30090</Text>
+                <View style={styles.sport__right}>
+                  <View style={styles.toady_step_wrapper}>
+                    <Text style={styles.today_step_count}>今日目标(公里)</Text>
+                    <Image style={styles.toady_step_edit} source={require('../../assets/pages/home/edit.png')} />
+                  </View>
+                  <Text style={styles.toady_step_num}>30090</Text>
+                </View>
               </View>
+              <TouchableOpacity activeOpacity={1} style={styles.start_exercise}>
+                <Image style={styles.start_exercise_icon} source={require('../../assets/pages/home/yd.png')} />
+                <Text style={styles.start_exercise__text}>开始运动</Text>
+              </TouchableOpacity>
+            </ImageBackground>
+          ) : (
+            <View style={styles.home__sport_container}>
+              <Text>健身</Text>
             </View>
-            <TouchableOpacity activeOpacity={1} style={styles.start_exercise}>
-              <Image style={styles.start_exercise_icon} source={require('../../assets/pages/home/yd.png')} />
-              <Text style={styles.start_exercise__text}>开始运动</Text>
-            </TouchableOpacity>
-          </ImageBackground>
+          )}
         </View>
         {/* 排行榜 */}
         <View style={styles.home_leaderboard__container}>
