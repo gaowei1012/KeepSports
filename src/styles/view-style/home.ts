@@ -67,7 +67,15 @@ export const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   home__container_tab: {
-    height: px2dp(40)
+    height: px2dp(40),
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  home__container_tab_flow: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginRight: px2dp(31),
+    // justifyContent: 'center'
   },
   home__sport_container: {
     height: px2dp(185),
@@ -288,5 +296,33 @@ export const styles = StyleSheet.create({
   r_c_text: {
     color: '#999999',
     fontSize: px2dp(11)
+  },
+  tab_default: {
+    // marginRight: px2dp(31)
+  },
+  actionText: {
+    fontWeight: 'bold',
+    color: '#333',
+    fontSize: px2dp(18)
+  },
+  noActionText: {
+   fontSize: px2dp(15),
+   color: '#666'
+  },
+  actionLine: {
+    width: px2dp(24),
+    height: px2dp(13),
+    marginTop: px2dp(6)
+  },
+  noActionLine: {
+    width: px2dp(24),
+    height: px2dp(13),
+    marginTop: px2dp(6)
+  },
+  actionRioa: {
+
+  },
+  noActionRioa: {
+
   }
 })

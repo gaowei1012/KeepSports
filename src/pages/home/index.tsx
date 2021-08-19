@@ -13,6 +13,7 @@ import { Bottom } from '../../components/index'
 import { px2dp } from '../../utils/px2dp'
 import Swiper from 'react-native-swiper'
 import { LineChart } from '../../containers/charts'
+import { useState } from 'react'
 
 const bannerData: any[] = [
   { icon: require('../../assets/pages/home/banner.png'), id: 1 },
@@ -55,7 +56,17 @@ const dData = [
   }
 ]
 
+const tabs = [
+  { id: 1, type: 1, name: '跑步' },
+  { id: 2, type: 2, name: '健身' }
+]
+
 const Home = () => {
+  const [top_menu, setTableMenu] = useState<number>(1)
+  const switchTabs = (name: string, type: number) => {
+    setTableMenu(type)
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
@@ -91,7 +102,12 @@ const Home = () => {
         </ImageBackground>
         <View style={styles.home__content_container}>
           <View style={styles.home__container_tab}>
-            <Text>switch tab</Text>
+            {tabs.map((tab: { name: string; type: number }) => (
+              <TouchableOpacity style={styles.home__container_tab_flow} activeOpacity={1} onPress={() => switchTabs(tab.name, tab.type)}>
+                <Text style={[styles.tab_default, top_menu === tab.type ? styles.actionText : styles.noActionText]}>{tab.name}</Text>
+                {top_menu == tab.type ? <Image style={styles.actionLine} source={require('../../assets/pages/home/sle.png')} resizeMode='center' /> : <View style={styles.noActionLine} />}
+              </TouchableOpacity>
+            ))}
           </View>
           <ImageBackground style={styles.home__sport_container} source={require('../../assets/pages/home/sports.png')}>
             <View style={styles.sport__flow}>
