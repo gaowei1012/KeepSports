@@ -13,6 +13,7 @@ import { Bottom } from '../../components/index'
 import { px2dp } from '../../utils/px2dp'
 import Swiper from 'react-native-swiper'
 import { LineChart } from '../../containers/charts'
+import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { useState } from 'react'
 
 const bannerData: any[] = [
@@ -134,7 +135,9 @@ const Home = () => {
                   <Text style={styles.toady_step_num}>30090</Text>
                 </View>
               </View>
-              <TouchableOpacity activeOpacity={1} style={styles.start_exercise}>
+              <TouchableOpacity activeOpacity={1} onPress={() => {
+                NavigationUtil.goPage({}, 'Sports')
+              }} style={styles.start_exercise}>
                 <Image style={styles.start_exercise_icon} source={require('../../assets/pages/home/yd.png')} />
                 <Text style={styles.start_exercise__text}>开始运动</Text>
               </TouchableOpacity>

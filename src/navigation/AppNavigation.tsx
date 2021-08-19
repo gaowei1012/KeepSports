@@ -11,6 +11,7 @@ import Dynamic from '../pages/dynamic'
 import Mine from '../pages/mine'
 import OfficialInformation from '../pages/information/official'
 import UserInformation from '../pages/information/user'
+import Sports from '../pages/home/Sports'
 
 export const rootCom: string = 'Init'
 
@@ -68,6 +69,12 @@ const MainNavigator = createStackNavigator({
   },
   OfficialInformation: {
     screen: OfficialInformation,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Sports: {
+    screen: Sports,
     navigationOptions: {
       header: null
     }
