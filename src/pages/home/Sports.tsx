@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
+import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/sports'
 import { GoBack } from '../../utils/goBack'
 
@@ -51,6 +52,10 @@ const Sports = (props: any) => {
   const sport_start = () => {
     setStart(!start)
   }
+  // 目标
+  const go_target = () => {
+    NavigationUtil.goPage({}, 'TargetDistance')
+  }
   return (
     <SafeAreaView style={styles.container}>
       <TopNavigationBar statusBar={statusbar} leftButton={GoBack(props)} style={{ backgroundColor: '#DEF2EA' }} />
@@ -75,13 +80,13 @@ const Sports = (props: any) => {
           ))}
         </ImageBackground>
         <View style={styles.sports_start}>
-          <TouchableOpacity>
+          <TouchableOpacity activeOpacity={1} onPress={go_target}>
             <ImageBackground style={styles.sports_c_mb} source={require('../../assets/pages/sports/mb.png')}>
               <Text style={styles.sports_c_mb_text}>设定目标</Text>
               <Image style={styles.sports_mb_i} source={require('../../assets/pages/sports/r.png')} />
             </ImageBackground>
           </TouchableOpacity>
-          <TouchableOpacity activeOpacity={0.8} onPress={sport_start}>
+          <TouchableOpacity activeOpacity={1} onPress={sport_start}>
             <ImageBackground style={styles.sports_c_start} source={`${!start ? require('../../assets/pages/sports/start.png') : require('../../assets/pages/sports/end.png')}`}>
               <Text style={styles.sports_c_start_text}>{`${!start ? '开始' : '暂停'}`}</Text>
             </ImageBackground>

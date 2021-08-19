@@ -12,6 +12,7 @@ import Mine from '../pages/mine'
 import OfficialInformation from '../pages/information/official'
 import UserInformation from '../pages/information/user'
 import Sports from '../pages/home/Sports'
+import TargetDistance from '../pages/home/TargetDistance'
 
 export const rootCom: string = 'Init'
 
@@ -78,7 +79,13 @@ const MainNavigator = createStackNavigator({
     navigationOptions: {
       header: null
     }
-  }
+  },
+  TargetDistance: {
+    screen: TargetDistance,
+    navigationOptions: {
+      header: null
+    }
+  },
 })
 
 export const RootNavigation: any = createAppContainer(
