@@ -40,7 +40,7 @@ export default class NavigationBar extends React.Component<any, any> {
     let { fontSize, color } = this.props
     let statusBar = !this.props.statusBar.hidden ? (
       <View style={styles.statusBar}>
-        <StatusBar {...this.props.statusBar} />
+        <StatusBar translucent {...this.props.statusBar} />
       </View>
     ) : null
     let titleView = this.props.titleView ? (
@@ -61,7 +61,7 @@ export default class NavigationBar extends React.Component<any, any> {
       </View>
     )
     return (
-      <View style={[styles.container, this.props.style]}>
+      <View style={[this.props.style]}>
         {statusBar}
         {content}
       </View>
