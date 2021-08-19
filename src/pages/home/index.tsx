@@ -1,7 +1,7 @@
 /*
  * @Author: 执念
  * @Date: 2021-08-11 13:46:28
- * @LastEditTime: 2021-08-18 21:42:19
+ * @LastEditTime: 2021-08-19 11:32:58
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /KeepSports/src/pages/home/index.tsx
@@ -35,7 +35,7 @@ const dData = [
     date: '刚刚',
     km: '18km',
     grade: '高级',
-    icon: require('../../assets/pages/home/icon.png')
+    icon: require('../../assets/pages/home/icon2.png')
   },
   {
     title: '小柠檬精',
@@ -43,7 +43,7 @@ const dData = [
     date: '3小时前',
     km: '36km',
     grade: '高级',
-    icon: require('../../assets/pages/home/icon.png')
+    icon: require('../../assets/pages/home/icon3.png')
   },
   {
     title: '王者归来',
@@ -51,7 +51,7 @@ const dData = [
     date: '06/11',
     km: '21km',
     grade: '高级',
-    icon: require('../../assets/pages/home/icon.png')
+    icon: require('../../assets/pages/home/icon4.png')
   }
 ]
 
@@ -124,16 +124,16 @@ const Home = () => {
             <Text style={styles.p_text}>好友排名</Text>
           </ImageBackground>
           <ImageBackground style={styles.leaderboard__image__bg} source={require('../../assets/pages/home/leaderboard.png')}>
-            <ImageBackground style={styles.l_icon__bg} source={require('../../assets/pages/home/buddy.png')}>
-              <Image style={styles.l_icon_min} source={require('../../assets/pages/home/p.png')} />
+            <ImageBackground style={styles.l_icon__bg} source={require('../../assets/pages/home/i3.png')}>
+              <Image style={styles.l_icon_min} source={require('../../assets/pages/home/tc.png')} />
             </ImageBackground>
             <Text style={styles.p_num}>620</Text>
             <Image style={styles.line} source={require('../../assets/pages/home/line.png')} />
             <Text style={styles.p_text}>同城排名</Text>
           </ImageBackground>
           <ImageBackground style={styles.leaderboard__image__bg} source={require('../../assets/pages/home/leaderboard.png')}>
-            <ImageBackground style={styles.l_icon__bg} source={require('../../assets/pages/home/buddy.png')}>
-              <Image style={styles.l_icon_min} source={require('../../assets/pages/home/p.png')} />
+            <ImageBackground style={styles.l_icon__bg} source={require('../../assets/pages/home/i2.png')}>
+              <Image style={styles.l_icon_min} source={require('../../assets/pages/home/qb.png')} />
             </ImageBackground>
             <Text style={styles.p_num}>2061</Text>
             <Image style={styles.line} source={require('../../assets/pages/home/line.png')} />
