@@ -1,5 +1,6 @@
 import React from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, ScrollView, TouchableOpacity, StatusBar } from 'react-native'
+import * as ImagePicker from 'react-native-image-picker'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/establish'
@@ -21,6 +22,29 @@ const selData = [
 
 const Establish = (props: any) => {
   const [type, setType] = useState<number>(1)
+  const [response, setResponse] = React.useState<any>(null)
+  // upload file
+  const uploadFile = () => {
+    const options:any = {
+      title: '选择图片',
+      customButtons: [{ name: 'fb', title: '关闭' }],
+      storageOptions: {
+        skipBackup: true,
+        path: 'images'
+      }
+      //noData: true, // 是否启用base64
+    }
+    ImagePicker.launchImageLibrary(options, function(response) {
+      setResponse(response)
+      console.log('response', response)
+    })
+    // ImagePicker.showImagePicker(options, (response) => {
+    //   // 当不选择图片时
+    //   if (response.didCancel !== true) {
+    //     console.log('图片', response)
+    //   }
+    // })
+  }
   return (
     <View>
       <ImageBackground style={styles.establish_bg__container} source={require('../../assets/pages/establish/bg.png')}>
@@ -37,7 +61,7 @@ const Establish = (props: any) => {
         </SafeAreaView>
       </ImageBackground>
       <ImageBackground style={styles.establish_bg__content} source={require('../../assets/pages/establish/cbg.png')}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={uploadFile}>
           <ImageBackground source={require('../../assets/pages/establish/pc.png')} style={styles.establish_bg__content_photon}>
             <Image style={styles.establish_bg__content_photon_icon} source={require('../../assets/pages/establish/c.png')} />
           </ImageBackground>
