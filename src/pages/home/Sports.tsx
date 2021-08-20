@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity } from 'react-native'
+import { CircularProgress, Dial } from '../../components/circle/index'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/sports'
@@ -60,24 +61,28 @@ const Sports = (props: any) => {
     <SafeAreaView style={styles.container}>
       <TopNavigationBar statusBar={statusbar} leftButton={GoBack(props)} style={{ backgroundColor: '#DEF2EA' }} />
       <View style={styles.sports_container}>
-        <View style={styles.sports_num_wrapper}>
-          <Text style={styles.sports_num}>{!start ? '00.00' : '10.26'}</Text>
-          <Text style={styles.sports_gl}>公里</Text>
-        </View>
+        {/* <CircularProgress width={300} progress={(270 / 360) * 100} progressIndicator='circle' strokeColor={{ background: '#F7F7F9', foreground: ['#FF8F2C', '#F84238'] }}> */}
+          <View style={styles.sports_num_wrapper}>
+            <Text style={styles.sports_num}>{!start ? '00.00' : '10.26'}</Text>
+            <Text style={styles.sports_gl}>公里</Text>
+          </View>
+        {/* </CircularProgress> */}
         <ImageBackground style={styles.sports_bg_container} source={require('../../assets/pages/sports/ydbg.png')}>
-          {!start ? ydData.map((d) => (
-            <View style={styles.sports_c_w}>
-              <Image style={styles.sports_c_i} source={d.icon} />
-              <Text style={styles.sports_c_sum}>{d.sum}</Text>
-              <Text style={styles.desc}>{d.desc}</Text>
-            </View>
-          )) : ydDataStart.map((d) => (
-            <View style={styles.sports_c_w}>
-              <Image style={styles.sports_c_i} source={d.icon} />
-              <Text style={styles.sports_c_sum}>{d.sum}</Text>
-              <Text style={styles.desc}>{d.desc}</Text>
-            </View>
-          ))}
+          {!start
+            ? ydData.map((d) => (
+                <View style={styles.sports_c_w}>
+                  <Image style={styles.sports_c_i} source={d.icon} />
+                  <Text style={styles.sports_c_sum}>{d.sum}</Text>
+                  <Text style={styles.desc}>{d.desc}</Text>
+                </View>
+              ))
+            : ydDataStart.map((d) => (
+                <View style={styles.sports_c_w}>
+                  <Image style={styles.sports_c_i} source={d.icon} />
+                  <Text style={styles.sports_c_sum}>{d.sum}</Text>
+                  <Text style={styles.desc}>{d.desc}</Text>
+                </View>
+              ))}
         </ImageBackground>
         <View style={styles.sports_start}>
           <TouchableOpacity activeOpacity={1} onPress={go_target}>
