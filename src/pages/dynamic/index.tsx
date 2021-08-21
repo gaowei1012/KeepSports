@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, ScrollView, TouchableOpacity } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
+import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/dynamic'
 
 const dynamicData = [
@@ -74,6 +75,11 @@ const Dynamic = () => {
     setType(type)
   }
 
+  // 添加
+  const add_dynamic = () => {
+    NavigationUtil.goPage({}, 'AddDynamic')
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.dynamic_top_switch}>
@@ -134,7 +140,9 @@ const Dynamic = () => {
           ))}
         </View>
       </ScrollView>
-      <ImageBackground style={styles.btn_add} source={require('../../assets/pages/dynamic/add_dy.png')} />
+      <TouchableOpacity onPress={add_dynamic}>
+        <ImageBackground style={styles.btn_add} source={require('../../assets/pages/dynamic/add_dy.png')} />
+      </TouchableOpacity>
     </SafeAreaView>
   )
 }

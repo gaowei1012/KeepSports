@@ -14,6 +14,7 @@ import UserInformation from '../pages/information/user'
 import Sports from '../pages/home/Sports'
 import TargetDistance from '../pages/home/TargetDistance'
 import Establish from '../pages/discovery/establish'
+import AddDynamic from '../pages/dynamic/add_dynamic'
 
 export const rootCom: string = 'Init'
 
@@ -89,6 +90,12 @@ const MainNavigator = createStackNavigator({
   },
   Establish : {
     screen: Establish,
+    navigationOptions: {
+      header: null
+    }
+  },
+  AddDynamic : {
+    screen: AddDynamic,
     navigationOptions: {
       header: null
     }

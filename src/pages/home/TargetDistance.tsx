@@ -29,7 +29,7 @@ const TargetDistance = (props: any) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <TopNavigationBar title='设定距离目标' statusBar={statusbar} leftButton={GoBack(props)} style={{ backgroundColor: '#fff' }} />
+      <TopNavigationBar title='设定距离目标' statusBar={statusbar} leftButton={GoBack(props, true)} style={{ backgroundColor: '#fff' }} />
       <View style={styles.content}>
         <View style={styles.target_top_jl}>
           <Text style={styles.target_top_sum}>0.80</Text>

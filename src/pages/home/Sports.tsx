@@ -59,7 +59,7 @@ const Sports = (props: any) => {
   }
   return (
     <SafeAreaView style={styles.container}>
-      <TopNavigationBar statusBar={statusbar} leftButton={GoBack(props)} style={{ backgroundColor: '#DEF2EA' }} />
+      <TopNavigationBar statusBar={statusbar} leftButton={GoBack(props, true)} style={{ backgroundColor: '#DEF2EA' }} />
       <View style={styles.sports_container}>
         {/* <CircularProgress width={300} progress={(270 / 360) * 100} progressIndicator='circle' strokeColor={{ background: '#F7F7F9', foreground: ['#FF8F2C', '#F84238'] }}> */}
           <View style={styles.sports_num_wrapper}>

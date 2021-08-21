@@ -49,7 +49,7 @@ const Establish = (props: any) => {
     <View>
       <ImageBackground style={styles.establish_bg__container} source={require('../../assets/pages/establish/bg.png')}>
         <SafeAreaView>
-          <TopNavigationBar leftButton={GoBack(props)} title={'创建团'} statusBar={statusbar} />
+          <TopNavigationBar leftButton={GoBack(props, true)} title={'创建团'} statusBar={statusbar} />
           <ImageBackground style={styles.establish_bg__top} source={require('../../assets/pages/establish/tbg.png')}>
             {selData.map((c) => (
               <View key={c.type} style={styles.avatar_wrapper}>
