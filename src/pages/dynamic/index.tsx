@@ -134,6 +134,7 @@ const Dynamic = () => {
           ))}
         </View>
       </ScrollView>
+      <ImageBackground style={styles.btn_add} source={require('../../assets/pages/dynamic/add_dy.png')} />
     </SafeAreaView>
   )
 }

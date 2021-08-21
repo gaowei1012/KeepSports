@@ -167,5 +167,15 @@ export const styles = StyleSheet.create({
     color: '#333333',
     fontSize: px2dp(13),
     marginLeft: px2dp(15)
+  },
+  btn_add: {
+    width: px2dp(67),
+    height: px2dp(67),
+    alignSelf: 'flex-end',
+    // marginRight: px2dp(18),
+    marginBottom: px2dp(20),
+    position: 'absolute',
+    bottom: 0,
+    right: px2dp(18)
   }
 })
