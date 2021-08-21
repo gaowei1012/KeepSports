@@ -177,5 +177,101 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     right: px2dp(18)
+  },
+  // add
+  add_container: {
+    height: height,
+  },
+  add_text_dynamic: {
+    width: px2dp(345),
+    alignSelf: 'center',
+    marginTop: px2dp(18)
+  },
+  textinput: {
+    height: px2dp(97)
+  },
+  upload_file: {
+    width: px2dp(345),
+    alignSelf: 'center',
+    marginVertical: px2dp(40)
+  },
+  textnum_container: {
+    width: px2dp(345),
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+  },
+  textnum: {
+    color: '#999',
+    fontSize: px2dp(14)
+  },
+  btn: {
+    width: px2dp(345),
+    height: px2dp(48),
+    alignSelf: 'center',
+    borderRadius: px2dp(24),
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#24C789',
+    position: 'absolute',
+    bottom: px2dp(20)
+  },
+  fabu_text: {
+    color: '#fff',
+    fontSize: px2dp(19),
+    fontWeight: 'bold'
+  },
+  local_wrapper: {
+    width: px2dp(72),
+    height: px2dp(24),
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: px2dp(15),
+    marginTop: px2dp(22),
+    flexDirection: 'row',
+  },
+  local_icon: {
+    width: px2dp(13),
+    height: px2dp(15)
+  },
+  local_text: {
+    color: '#FD4538',
+    fontSize: px2dp(13),
+    marginLeft: px2dp(3)
+  },
+
+  establish_bg__content: {
+    width: width,
+    height: px2dp(454),
+    alignItems: 'center',
+    marginTop: px2dp(101),
+  },
+  establish_bg__content_photon: {
+    width: px2dp(120),
+    height: px2dp(120),
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  establish_bg__content_photon_icon: {
+    width: px2dp(39),
+    height: px2dp(33)
+  },
+  establish_bg__content_btn: {
+    width: px2dp(345),
+    height: px2dp(38),
+    borderRadius: px2dp(19),
+    backgroundColor: '#24C789',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: px2dp(180)
+  },
+  establish_bg__content_next_text: {
+    color: '#fff',
+    fontSize: px2dp(17),
+    fontWeight: 'bold'
+  },
+  p_content_container: {
+    marginLeft: px2dp(15),
+    marginTop: px2dp(20)
   }
 })
