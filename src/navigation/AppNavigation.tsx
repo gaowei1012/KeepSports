@@ -15,6 +15,7 @@ import Sports from '../pages/home/Sports'
 import TargetDistance from '../pages/home/TargetDistance'
 import Establish from '../pages/discovery/establish'
 import AddDynamic from '../pages/dynamic/add_dynamic'
+import DynamicCenter from '../pages/dynamic/dynamic_center'
 
 export const rootCom: string = 'Init'
 
@@ -96,6 +97,12 @@ const MainNavigator = createStackNavigator({
   },
   AddDynamic : {
     screen: AddDynamic,
+    navigationOptions: {
+      header: null
+    }
+  },
+  DynamicCenter: {
+    screen: DynamicCenter,
     navigationOptions: {
       header: null
     }

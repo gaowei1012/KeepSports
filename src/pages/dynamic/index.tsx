@@ -96,13 +96,15 @@ const Dynamic = () => {
             <View style={styles.dynamic_content_flow}>
               <View style={styles.dy_top_avatar_wrapper}>
                 {/* 头像 */}
-                <View style={styles.dy_top_left_wrapper}>
+                <TouchableOpacity onPress={() => {
+                  NavigationUtil.goPage({}, 'DynamicCenter')
+                }} style={styles.dy_top_left_wrapper}>
                   <Image source={require('../../assets/pages/dynamic/a1.png')} style={styles.avatar} />
                   <View style={styles.avatar_right_wrapper}>
                     <Text style={styles.avatar_text}>{list.title}</Text>
                     <Text style={styles.avatar_desc}>{list.date}</Text>
                   </View>
-                </View>
+                </TouchableOpacity>
                 <TouchableOpacity>
                   <ImageBackground source={require('../../assets/pages/dynamic/gz.png')} style={styles.dy_top_right_wrapper}>
                     <Image source={require('../../assets/pages/dynamic/add.png')} style={styles.dy_top_right_add} />

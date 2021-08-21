@@ -273,5 +273,43 @@ export const styles = StyleSheet.create({
   p_content_container: {
     marginLeft: px2dp(15),
     marginTop: px2dp(20)
+  },
+  // 个人界面
+  center_container: {
+    width: width,
+    height: px2dp(212)
+  },
+  center_avatar_flow: {
+    width: px2dp(355),
+    height: px2dp(206),
+    alignSelf: 'center',
+    marginTop: px2dp(29),
+    flexDirection: 'row'
+  },
+  center_avatar_icon: {
+    width: px2dp(63),
+    height: px2dp(63),
+    marginLeft: px2dp(21),
+    marginTop: px2dp(7)
+  },
+  center_avatar_name_flow: {
+    flexDirection: 'column',
+    marginLeft: px2dp(18),
+    marginTop: px2dp(28)
+  },
+  center_avatar_name_text: {
+    color: '#000000',
+    fontSize: px2dp(17)
+  },
+  center_avatar_name_desc: {
+    color: '#999999',
+    fontSize: px2dp(10),
+    marginTop: px2dp(12)
+  },
+  center_fans_flow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    flexWrap: 'wrap'
   }
 })
