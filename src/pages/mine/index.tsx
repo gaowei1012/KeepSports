@@ -10,9 +10,11 @@ import { View, Text, SafeAreaView, ImageBackground, Image, TouchableOpacity } fr
 import { styles } from '../../styles/view-style/mine'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import LogOut from './LogOut'
+import LogSuccess from './LogSuccess'
 
 const Mine = () => {
   const [log_out, setLogOut] = useState<boolean>(false)
+  const [log_success, setLogSuccess] = useState<boolean>(false)
   const listArr = [
     {
       id: 0,
@@ -53,7 +55,7 @@ const Mine = () => {
 
   const onPress = (e: any) => {
     console.log(e)
-    e.name == '注销账号' ? setLogOut(true) : NavigationUtil.goPage({}, e.pages)
+    e.name == '注销账号' ? setLogSuccess(true) : NavigationUtil.goPage({}, e.pages)
   }
 
   return (
@@ -118,6 +120,7 @@ const Mine = () => {
           })}
       </View>
       <LogOut visible={log_out} setLogOut={setLogOut} />
+      <LogSuccess visible={log_success} setLogSuccess={setLogSuccess}/>
     </ImageBackground>
   )
 }

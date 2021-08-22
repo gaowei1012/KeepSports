@@ -251,5 +251,40 @@ export const styles = StyleSheet.create({
     color: '#24C789',
     fontSize: px2dp(14),
     fontWeight: 'bold'
+  },
+  logout_success_wrapper: {
+    flexDirection: 'row',
+    marginTop: px2dp(71)
+  },
+  logout_success_text: {
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+    marginLeft: px2dp(13)
+  },
+  t: {
+    color: '#333333',
+    fontSize: px2dp(17),
+    fontWeight: 'bold'
+  },
+  l: {
+    marginTop: px2dp(11),
+    color: '#999999',
+    fontSize: px2dp(11)
+  },
+  logout_success_img: {
+    width: px2dp(49),
+    height: px2dp(49)
+  },
+  logout_btn_fl: {
+    width: px2dp(168),
+    height: px2dp(38),
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: px2dp(81)
+  },
+  logout_btn_fl_t: {
+    color: '#fff',
+    fontSize: px2dp(17),
+    fontWeight: 'bold'
   }
 })
