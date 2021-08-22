@@ -75,6 +75,11 @@ const DynamicCenter = (props: any) => {
             </View>
           </View>
         </ScrollView>
+        <TouchableOpacity activeOpacity={.8} style={styles.dy_follow_wrapper}>
+          <ImageBackground style={styles.dy_follow} source={require('../../../assets/pages/discovery/follow.png')}>
+            <Text>关注</Text>
+          </ImageBackground>
+        </TouchableOpacity>
       </SafeAreaView>
     </ImageBackground>
   )

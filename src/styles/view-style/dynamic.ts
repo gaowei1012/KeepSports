@@ -410,5 +410,16 @@ export const styles = StyleSheet.create({
   },
   scrollview: {
     height: height,
+  },
+  dy_follow_wrapper: {
+    width: width,
+    alignItems: 'center',
+    backgroundColor: '#fff'
+  },
+  dy_follow: {
+    width: px2dp(115),
+    height: px2dp(35),
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 })
