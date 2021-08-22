@@ -2,40 +2,45 @@
  * @Author: 一个为高薪头秃的程序媴
  * @Date: 2021-08-18 15:10:30
  * @LastEditors: 一个为高薪头秃的程序猿
- * @LastEditTime: 2021-08-22 09:56:49
+ * @LastEditTime: 2021-08-22 10:55:29
  * @Description: 我的页面
  */
 import React from 'react'
-import { View, Text, SafeAreaView, ImageBackground, Image } from 'react-native'
+import { View, Text, SafeAreaView, ImageBackground, Image, TouchableOpacity } from 'react-native'
 import { styles } from '../../styles/view-style/mine'
+import { NavigationUtil } from '../../navigation/NavigationUtil'
 
 const Mine = () => {
-  // const [] = useState()
   const listArr = [
     {
       id: 0,
       name: '我的动态',
-      icon: require('../../assets/pages/mine/dynamic.png')
+      icon: require('../../assets/pages/mine/dynamic.png'),
+      pages: 'Dynamic'
     },
     {
       id: 1,
       name: '我的活动',
-      icon: require('../../assets/pages/mine/activity.png')
+      icon: require('../../assets/pages/mine/activity.png'),
+      pages: 'Activity'
     },
     {
       id: 2,
       name: '在线客服',
-      icon: require('../../assets/pages/mine/customerService.png')
+      icon: require('../../assets/pages/mine/customerService.png'),
+      pages: 'CustomerService'
     },
     {
       id: 3,
       name: '隐私政策',
-      icon: require('../../assets/pages/mine/privacyPolicy.png')
+      icon: require('../../assets/pages/mine/privacyPolicy.png'),
+      pages: 'PrivacyPolicy'
     },
     {
       id: 4,
       name: '用户协议',
-      icon: require('../../assets/pages/mine/userAgreement.png')
+      icon: require('../../assets/pages/mine/userAgreement.png'),
+      pages: 'UserAgreement'
     },
     {
       id: 5,
@@ -43,6 +48,10 @@ const Mine = () => {
       icon: require('../../assets/pages/mine/loginout.png')
     }
   ]
+
+  const onPress = (e: any) => {
+    e.name == 'loginout' ? console.log('退出登录啦') : NavigationUtil.goPage({}, e.pages)
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -94,13 +103,13 @@ const Mine = () => {
           {listArr &&
             listArr.map((item) => {
               return (
-                <View style={styles.box} key={item.id}>
+                <TouchableOpacity activeOpacity={1} onPress={() => onPress(item)} style={styles.box} key={item.id}>
                   <View style={styles.list_flex}>
                     <Image style={styles.img} source={item.icon} />
                     <Text style={styles.desc}>{item.name}</Text>
                   </View>
                   <Image style={styles.list_right} source={require('../../assets/pages/mine/list_right.png')} />
-                </View>
+                </TouchableOpacity>
               )
             })}
         </View>

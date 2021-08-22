@@ -16,6 +16,7 @@ import TargetDistance from '../pages/home/TargetDistance'
 import Establish from '../pages/discovery/establish'
 import AddDynamic from '../pages/dynamic/add_dynamic'
 import DynamicCenter from '../pages/dynamic/dynamic_center'
+import PrivacyPolicy from '../pages/privacyPolicy'
 
 export const rootCom: string = 'Init'
 
@@ -103,6 +104,12 @@ const MainNavigator = createStackNavigator({
   },
   DynamicCenter: {
     screen: DynamicCenter,
+    navigationOptions: {
+      header: null
+    }
+  },
+  PrivacyPolicy: {
+    screen: PrivacyPolicy,
     navigationOptions: {
       header: null
     }
