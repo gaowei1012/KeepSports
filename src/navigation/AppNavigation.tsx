@@ -20,6 +20,7 @@ import DynamicCenter from '../pages/dynamic/dynamic_center'
 import PrivacyPolicy from '../pages/privacyPolicy'
 import UserAgreement from '../pages/agreement'
 import Intent from '../pages/discovery/intent'
+import GroupInformation from '../pages/discovery/Information'
 
 export const rootCom: string = 'Init'
 
@@ -131,6 +132,12 @@ const MainNavigator = createStackNavigator({
   },
   CreateEstablish: {
     screen: CreateEstablish,
+    navigationOptions: {
+      header: null
+    }
+  },
+  GroupInformation: {
+    screen: GroupInformation,
     navigationOptions: {
       header: null
     }

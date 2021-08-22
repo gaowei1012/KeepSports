@@ -37,19 +37,23 @@ const Establish = (props: any) => {
             <View style={styles.line} />
             <Text style={styles.line_text}>我创建的团</Text>
           </View>
-          <ImageBackground source={require('../../assets/pages/discovery/cc.png')} style={styles.content_wrapper}>
-            <Image style={styles.content_icon} source={require('../../assets/pages/discovery/ccc.png')} />
-            <View style={styles.content_list_wrapper}>
-              <View style={styles.content_list_top}>
-                <Text>陕西健身体操团队</Text>
-                <Text style={styles.content_km}>15km</Text>
+          <TouchableOpacity onPress={() => {
+            NavigationUtil.goPage({}, 'GroupInformation')
+          }} activeOpacity={.8}>
+            <ImageBackground source={require('../../assets/pages/discovery/cc.png')} style={styles.content_wrapper}>
+              <Image style={styles.content_icon} source={require('../../assets/pages/discovery/ccc.png')} />
+              <View style={styles.content_list_wrapper}>
+                <View style={styles.content_list_top}>
+                  <Text>陕西健身体操团队</Text>
+                  <Text style={styles.content_km}>15km</Text>
+                </View>
+                <ImageBackground style={styles.content_gj} source={require('../../assets/pages/discovery/gj.png')}>
+                  <Text style={styles.content_text}>高级</Text>
+                </ImageBackground>
+                <Text style={styles.content_desc}>坚持、信念、对运动有着永不放弃的执着....</Text>
               </View>
-              <ImageBackground style={styles.content_gj} source={require('../../assets/pages/discovery/gj.png')}>
-                <Text style={styles.content_text}>高级</Text>
-              </ImageBackground>
-              <Text style={styles.content_desc}>坚持、信念、对运动有着永不放弃的执着....</Text>
-            </View>
-          </ImageBackground>
+            </ImageBackground>
+          </TouchableOpacity>
         </View>
         <View style={styles.create_content_wrapper}>
           <View style={styles.create_content_line}>
