@@ -279,6 +279,9 @@ export const styles = StyleSheet.create({
     width: width,
     height: px2dp(212)
   },
+  center_container_bg: {
+    // backgroundColor: '#F6F6F6'
+  },
   center_avatar_flow: {
     width: px2dp(355),
     height: px2dp(206),
@@ -329,7 +332,8 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginHorizontal: px2dp(13),
-    marginVertical: px2dp(14)
+    marginVertical: px2dp(14),
+    // backgroundColor: '#F6F6F6'
   },
   center_line: {
     width: px2dp(3),
@@ -342,5 +346,69 @@ export const styles = StyleSheet.create({
     color: '#333',
     fontSize: px2dp(15),
     fontWeight: '800'
+  },
+  center_content_file: {
+    width: px2dp(355),
+    alignSelf: 'center',
+    height: px2dp(85),
+    marginTop: px2dp(11),
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around'
+  },
+  center_file_flow: {
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  file_title: {
+    color: '#333333',
+    fontSize: px2dp(24)
+  },
+  file_text: {
+    color: '#999999',
+    fontSize: px2dp(12),
+    marginTop: px2dp(6)
+  },
+  center_file_content: {
+    backgroundColor: '#fff'
+  },
+  center_file_content_flow: {
+   marginHorizontal: px2dp(15),
+   marginVertical: px2dp(15),
+  },
+  file_date: {
+    color: '#333333',
+    fontSize: px2dp(11),
+    fontWeight: 'normal'
+  },
+  file_content: {
+    marginHorizontal: px2dp(10),
+    marginVertical: px2dp(10),
+    flexDirection: 'row'
+  },
+  file_content_left: {
+    color: '#333',
+    fontSize: px2dp(17),
+    fontWeight: 'bold',
+    lineHeight: px2dp(20)
+  },
+  file_content_right: {
+    color: '#333',
+    fontSize: px2dp(13),
+    fontWeight: 'bold',
+    marginLeft: px2dp(20),
+    lineHeight: px2dp(26)
+  },
+  file_content_img_wrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  justifyContent: 'space-around'
+  },
+  file_content_img: {
+    width: px2dp(88),
+    height: px2dp(85)
+  },
+  scrollview: {
+    height: height,
   }
 })
