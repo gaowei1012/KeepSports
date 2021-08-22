@@ -26,6 +26,8 @@ const Discovery = () => {
   const establish = (title: string) => {
     if (title == '我的团队') {
       NavigationUtil.goPage({}, "Establish")
+    } else {
+      NavigationUtil.goPage({}, 'Intent')
     }
   }
   return (

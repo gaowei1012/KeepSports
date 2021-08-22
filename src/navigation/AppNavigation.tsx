@@ -18,6 +18,7 @@ import AddDynamic from '../pages/dynamic/add_dynamic'
 import DynamicCenter from '../pages/dynamic/dynamic_center'
 import PrivacyPolicy from '../pages/privacyPolicy'
 import UserAgreement from '../pages/agreement'
+import Intent from '../pages/discovery/intent'
 
 export const rootCom: string = 'Init'
 
@@ -117,6 +118,12 @@ const MainNavigator = createStackNavigator({
   },
   UserAgreement: {
     screen: UserAgreement,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Intent: {
+    screen: Intent,
     navigationOptions: {
       header: null
     }
