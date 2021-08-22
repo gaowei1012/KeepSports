@@ -17,6 +17,7 @@ import Establish from '../pages/discovery/establish'
 import AddDynamic from '../pages/dynamic/add_dynamic'
 import DynamicCenter from '../pages/dynamic/dynamic_center'
 import PrivacyPolicy from '../pages/privacyPolicy'
+import UserAgreement from '../pages/agreement'
 
 export const rootCom: string = 'Init'
 
@@ -90,13 +91,13 @@ const MainNavigator = createStackNavigator({
       header: null
     }
   },
-  Establish : {
+  Establish: {
     screen: Establish,
     navigationOptions: {
       header: null
     }
   },
-  AddDynamic : {
+  AddDynamic: {
     screen: AddDynamic,
     navigationOptions: {
       header: null
@@ -114,6 +115,12 @@ const MainNavigator = createStackNavigator({
       header: null
     }
   },
+  UserAgreement: {
+    screen: UserAgreement,
+    navigationOptions: {
+      header: null
+    }
+  }
 })
 
 export const RootNavigation: any = createAppContainer(
