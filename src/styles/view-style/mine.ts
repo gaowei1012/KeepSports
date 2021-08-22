@@ -196,5 +196,60 @@ export const styles = StyleSheet.create({
   list_right: {
     width: px2dp(6),
     height: px2dp(11)
+  },
+  // 退出
+  logout_container: {
+    height: height,
+    width: width,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(0, 0, 0, .45)'
+  },
+  logout_content_wrapper: {
+    width: px2dp(321),
+    height: px2dp(265),
+    alignItems: 'center'
+  },
+  logout_content: {
+    marginTop: px2dp(20),
+    marginHorizontal: px2dp(18),
+    color: '#333333',
+    fontSize: px2dp(14),
+    lineHeight: px2dp(25),
+    fontWeight: 'bold'
+  },
+  logout_title: {
+    marginTop: px2dp(17),
+    color: '#333333',
+    fontSize: px2dp(17),
+    fontWeight: 'bold'
+  },
+  logout_bottom: {
+    width: px2dp(319),
+    height: px2dp(52),
+    position: 'absolute',
+    bottom: 0,
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  logout_bottom_l: {
+    width: px2dp(160),
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderTopColor: '#F7F7F7',
+    borderTopWidth: px2dp(1),
+    borderRightWidth: px2dp(1),
+    borderRightColor: '#F7F7F7'
+  },
+  concel: {
+    color: '#333333',
+    fontSize: px2dp(14),
+    fontWeight: 'bold'
+  },
+  commen: {
+    color: '#24C789',
+    fontSize: px2dp(14),
+    fontWeight: 'bold'
   }
 })

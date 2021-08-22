@@ -5,12 +5,14 @@
  * @LastEditTime: 2021-08-22 10:55:29
  * @Description: 我的页面
  */
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, SafeAreaView, ImageBackground, Image, TouchableOpacity } from 'react-native'
 import { styles } from '../../styles/view-style/mine'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
+import LogOut from './LogOut'
 
 const Mine = () => {
+  const [log_out, setLogOut] = useState<boolean>(false)
   const listArr = [
     {
       id: 0,
@@ -50,7 +52,8 @@ const Mine = () => {
   ]
 
   const onPress = (e: any) => {
-    e.name == 'loginout' ? console.log('退出登录啦') : NavigationUtil.goPage({}, e.pages)
+    console.log(e)
+    e.name == '注销账号' ? setLogOut(true) : NavigationUtil.goPage({}, e.pages)
   }
 
   return (
@@ -104,7 +107,7 @@ const Mine = () => {
         {listArr &&
           listArr.map((item) => {
             return (
-              <TouchableOpacity activeOpacity={1} onPress={() => onPress(item)} style={styles.box} key={item.id}>
+              <TouchableOpacity activeOpacity={.8} onPress={() => onPress(item)} style={styles.box} key={item.id}>
                 <View style={styles.list_flex}>
                   <Image style={styles.img} source={item.icon} />
                   <Text style={styles.desc}>{item.name}</Text>
@@ -114,6 +117,7 @@ const Mine = () => {
             )
           })}
       </View>
+      <LogOut visible={log_out} setLogOut={setLogOut} />
     </ImageBackground>
   )
 }
