@@ -14,6 +14,7 @@ import UserInformation from '../pages/information/user'
 import Sports from '../pages/home/Sports'
 import TargetDistance from '../pages/home/TargetDistance'
 import Establish from '../pages/discovery/establish'
+import CreateEstablish from '../pages/discovery/CreateEstablish'
 import AddDynamic from '../pages/dynamic/add_dynamic'
 import DynamicCenter from '../pages/dynamic/dynamic_center'
 import PrivacyPolicy from '../pages/privacyPolicy'
@@ -124,6 +125,12 @@ const MainNavigator = createStackNavigator({
   },
   Intent: {
     screen: Intent,
+    navigationOptions: {
+      header: null
+    }
+  },
+  CreateEstablish: {
+    screen: CreateEstablish,
     navigationOptions: {
       header: null
     }

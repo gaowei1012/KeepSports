@@ -8,69 +8,70 @@ import { GoBack } from '../../utils/goBack'
 import { useState } from 'react'
 
 const statusbar = {
-  backgroundColor: 'rgba(0, 0, 0, 0)',
+  backgroundColor: '#F6F6F6',
   barStyle: 'dark-content',
-  translucent: true,
+  translucent: false,
   hidden: false
 }
 
-const selData = [
-  { title: '选择头像', type: 1 },
-  { title: '设置密码', type: 2 },
-  { title: '确认创建', type: 3 }
-]
-
 const Establish = (props: any) => {
-  const [type, setType] = useState<number>(1)
-  const [response, setResponse] = React.useState<any>(null)
-  // upload file
-  const uploadFile = () => {
-    const options:any = {
-      title: '选择图片',
-      customButtons: [{ name: 'fb', title: '关闭' }],
-      storageOptions: {
-        skipBackup: true,
-        path: 'images'
-      }
-      //noData: true, // 是否启用base64
-    }
-    ImagePicker.launchImageLibrary(options, function(response) {
-      setResponse(response)
-      console.log('response', response)
-    })
-    // ImagePicker.showImagePicker(options, (response) => {
-    //   // 当不选择图片时
-    //   if (response.didCancel !== true) {
-    //     console.log('图片', response)
-    //   }
-    // })
-  }
   return (
-    <View>
-      <ImageBackground style={styles.establish_bg__container} source={require('../../assets/pages/establish/bg.png')}>
-        <SafeAreaView>
-          <TopNavigationBar leftButton={GoBack(props, true)} title={'创建团'} statusBar={statusbar} />
-          <ImageBackground style={styles.establish_bg__top} source={require('../../assets/pages/establish/tbg.png')}>
-            {selData.map((c) => (
-              <View key={c.type} style={styles.avatar_wrapper}>
-                <Image style={styles.avatar_icon} source={`${type == c.type ? require('../../assets/pages/establish/sr.png') : require('../../assets/pages/establish/nr.png')}`} />
-                <Text style={styles.avatar_text}>选择头像</Text>
+    <SafeAreaView style={styles.create_establish_container}>
+      <TopNavigationBar
+        leftButton={GoBack(props, true)}
+        title={'我的运动团'}
+        rightButton={
+          <TouchableOpacity
+            onPress={() => {
+              NavigationUtil.goPage({}, 'CreateEstablish')
+            }}
+            style={styles.create_establish}>
+            <Text style={styles.create_text}>创建团</Text>
+          </TouchableOpacity>
+        }
+        statusBar={statusbar}
+      />
+      <ScrollView>
+        <View style={styles.create_content_wrapper}>
+          <View style={styles.create_content_line}>
+            <View style={styles.line} />
+            <Text style={styles.line_text}>我创建的团</Text>
+          </View>
+          <ImageBackground source={require('../../assets/pages/discovery/cc.png')} style={styles.content_wrapper}>
+            <Image style={styles.content_icon} source={require('../../assets/pages/discovery/ccc.png')} />
+            <View style={styles.content_list_wrapper}>
+              <View style={styles.content_list_top}>
+                <Text>陕西健身体操团队</Text>
+                <Text style={styles.content_km}>15km</Text>
               </View>
-            ))}
+              <ImageBackground style={styles.content_gj} source={require('../../assets/pages/discovery/gj.png')}>
+                <Text style={styles.content_text}>高级</Text>
+              </ImageBackground>
+              <Text style={styles.content_desc}>坚持、信念、对运动有着永不放弃的执着....</Text>
+            </View>
           </ImageBackground>
-        </SafeAreaView>
-      </ImageBackground>
-      <ImageBackground style={styles.establish_bg__content} source={require('../../assets/pages/establish/cbg.png')}>
-        <TouchableOpacity onPress={uploadFile}>
-          <ImageBackground source={require('../../assets/pages/establish/pc.png')} style={styles.establish_bg__content_photon}>
-            <Image style={styles.establish_bg__content_photon_icon} source={require('../../assets/pages/establish/c.png')} />
+        </View>
+        <View style={styles.create_content_wrapper}>
+          <View style={styles.create_content_line}>
+            <View style={styles.line} />
+            <Text style={styles.line_text}>我加入的团</Text>
+          </View>
+          <ImageBackground source={require('../../assets/pages/discovery/cc.png')} style={styles.content_wrapper}>
+            <Image style={styles.content_icon} source={require('../../assets/pages/discovery/ccc.png')} />
+            <View style={styles.content_list_wrapper}>
+              <View style={styles.content_list_top}>
+                <Text>武汉健身体操团队</Text>
+                <Text style={styles.content_km}>19km</Text>
+              </View>
+              <ImageBackground style={styles.content_gj} source={require('../../assets/pages/discovery/gj.png')}>
+                <Text style={styles.content_text}>高级</Text>
+              </ImageBackground>
+              <Text style={styles.content_desc}>坚持、信念、对运动有着永不放弃的执着....</Text>
+            </View>
           </ImageBackground>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.establish_bg__content_btn}>
-          <Text style={styles.establish_bg__content_next_text}>下一步</Text>
-        </TouchableOpacity>
-      </ImageBackground>
-    </View>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   )
 }
 
