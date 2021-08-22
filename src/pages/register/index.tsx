@@ -7,7 +7,7 @@
  */
 
 import React from 'react'
-import { View, Input, Text } from 'react-native'
+import { View, TextInput, Text } from 'react-native'
 import { SafeAreaView } from 'react-navigation'
 
 const Register = () => {
