@@ -283,8 +283,11 @@ export const styles = StyleSheet.create({
     width: px2dp(355),
     height: px2dp(206),
     alignSelf: 'center',
-    marginTop: px2dp(29),
-    flexDirection: 'row'
+    marginTop: px2dp(29)
+  },
+  center_avatar_top_flow: {
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   center_avatar_icon: {
     width: px2dp(63),
@@ -310,6 +313,16 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    marginTop: px2dp(16)
+  },
+  center_avatar_tips: {
+    marginHorizontal: px2dp(31),
+    marginVertical: px2dp(20)
+  },
+  center_avatar_tips_text: {
+    lineHeight: px2dp(18),
+    color: '#666',
+    fontWeight: 'bold'
   }
 })

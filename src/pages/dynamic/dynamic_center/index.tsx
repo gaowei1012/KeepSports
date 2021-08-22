@@ -10,7 +10,7 @@ const DynamicCenter = (props: any) => {
       <SafeAreaView>
         <TopNavigationBar leftButton={GoBack(props, true)} title='个人界面' />
         <ImageBackground style={styles.center_avatar_flow} source={require('../../../assets/pages/dynamic/centert.png')}>
-          <View>
+          <View style={styles.center_avatar_top_flow}>
             <Image style={styles.center_avatar_icon} source={require('../../../assets/pages/dynamic/a1.png')} />
             <View style={styles.center_avatar_name_flow}>
               <Text style={styles.center_avatar_name_text}>拯救地球李小姐</Text>
@@ -31,6 +31,9 @@ const DynamicCenter = (props: any) => {
                 <Text>关注</Text>
               </View>
             </View>
+          <View style={styles.center_avatar_tips}>
+            <Text style={styles.center_avatar_tips_text}>生命在于运动中延续，健康在健身中加固，好好运动从你我 做起，运动是健康的源泉。</Text>
+          </View>
         </ImageBackground>
         <View>
           <Text>DynamicCenter</Text>
