@@ -324,5 +324,23 @@ export const styles = StyleSheet.create({
     lineHeight: px2dp(18),
     color: '#666',
     fontWeight: 'bold'
+  },
+  center_content_line_wrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginHorizontal: px2dp(13),
+    marginVertical: px2dp(14)
+  },
+  center_line: {
+    width: px2dp(3),
+    height: px2dp(17),
+    backgroundColor: '#24C789',
+    borderRadius: px2dp(3)
+  },
+  center_line_text: {
+    marginLeft: px2dp(10),
+    color: '#333',
+    fontSize: px2dp(15),
+    fontWeight: '800'
   }
 })

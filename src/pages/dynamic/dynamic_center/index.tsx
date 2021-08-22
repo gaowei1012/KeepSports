@@ -35,8 +35,9 @@ const DynamicCenter = (props: any) => {
             <Text style={styles.center_avatar_tips_text}>生命在于运动中延续，健康在健身中加固，好好运动从你我 做起，运动是健康的源泉。</Text>
           </View>
         </ImageBackground>
-        <View>
-          <Text>DynamicCenter</Text>
+        <View style={styles.center_content_line_wrapper}>
+          <View style={styles.center_line}/>
+          <Text style={styles.center_line_text}>运动档案</Text>
         </View>
       </SafeAreaView>
     </ImageBackground>
