@@ -54,8 +54,8 @@ const Mine = () => {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
-      <ImageBackground style={styles.mine_bg__container} source={require('../../assets/pages/home/home_bg.png')}>
+    <ImageBackground style={styles.mine_bg__container} source={require('../../assets/pages/home/home_bg.png')}>
+      <SafeAreaView>
         <View style={styles.info_box}>
           {/* 个人信息 */}
           <View style={styles.information_box}>
@@ -98,23 +98,23 @@ const Mine = () => {
             </View>
           </View>
         </View>
+      </SafeAreaView>
 
-        <View style={styles.list_box}>
-          {listArr &&
-            listArr.map((item) => {
-              return (
-                <TouchableOpacity activeOpacity={1} onPress={() => onPress(item)} style={styles.box} key={item.id}>
-                  <View style={styles.list_flex}>
-                    <Image style={styles.img} source={item.icon} />
-                    <Text style={styles.desc}>{item.name}</Text>
-                  </View>
-                  <Image style={styles.list_right} source={require('../../assets/pages/mine/list_right.png')} />
-                </TouchableOpacity>
-              )
-            })}
-        </View>
-      </ImageBackground>
-    </SafeAreaView>
+      <View style={styles.list_box}>
+        {listArr &&
+          listArr.map((item) => {
+            return (
+              <TouchableOpacity activeOpacity={1} onPress={() => onPress(item)} style={styles.box} key={item.id}>
+                <View style={styles.list_flex}>
+                  <Image style={styles.img} source={item.icon} />
+                  <Text style={styles.desc}>{item.name}</Text>
+                </View>
+                <Image style={styles.list_right} source={require('../../assets/pages/mine/list_right.png')} />
+              </TouchableOpacity>
+            )
+          })}
+      </View>
+    </ImageBackground>
   )
 }
 
