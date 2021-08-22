@@ -2,8 +2,8 @@
  * @Author: 一个为高薪头秃的程序媴
  * @Date: 2021-08-18 15:10:30
  * @LastEditors: 一个为高薪头秃的程序猿
- * @LastEditTime: 2021-08-18 17:09:25
- * @Description:
+ * @LastEditTime: 2021-08-22 09:56:49
+ * @Description: 我的页面
  */
 import React from 'react'
 import { View, Text, SafeAreaView, ImageBackground, Image } from 'react-native'
