@@ -286,5 +286,42 @@ export const styles = StyleSheet.create({
     color: '#fff',
     fontSize: px2dp(17),
     fontWeight: 'bold'
+  },
+  // 个人资料
+  mine_information_container: {
+    width: px2dp(345),
+    alignSelf: 'center'
+  },
+  list_wrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingBottom: px2dp(12),
+    marginTop: px2dp(28),
+    borderBottomColor: '#EFF0F7',
+    borderBottomWidth: px2dp(1)
+  },
+  arrow_wrapper: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  arrow_avatar_img: {
+    width: px2dp(54),
+    height: px2dp(54)
+  },
+  arrow_avatar_icon: {
+    width: px2dp(6),
+    height: px2dp(11),
+    marginLeft: px2dp(13)
+  },
+  arrow_text: {
+    color: '#999999',
+    fontSize: px2dp(13),
+    fontWeight: 'normal'
+  },
+  left_name: {
+    color: '#333333',
+    fontSize: px2dp(14),
+    fontWeight: 'bold',
   }
 })
