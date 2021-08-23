@@ -45,7 +45,7 @@ const MineInformation = (props: any) => {
       icon: require('../../assets/pages/mine/list_right.png'),
       arrow_text: 'UI设计师',
       status: false,
-      path: '',
+      path: 'CareerChoice',
     }
   ]
   return (
@@ -54,7 +54,7 @@ const MineInformation = (props: any) => {
       <View style={styles.mine_information_container}>
         {listArr.map(item => (
           <TouchableOpacity onPress={() => {
-            NavigationUtil.goPage({}, '')
+            NavigationUtil.goPage({}, item.path)
           }} style={styles.list_wrapper}>
             <Text style={styles.left_name}>{item.name}</Text>
             <View style={styles.arrow_wrapper}>

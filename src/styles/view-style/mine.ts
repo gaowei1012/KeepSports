@@ -323,5 +323,45 @@ export const styles = StyleSheet.create({
     color: '#333333',
     fontSize: px2dp(14),
     fontWeight: 'bold',
+  },
+  // 选择职业
+  cc_wrapper: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    flexWrap: 'wrap',
+    width: px2dp(345),
+    alignSelf: 'center',
+    marginTop: px2dp(30)
+  },
+  cc_conter: {
+    marginLeft: px2dp(12),
+    marginRight: px2dp(12),
+    marginBottom: px2dp(22)
+  },
+  cc_bg: {
+    width: px2dp(90),
+    height: px2dp(40),
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingLeft: px2dp(10),
+    paddingRight: px2dp(10)
+  },
+  cc_name: {
+    color: '#666666',
+    fontSize: px2dp(14)
+  },
+  cc_btn_wrapper: {
+    width: px2dp(344),
+    backgroundColor: '#24C789',
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: px2dp(39),
+    borderRadius: px2dp(39/2)
+  },
+  sele_text: {
+    color: '#FFFFFF',
+    fontSize: px2dp(17),
+    fontWeight: 'bold'
   }
 })

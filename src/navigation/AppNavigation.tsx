@@ -24,6 +24,7 @@ import GroupInformation from '../pages/discovery/Information'
 import Login from '../pages/login'
 import Register from '../pages/register'
 import MineInformation from '../pages/mine/MineInformation'
+import CareerChoice from '../pages/mine/CareerChoice'
 
 export const rootCom: string = 'Init'
 
@@ -159,6 +160,12 @@ const MainNavigator = createStackNavigator({
   },
   MineInformation: {
     screen: MineInformation,
+    navigationOptions: {
+      header: null
+    }
+  },
+  CareerChoice: {
+    screen: CareerChoice,
     navigationOptions: {
       header: null
     }
