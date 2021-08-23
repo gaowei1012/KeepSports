@@ -197,7 +197,7 @@ const Home = () => {
               </View>
             </View>
             {console.log([1, 2, 3][date])}
-            {/* <LineChart/> */}
+            <LineChart/>
           </ImageBackground>
         </TouchableOpacity>
         {/* 同城动态 */}

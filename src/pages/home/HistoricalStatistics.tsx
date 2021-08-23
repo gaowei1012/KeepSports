@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity } from 'react-native'
 import { CircularProgress, Dial } from '../../components/circle/index'
+import { LineChart } from '../../containers/charts'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/historical'
@@ -48,6 +49,7 @@ const HistoricalStatistics = (props: any) => {
             </TouchableOpacity>
           ))}
         </View>
+        <LineChart/>
       </View>
       <View style={styles.statistics_wrapper}>
         <View style={styles.statistics_title_wrapper}>

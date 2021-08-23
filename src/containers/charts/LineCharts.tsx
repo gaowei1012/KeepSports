@@ -4,12 +4,15 @@ import { px2dp, width } from '../../utils/px2dp'
 import { LineChart } from 'react-native-chart-kit'
 
 const data = {
-  labels: ['1', '2', '3', '4', '5', '6'],
+  labels: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
   datasets: [
     {
-      data: [Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100]
+      data: [0, 2.0, 4.0, 6.0, 7.0],
+      color: (opacity = 1) => `rgba(134, 65, 244, ${opacity})`, // optional
+      strokeWidth: 3 // optional
     }
-  ]
+  ],
+  // legend: ['Rainy Days'] // optional
 }
 
 const KeepLineChart = () => {
@@ -18,24 +21,22 @@ const KeepLineChart = () => {
       <LineChart
         data={data}
         width={px2dp(345)} // from react-native
-        height={220}
+        height={230}
         // yAxisLabel='$'
         // yAxisSuffix='k'
         yAxisInterval={1} // optional, defaults to 1
         chartConfig={{
-          backgroundColor: '#fff',
-          backgroundGradientFrom: '#fb8c00',
-          backgroundGradientTo: '#ffa726',
           decimalPlaces: 2, // optional, defaults to 2dp
           color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
           labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
           style: {
-            borderRadius: 10
+            borderRadius: 10,
+            borderColor: '#4BBB71'
           },
           propsForDots: {
             r: '2',
             strokeWidth: '2',
-            stroke: '#ffa726'
+            stroke: '#4BBB71'
           }
         }}
         bezier
