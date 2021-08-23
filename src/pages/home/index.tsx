@@ -63,9 +63,9 @@ const tabs = [
 ]
 
 const dateData = [
-  {id: 1, type: 1, name: '周'},
-  {id: 2, type: 2, name: '月'},
-  {id: 3, type: 3, name: '年'}
+  { id: 1, type: 1, name: '周' },
+  { id: 2, type: 2, name: '月' },
+  { id: 3, type: 3, name: '年' }
 ]
 
 const Home = () => {
@@ -135,9 +135,12 @@ const Home = () => {
                   <Text style={styles.toady_step_num}>30090</Text>
                 </View>
               </View>
-              <TouchableOpacity activeOpacity={1} onPress={() => {
-                NavigationUtil.goPage({}, 'Sports')
-              }} style={styles.start_exercise}>
+              <TouchableOpacity
+                activeOpacity={1}
+                onPress={() => {
+                  NavigationUtil.goPage({}, 'Sports')
+                }}
+                style={styles.start_exercise}>
                 <Image style={styles.start_exercise_icon} source={require('../../assets/pages/home/yd.png')} />
                 <Text style={styles.start_exercise__text}>开始运动</Text>
               </TouchableOpacity>
@@ -176,13 +179,17 @@ const Home = () => {
           </ImageBackground>
         </View>
         {/* 历史数据 */}
-        <View style={styles.history_data_container}>
+        <TouchableOpacity
+          onPress={() => {
+            NavigationUtil.goPage({}, 'HistoricalStatistics')
+          }}
+          style={styles.history_data_container}>
           <ImageBackground style={styles.history_data_bg} source={require('../../assets/pages/home/history_data.png')}>
             <View style={styles.history_data_charts_title}>
               <Text style={styles.history_dw_text}>单位/km</Text>
               <Text style={styles.history_title_text}>历史数据</Text>
               <View style={styles.history_date_wrapper}>
-                {dateData.map((d: {type: number}) => (
+                {dateData.map((d: { type: number }) => (
                   <TouchableOpacity activeOpacity={1} onPress={() => switchDateTabs(d.type)} style={[date !== d.type ? styles.date_wrapper : styles.no_date_wrapper]}>
                     <Text style={[date !== d.type ? styles.date_text : styles.no_date_text]}>{d.type}</Text>
                   </TouchableOpacity>
@@ -192,7 +199,7 @@ const Home = () => {
             {console.log([1, 2, 3][date])}
             {/* <LineChart/> */}
           </ImageBackground>
-        </View>
+        </TouchableOpacity>
         {/* 同城动态 */}
         <View style={styles.city__container}>
           <View style={styles.city__top_title}>

@@ -25,6 +25,7 @@ import Login from '../pages/login'
 import Register from '../pages/register'
 import MineInformation from '../pages/mine/MineInformation'
 import CareerChoice from '../pages/mine/CareerChoice'
+import HistoricalStatistics from '../pages/home/HistoricalStatistics'
 
 export const rootCom: string = 'Init'
 
@@ -166,6 +167,12 @@ const MainNavigator = createStackNavigator({
   },
   CareerChoice: {
     screen: CareerChoice,
+    navigationOptions: {
+      header: null
+    }
+  },
+  HistoricalStatistics: {
+    screen: HistoricalStatistics,
     navigationOptions: {
       header: null
     }
