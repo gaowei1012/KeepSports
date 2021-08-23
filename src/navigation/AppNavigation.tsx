@@ -21,6 +21,8 @@ import PrivacyPolicy from '../pages/privacyPolicy'
 import UserAgreement from '../pages/agreement'
 import Intent from '../pages/discovery/intent'
 import GroupInformation from '../pages/discovery/Information'
+import Login from '../pages/login'
+import Register from '../pages/register'
 
 export const rootCom: string = 'Init'
 
@@ -138,6 +140,18 @@ const MainNavigator = createStackNavigator({
   },
   GroupInformation: {
     screen: GroupInformation,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Login: {
+    screen: Login,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Register: {
+    screen: Register,
     navigationOptions: {
       header: null
     }
