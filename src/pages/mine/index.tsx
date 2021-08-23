@@ -65,9 +65,11 @@ const Mine = () => {
           {/* 个人信息 */}
           <View style={styles.information_box}>
             <View style={styles.flex}>
-              <View style={styles.avatar_box}>
+              <TouchableOpacity onPress={() => {
+                NavigationUtil.goPage({}, 'Register')
+              }} style={styles.avatar_box}>
                 <Image style={styles.avatar} source={require('../../assets/pages/mine/avatar.png')} />
-              </View>
+              </TouchableOpacity>
 
               <View>
                 <View style={styles.nickname_box}>
