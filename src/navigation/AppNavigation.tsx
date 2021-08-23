@@ -23,6 +23,7 @@ import Intent from '../pages/discovery/intent'
 import GroupInformation from '../pages/discovery/Information'
 import Login from '../pages/login'
 import Register from '../pages/register'
+import MineInformation from '../pages/mine/MineInformation'
 
 export const rootCom: string = 'Init'
 
@@ -152,6 +153,12 @@ const MainNavigator = createStackNavigator({
   },
   Register: {
     screen: Register,
+    navigationOptions: {
+      header: null
+    }
+  },
+  MineInformation: {
+    screen: MineInformation,
     navigationOptions: {
       header: null
     }

@@ -66,7 +66,7 @@ const Mine = () => {
           <View style={styles.information_box}>
             <View style={styles.flex}>
               <TouchableOpacity onPress={() => {
-                NavigationUtil.goPage({}, 'Register')
+                NavigationUtil.goPage({}, 'MineInformation')
               }} style={styles.avatar_box}>
                 <Image style={styles.avatar} source={require('../../assets/pages/mine/avatar.png')} />
               </TouchableOpacity>
