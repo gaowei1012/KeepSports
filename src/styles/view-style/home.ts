@@ -461,5 +461,17 @@ export const styles = StyleSheet.create({
     fontSize: px2dp(17),
     fontWeight: 'bold',
     marginLeft: px2dp(8)
+  },
+  dy_comment_botton_wrapper: {
+    width: width,
+    position: 'absolute',
+    bottom: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around'
+  },
+  dy_comment_botton: {
+    flexDirection: 'row',
+    alignItems: 'center'
   }
 })

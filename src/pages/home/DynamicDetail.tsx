@@ -28,9 +28,9 @@ const dylistData = [
 ]
 const DynamicDetail = (props: any) => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.dynamic_content_cotainer}>
       <TopNavigationBar statusBar={statusbar} title='详情' leftButton={GoBack(props, true)} style={{ backgroundColor: '#fff' }} />
-      <ScrollView style={styles.dynamic_content_cotainer}>
+      <ScrollView >
         <View style={styles.dynamic_content_flow__wrapper}>
           {dylistData.map((list) => (
             <View style={styles.dynamic_content_flow}>
@@ -79,6 +79,16 @@ const DynamicDetail = (props: any) => {
           </View>
         </View>
       </ScrollView>
+      <View style={styles.dy_comment_botton_wrapper}>
+          <View style={styles.dy_comment_botton}>
+            <Text>icon</Text>
+            <Text>icon</Text>
+          </View>
+          <View style={styles.dy_comment_botton}>
+            <Text>icon</Text>
+            <Text>icon</Text>
+          </View>
+        </View>
     </SafeAreaView>
   )
 }
