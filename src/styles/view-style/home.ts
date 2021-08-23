@@ -127,8 +127,8 @@ export const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   start_exercise_icon: {
-    width: px2dp(345),
-    height: px2dp(259)
+    width: px2dp(26),
+    height: px2dp(29)
   },
   start_exercise__text: {
     color: '#fff',
