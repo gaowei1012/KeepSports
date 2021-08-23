@@ -26,6 +26,7 @@ import Register from '../pages/register'
 import MineInformation from '../pages/mine/MineInformation'
 import CareerChoice from '../pages/mine/CareerChoice'
 import HistoricalStatistics from '../pages/home/HistoricalStatistics'
+import DynamicDetail from '../pages/home/DynamicDetail'
 
 export const rootCom: string = 'Init'
 
@@ -173,6 +174,12 @@ const MainNavigator = createStackNavigator({
   },
   HistoricalStatistics: {
     screen: HistoricalStatistics,
+    navigationOptions: {
+      header: null
+    }
+  },
+  DynamicDetail: {
+    screen: DynamicDetail,
     navigationOptions: {
       header: null
     }

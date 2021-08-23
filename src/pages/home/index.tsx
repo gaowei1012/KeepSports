@@ -214,7 +214,9 @@ const Home = () => {
           </View>
           <View>
             {dData.map((d: any) => (
-              <TouchableOpacity activeOpacity={1} style={styles.city_content_container}>
+              <TouchableOpacity activeOpacity={.8} onPress={() => {
+                NavigationUtil.goPage({}, 'DynamicDetail')
+              }} style={styles.city_content_container}>
                 <View style={styles.c_l_flow}>
                   <Image style={styles.l_c_icon} source={d.icon} />
                   <View style={styles.l_c_flow}>
