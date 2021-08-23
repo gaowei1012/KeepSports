@@ -127,8 +127,8 @@ export const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   start_exercise_icon: {
-    width: px2dp(26),
-    height: px2dp(29)
+    width: px2dp(345),
+    height: px2dp(259)
   },
   start_exercise__text: {
     color: '#fff',
@@ -351,5 +351,115 @@ export const styles = StyleSheet.create({
   },
   noActionRioa: {
 
+  },
+  // detail
+  dynamic_content_cotainer: {
+    height: height,
+  },
+  dynamic_content_flow__wrapper: {
+    width: width,
+    backgroundColor: '#fff',
+    paddingVertical: px2dp(10)
+  },
+  dynamic_content_flow: {
+    width: px2dp(345),
+    alignSelf: 'center',
+    marginBottom: px2dp(20)
+  },
+  dy_top_avatar_wrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  },
+  avatar_text: {
+    fontWeight: 'bold',
+    color: '#000000',
+    fontSize: px2dp(10)
+  },
+  avatar_desc: {
+    color: '#999999',
+    fontSize: px2dp(10),
+    marginTop: px2dp(8)
+  },
+  dy_top_left_wrapper: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  avatar: {
+    width: px2dp(36),
+    height: px2dp(36)
+  },
+  avatar_right_wrapper: {
+    marginLeft: px2dp(10)
+  },
+  dy_top_left_right_wrapper: {},
+  dy_top_right_wrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: px2dp(59),
+    height: px2dp(25)
+  },
+  dy_top_right_add: {
+    width: px2dp(13),
+    height: px2dp(13)
+  },
+  dy_top_right_add_text: {
+    fontSize: px2dp(14),
+    color: '#24C789',
+    marginLeft: px2dp(2)
+  },
+  dy_content_wrapper: {
+    marginTop: px2dp(14),
+    width: px2dp(344),
+    alignSelf: 'center'
+  },
+  content_img_wrapper: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    marginVertical: px2dp(15)
+  },
+  content_img: {
+    width: px2dp(345),
+    height: px2dp(259)
+  },
+  huati: {
+    width: px2dp(82),
+    height: px2dp(28),
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: px2dp(16)
+  },
+  huati_text: {
+    color: '#FC9C32',
+    fontSize: px2dp(12),
+    fontWeight: 'bold'
+  },
+  dy_comment_wrapper: {
+    width: px2dp(345),
+    alignSelf: 'center',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  },
+  dy_comment_left: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  dy_comment_right: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  dy_comment_left_title: {
+    color: '#333',
+    fontSize: px2dp(17),
+    fontWeight: 'bold',
+  },
+  dy_comment_left_mun: {
+    color: '#333',
+    fontSize: px2dp(17),
+    fontWeight: 'bold',
+    marginLeft: px2dp(8)
   }
 })

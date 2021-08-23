@@ -12,30 +12,29 @@ const zhouStatisticsData = [
   {
     icon: require('../../assets/pages/home/lj.png'),
     title: '累计跑量 (公里)',
-    time: '0.00',
+    time: '0.00'
   },
   {
     icon: require('../../assets/pages/home/ps.png'),
     title: '平均配速',
-    time: '0‘.00”',
+    time: '0‘.00”'
   },
   {
     icon: require('../../assets/pages/home/zys.png'),
     title: '总用时',
-    time: '0:00:00',
+    time: '0:00:00'
   },
   {
     icon: require('../../assets/pages/home/zrl.png'),
     title: '总热量 (千卡)',
-    time: '0',
+    time: '0'
   }
 ]
-
+const statusbar = {
+  backgroundColor: '#fff',
+  barStyle: 'dark-content'
+}
 const HistoricalStatistics = (props: any) => {
-  const statusbar = {
-    backgroundColor: '#fff',
-    barStyle: 'dark-content'
-  }
   return (
     <SafeAreaView>
       <TopNavigationBar statusBar={statusbar} title='历史统计' leftButton={GoBack(props, true)} style={{ backgroundColor: '#fff' }} />
@@ -55,13 +54,15 @@ const HistoricalStatistics = (props: any) => {
           <View style={styles.list_line} />
           <Text style={styles.statistics_title_text}>周总计</Text>
         </View>
-        <Text style={styles.statistics_desc}>累计跑步<Text style={styles.statistics_desc_c}>8</Text>次</Text>
+        <Text style={styles.statistics_desc}>
+          累计跑步<Text style={styles.statistics_desc_c}>8</Text>次
+        </Text>
       </View>
-      <View >
-        {zhouStatisticsData.map(item => (
+      <View>
+        {zhouStatisticsData.map((item) => (
           <View style={styles.statistics_content}>
             <View style={styles.statistics_list}>
-              <Image style={styles.statistics_icon} source={item.icon}/>
+              <Image style={styles.statistics_icon} source={item.icon} />
               <Text style={styles.statistics_content_title}>{item.title}</Text>
             </View>
             <Text style={styles.statistics_content_r}>{item.time}</Text>
