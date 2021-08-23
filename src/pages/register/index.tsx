@@ -9,6 +9,7 @@
 import React from 'react'
 import { View, TextInput, Text, SafeAreaView, ImageBackground, TouchableOpacity } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
+import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/login'
 import { GoBack } from '../../utils/goBack'
 
@@ -32,10 +33,16 @@ const Register = (props: any) => {
           <View style={styles.user_tk_container}>
             <Text>
               <Text style={styles.futk}>已仔细阅读</Text>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  NavigationUtil.goPage({}, 'UserAgreement')
+                }}>
                 <Text style={styles.fll}>《服务协议》</Text>
               </TouchableOpacity>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  NavigationUtil.goPage({}, 'PrivacyPolicy')
+                }}>
                 <Text style={styles.fll}>《和隐私政策》</Text>
               </TouchableOpacity>
             </Text>
