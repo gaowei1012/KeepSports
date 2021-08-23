@@ -210,6 +210,12 @@ export const styles = StyleSheet.create({
     height: px2dp(265),
     alignItems: 'center'
   },
+  logout_content_wrapper_c: {
+    width: px2dp(321),
+    height: px2dp(320),
+    alignItems: 'center',
+    borderRadius: px2dp(8)
+  },
   logout_content: {
     marginTop: px2dp(20),
     marginHorizontal: px2dp(18),
@@ -249,6 +255,11 @@ export const styles = StyleSheet.create({
   },
   commen: {
     color: '#24C789',
+    fontSize: px2dp(14),
+    fontWeight: 'bold'
+  },
+  commen_c: {
+    color: '#FFA22C',
     fontSize: px2dp(14),
     fontWeight: 'bold'
   },
