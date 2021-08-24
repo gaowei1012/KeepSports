@@ -8,7 +8,7 @@
  */
 import React from 'react'
 import { useState } from 'react'
-import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity } from 'react-native'
+import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity, TextInput } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { styles } from '../../styles/view-style/targetdistance'
 import { GoBack } from '../../utils/goBack'
@@ -33,16 +33,48 @@ const jldata = [
 
 const TargetDistance = (props: any) => {
   const [default_type, setDefaultType] = useState<number>(1)
+  const [edit, setEdit] = useState<boolean>(false)
+  const [lc_num, setLcNum] = useState<number>(0.9)
   const switchTab = (type: number) => {
     setDefaultType(type)
   }
 
+  const handle_lc_num = (e: any) => {
+    setLcNum(e)
+  }
+
   return (
     <SafeAreaView style={styles.container}>
-      <TopNavigationBar title='设定距离目标' statusBar={statusbar} leftButton={GoBack(props, true)} style={{ backgroundColor: '#fff' }} />
+      <TopNavigationBar
+        title={`${edit ? '自定义距离' : '设定距离目标'}`}
+        statusBar={statusbar}
+        leftButton={GoBack(props, true)}
+        style={{ backgroundColor: '#fff' }}
+        rightButton={
+          <View>
+            {edit ? (
+              <TouchableOpacity
+                onPress={() => {
+                  setEdit(false)
+                }}>
+                <Text>确认</Text>
+              </TouchableOpacity>
+            ) : null}
+          </View>
+        }
+      />
       <View style={styles.content}>
         <View style={styles.target_top_jl}>
-          <Text style={styles.target_top_sum}>0.80</Text>
+          {edit ? (
+            <TextInput onChangeText={handle_lc_num} style={styles.textinput} />
+          ) : (
+            <TouchableOpacity
+              onPress={() => {
+                setEdit(true)
+              }}>
+              <Text style={styles.target_top_sum}>{lc_num}</Text>
+            </TouchableOpacity>
+          )}
           <Text style={styles.target_top_text}>距离步行公里</Text>
         </View>
         <View style={styles.target_content}>
@@ -59,9 +91,11 @@ const TargetDistance = (props: any) => {
             </TouchableOpacity>
           ))}
         </View>
-        <TouchableOpacity style={styles.target_c} onPress={() => {}}>
-          <Text style={styles.target_c_text}>确定</Text>
-        </TouchableOpacity>
+        {!edit ? (
+          <TouchableOpacity style={styles.target_c} onPress={() => {}}>
+            <Text style={styles.target_c_text}>确定</Text>
+          </TouchableOpacity>
+        ) : null}
       </View>
     </SafeAreaView>
   )

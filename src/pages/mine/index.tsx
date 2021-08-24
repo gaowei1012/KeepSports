@@ -1,8 +1,8 @@
 /*
  * @Author: 一个为高薪头秃的程序媴
  * @Date: 2021-08-18 15:10:30
- * @LastEditors: 一个为高薪头秃的程序猿
- * @LastEditTime: 2021-08-22 10:55:29
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-08-24 17:11:14
  * @Description: 我的页面
  */
 import React, { useState } from 'react'
@@ -111,7 +111,7 @@ const Mine = () => {
         {listArr &&
           listArr.map((item) => {
             return (
-              <TouchableOpacity activeOpacity={.8} onPress={() => onPress(item)} style={styles.box} key={item.id}>
+              <TouchableOpacity activeOpacity={1} onPress={() => onPress(item)} style={styles.box} key={item.id}>
                 <View style={styles.list_flex}>
                   <Image style={styles.img} source={item.icon} />
                   <Text style={styles.desc}>{item.name}</Text>

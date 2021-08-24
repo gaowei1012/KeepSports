@@ -76,5 +76,12 @@ export const styles = StyleSheet.create({
     color: '#fff',
     fontSize: px2dp(8),
     fontWeight: '500'
+  },
+  textinput: {
+    width: px2dp(253),
+    height: px2dp(56),
+    backgroundColor: '#EBFAF4',
+    color: '#333',
+    fontSize: px2dp(28)
   }
 })
