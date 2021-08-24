@@ -61,13 +61,13 @@ const Sports = (props: any) => {
   }
   return (
     <SafeAreaView style={styles.container}>
-      <TopNavigationBar statusBar={statusbar} leftButton={GoBack(props, true)} style={{ backgroundColor: '#DEF2EA' }} />
+      <TopNavigationBar title={`${start ? '跑步进行中' : ''}`} statusBar={statusbar} leftButton={GoBack(props, true)} style={{ backgroundColor: '#DEF2EA' }} />
       <View style={styles.sports_container}>
         {/* <CircularProgress width={300} progress={(270 / 360) * 100} progressIndicator='circle' strokeColor={{ background: '#F7F7F9', foreground: ['#FF8F2C', '#F84238'] }}> */}
-          <View style={styles.sports_num_wrapper}>
-            <Text style={styles.sports_num}>{!start ? '00.00' : '10.26'}</Text>
-            <Text style={styles.sports_gl}>公里</Text>
-          </View>
+        <View style={styles.sports_num_wrapper}>
+          <Text style={styles.sports_num}>{!start ? '00.00' : '10.26'}</Text>
+          <Text style={styles.sports_gl}>公里</Text>
+        </View>
         {/* </CircularProgress> */}
         <ImageBackground style={styles.sports_bg_container} source={require('../../assets/pages/sports/ydbg.png')}>
           {!start
