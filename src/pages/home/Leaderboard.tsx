@@ -22,6 +22,9 @@ const Leaderboard = (props: any) => {
         <SafeAreaView>
           <TopNavigationBar title='排行榜' statusBar={statusbar} leftButton={GoBack(props, true)}/>
         </SafeAreaView>
+        <ImageBackground style={styles.leaderboard_container_bottom} source={require('../../assets/pages/sports/phbb.png')}>
+          <Text>内容</Text>
+        </ImageBackground>
       </ImageBackground>
     </View>
   )

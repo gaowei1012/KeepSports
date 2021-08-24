@@ -175,5 +175,11 @@ export const styles = StyleSheet.create({
   leaderboard_container: {
     width: width,
     height: px2dp(667)
+  },
+  leaderboard_container_bottom: {
+    width: width,
+    height: px2dp(370),
+    position: 'absolute',
+    bottom: 0
   }
 })

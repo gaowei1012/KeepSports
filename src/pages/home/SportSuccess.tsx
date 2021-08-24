@@ -10,6 +10,7 @@ const SportSuccess = (props: any) => {
       <View style={styles.sports_modal_container}>
         <ImageBackground style={styles.sports_modal_bg} source={require('../../assets/pages/sports/tcbj.png')}>
           <TouchableOpacity onPress={() =>{
+            setVisible(false)
             NavigationUtil.goPage({}, 'Leaderboard')
           }} style={styles.sports_modal_top}>
             <Text style={styles.sports_modal_top_text}>恭喜你完成了本次跑步</Text>
