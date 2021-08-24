@@ -11,7 +11,7 @@ import { px2dp, width, height } from '../../utils/px2dp'
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     backgroundColor: '#F7F7F7'
   },
   home_bg__container: {
@@ -53,8 +53,10 @@ export const styles = StyleSheet.create({
     width: px2dp(345),
     height: px2dp(153),
     alignSelf: 'center',
-    marginTop: px2dp(20),
-    overflow: 'hidden',
+    marginTop: px2dp(-100),
+    // overflow: 'hidden',
+    // position: 'relative',
+    // top: -100,
     borderRadius: px2dp(6)
   },
   swipple_image: {

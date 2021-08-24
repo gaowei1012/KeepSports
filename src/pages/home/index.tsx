@@ -10,7 +10,7 @@ import React from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity, ScrollView } from 'react-native'
 import { styles } from '../../styles/view-style/home'
 import { Bottom } from '../../components/index'
-import { px2dp } from '../../utils/px2dp'
+import { height, px2dp } from '../../utils/px2dp'
 import Swiper from 'react-native-swiper'
 import { LineChart } from '../../containers/charts'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
@@ -79,38 +79,39 @@ const Home = () => {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <ScrollView>
         <ImageBackground style={styles.home_bg__container} source={require('../../assets/pages/home/home_bg.png')}>
-          <View style={styles.home_title__container}>
-            <Image style={styles.title__avatar} source={require('../../assets/pages/home/avatar.png')} />
-            <View style={styles.title__flow}>
-              <Text style={styles.title__name}>遗失的美好</Text>
-              <Text style={styles.title__desc}>北京运动达人对</Text>
+          <SafeAreaView>
+            <View style={styles.home_title__container}>
+              <Image style={styles.title__avatar} source={require('../../assets/pages/home/avatar.png')} />
+              <View style={styles.title__flow}>
+                <Text style={styles.title__name}>遗失的美好</Text>
+                <Text style={styles.title__desc}>北京运动达人对</Text>
+              </View>
+              <Bottom
+                activeOpacity={1}
+                text='高级'
+                propStyles={{
+                  marginLeft: px2dp(21),
+                  marginTop: px2dp(-14)
+                }}
+                onPress={() => {}}
+              />
             </View>
-            <Bottom
-              activeOpacity={1}
-              text='高级'
-              propStyles={{
-                marginLeft: px2dp(21),
-                marginTop: px2dp(-14)
-              }}
-              onPress={() => {}}
-            />
-          </View>
-          {/* banner */}
-          <View style={styles.swipple__flow}>
-            <Swiper
-              autoplay
-              paginationStyle={{
-                marginBottom: px2dp(-20)
-              }}>
-              {bannerData.map((item) => (
-                <Image style={styles.swipple_image} source={item.icon} key={item.id} />
-              ))}
-            </Swiper>
-          </View>
+          </SafeAreaView>
         </ImageBackground>
+        <View style={styles.swipple__flow}>
+          <Swiper
+            autoplay
+            paginationStyle={{
+              marginBottom: px2dp(-20)
+            }}>
+            {bannerData.map((item) => (
+              <Image style={styles.swipple_image} source={item.icon} key={item.id} />
+            ))}
+          </Swiper>
+        </View>
         <View style={styles.home__content_container}>
           <View style={styles.home__container_tab}>
             {tabs.map((tab: { name: string; type: number }) => (
@@ -151,7 +152,6 @@ const Home = () => {
             </View>
           )}
         </View>
-        {/* 排行榜 */}
         <View style={styles.home_leaderboard__container}>
           <ImageBackground style={styles.leaderboard__image__bg} source={require('../../assets/pages/home/leaderboard.png')}>
             <ImageBackground style={styles.l_icon__bg} source={require('../../assets/pages/home/buddy.png')}>
@@ -178,7 +178,6 @@ const Home = () => {
             <Text style={styles.p_text}>全国排名</Text>
           </ImageBackground>
         </View>
-        {/* 历史数据 */}
         <TouchableOpacity
           onPress={() => {
             NavigationUtil.goPage({}, 'HistoricalStatistics')
@@ -197,10 +196,9 @@ const Home = () => {
               </View>
             </View>
             {console.log([1, 2, 3][date])}
-            <LineChart/>
+            <LineChart />
           </ImageBackground>
         </TouchableOpacity>
-        {/* 同城动态 */}
         <View style={styles.city__container}>
           <View style={styles.city__top_title}>
             <View>
@@ -214,9 +212,12 @@ const Home = () => {
           </View>
           <View>
             {dData.map((d: any) => (
-              <TouchableOpacity activeOpacity={.8} onPress={() => {
-                NavigationUtil.goPage({}, 'DynamicDetail')
-              }} style={styles.city_content_container}>
+              <TouchableOpacity
+                activeOpacity={0.8}
+                onPress={() => {
+                  NavigationUtil.goPage({}, 'DynamicDetail')
+                }}
+                style={styles.city_content_container}>
                 <View style={styles.c_l_flow}>
                   <Image style={styles.l_c_icon} source={d.icon} />
                   <View style={styles.l_c_flow}>
@@ -235,7 +236,7 @@ const Home = () => {
           </View>
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   )
 }
 
