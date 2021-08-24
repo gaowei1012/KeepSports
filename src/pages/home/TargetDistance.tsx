@@ -35,8 +35,9 @@ const TargetDistance = (props: any) => {
   const [default_type, setDefaultType] = useState<number>(1)
   const [edit, setEdit] = useState<boolean>(false)
   const [lc_num, setLcNum] = useState<number>(0.9)
-  const switchTab = (type: number) => {
+  const switchTab = (sum: number, type: number) => {
     setDefaultType(type)
+    setLcNum(sum)
   }
 
   const handle_lc_num = (e: any) => {
@@ -79,7 +80,7 @@ const TargetDistance = (props: any) => {
         </View>
         <View style={styles.target_content}>
           {jldata.map((j) => (
-            <TouchableOpacity activeOpacity={0.8} onPress={() => switchTab(j.type)}>
+            <TouchableOpacity activeOpacity={0.8} onPress={() => switchTab(j.sum, j.type)}>
               <ImageBackground source={`${default_type !== j.type ? require('../../assets/pages/sports/nxz.png') : require('../../assets/pages/sports/xz.png')}`} style={styles.target_content_bg}>
                 {j.sum > 20 ? (
                   <ImageBackground style={styles.tl} source={require('../../assets/pages/sports/tl.png')}>
