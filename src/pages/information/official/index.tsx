@@ -1,3 +1,11 @@
+/*
+ * @Author: 执念
+ * @Date: 2021-08-19 10:57:02
+ * @LastEditTime: 2021-08-24 16:51:16
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /KeepSports/src/pages/information/official/index.tsx
+ */
 import React from 'react';
 import {View, SafeAreaView, Text, Image, ImageBackground} from 'react-native'
 import TopNavigationBar from '../../../navigation/TopNavigationBar'
@@ -13,7 +21,9 @@ const OfficialData: any = [
 const OfficialInformation = (props: any) => {
   const statusbar = {
     backgroundColor: '#ffffff',
-    barStyle: 'dark-content'
+    barStyle: 'dark-content',
+    translucent: false,
+  hidden: false
   }
   return (
     <SafeAreaView style={styles.official_container}>
@@ -21,7 +31,7 @@ const OfficialInformation = (props: any) => {
         title={'官方消息'}
         statusBar={statusbar}
         style={{ backgroundColor: '#fff' }}
-        leftButton={GoBack(props)}
+        leftButton={GoBack(props, true)}
       />
       <View style={styles.official_container_flow}>
         {OfficialData.map((item: {icon: any; message: string;}) => (

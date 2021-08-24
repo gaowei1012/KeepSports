@@ -1,9 +1,23 @@
+/*
+ * @Author: 执念
+ * @Date: 2021-08-23 12:59:04
+ * @LastEditTime: 2021-08-24 16:57:13
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /KeepSports/src/pages/mine/MineInformation.tsx
+ */
 import React from 'react'
 import { View, Text, SafeAreaView, TouchableOpacity, Image } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/mine'
 import { GoBack } from '../../utils/goBack'
+const statusbar = {
+  backgroundColor: '#fff',
+  barStyle: 'dark-content',
+  translucent: false,
+  hidden: false
+}
 
 const MineInformation = (props: any) => {
   const listArr = [
@@ -50,7 +64,7 @@ const MineInformation = (props: any) => {
   ]
   return (
     <SafeAreaView>
-      <TopNavigationBar leftButton={GoBack(props, true)} title='个人资料' />
+      <TopNavigationBar statusBar={statusbar} leftButton={GoBack(props, true)} title='个人资料' />
       <View style={styles.mine_information_container}>
         {listArr.map(item => (
           <TouchableOpacity onPress={() => {

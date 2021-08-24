@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-08-19 15:31:52
+ * @LastEditTime: 2021-08-24 16:50:03
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /KeepSports/src/pages/home/TargetDistance.tsx
+ */
 import React from 'react'
 import { useState } from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity } from 'react-native'
@@ -6,7 +14,9 @@ import { styles } from '../../styles/view-style/targetdistance'
 import { GoBack } from '../../utils/goBack'
 const statusbar = {
   backgroundColor: '#fff',
-  barStyle: 'dark-content'
+  barStyle: 'dark-content',
+  translucent: false,
+  hidden: false
 }
 
 const jldata = [

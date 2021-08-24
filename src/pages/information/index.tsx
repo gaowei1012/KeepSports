@@ -1,7 +1,7 @@
 /*
  * @Author: 执念
  * @Date: 2021-08-11 15:26:52
- * @LastEditTime: 2021-08-17 19:52:08
+ * @LastEditTime: 2021-08-24 16:51:02
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /KeepSports/src/pages/information/index.tsx
@@ -34,7 +34,9 @@ const informationData: any = [
 const Information = () => {
   const statusbar = {
     backgroundColor: '#ffffff',
-    barStyle: 'dark-content'
+    barStyle: 'dark-content',
+    translucent: false,
+    hidden: false
   }
 
   const go_to_page = (item: {id: number}) => {

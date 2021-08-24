@@ -1,3 +1,11 @@
+/*
+ * @Author: 执念
+ * @Date: 2021-08-23 21:59:05
+ * @LastEditTime: 2021-08-24 16:49:22
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /KeepSports/src/pages/home/DynamicDetail.tsx
+ */
 import React from 'react'
 import { useState } from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity } from 'react-native'
@@ -10,7 +18,9 @@ import { ScrollView } from 'react-navigation'
 import { height } from '../../utils/px2dp'
 const statusbar = {
   backgroundColor: '#fff',
-  barStyle: 'dark-content'
+  barStyle: 'dark-content',
+  translucent: false,
+  hidden: false
 }
 const dylistData = [
   {

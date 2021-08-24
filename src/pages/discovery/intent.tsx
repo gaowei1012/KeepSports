@@ -1,3 +1,11 @@
+/*
+ * @Author: 执念
+ * @Date: 2021-08-22 16:03:46
+ * @LastEditTime: 2021-08-24 16:44:32
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /KeepSports/src/pages/discovery/intent.tsx
+ */
 import React from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, ScrollView, TouchableOpacity, StatusBar } from 'react-native'
 import * as ImagePicker from 'react-native-image-picker'
@@ -8,7 +16,9 @@ import { GoBack } from '../../utils/goBack'
 import { useState } from 'react'
 const statusbar = {
   backgroundColor: '#DEF2EA',
-  barStyle: 'dark-content'
+  barStyle: 'dark-content',
+  translucent: false,
+  hidden: false
 }
 
 const Intent = (props: any) => {

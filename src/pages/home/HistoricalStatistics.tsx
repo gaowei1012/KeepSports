@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-08-23 20:57:34
+ * @LastEditTime: 2021-08-24 16:48:05
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /KeepSports/src/pages/home/HistoricalStatistics.tsx
+ */
 import React from 'react'
 import { useState } from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity } from 'react-native'
@@ -33,7 +41,9 @@ const zhouStatisticsData = [
 ]
 const statusbar = {
   backgroundColor: '#fff',
-  barStyle: 'dark-content'
+  barStyle: 'dark-content',
+  translucent: false,
+  hidden: false
 }
 const HistoricalStatistics = (props: any) => {
   return (
@@ -43,9 +53,9 @@ const HistoricalStatistics = (props: any) => {
         <View style={styles.history_list_wrapper}>
           {listArr.map((item) => (
             <TouchableOpacity style={styles.list_btn}>
-              {/* <ImageBackground style={styles.list_btn} source={require('../../assets/pages/home/zhou.png')}>
+              <ImageBackground style={styles.list_btn} source={require('../../assets/pages/home/zhou.png')}>
                 <Text>{item}</Text>
-              </ImageBackground> */}
+              </ImageBackground>
             </TouchableOpacity>
           ))}
         </View>

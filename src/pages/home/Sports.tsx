@@ -46,7 +46,9 @@ const ydDataStart = [
 const Sports = (props: any) => {
   const statusbar = {
     backgroundColor: '#DEF2EA',
-    barStyle: 'dark-content'
+    barStyle: 'dark-content',
+    translucent: false,
+    hidden: false
   }
   const [start, setStart] = useState<boolean>(false)
   // 开始运行

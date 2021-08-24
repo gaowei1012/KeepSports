@@ -1,5 +1,13 @@
+/*
+ * @Author: 执念
+ * @Date: 2021-08-22 17:02:13
+ * @LastEditTime: 2021-08-24 16:58:06
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /KeepSports/src/pages/discovery/CreateEstablish.tsx
+ */
 import React from 'react'
-import { View, Text, SafeAreaView, Image, ImageBackground, ScrollView, TouchableOpacity, StatusBar } from 'react-native'
+import { View, Text, SafeAreaView, Image, ImageBackground, ScrollView, TouchableOpacity, Platform } from 'react-native'
 import * as ImagePicker from 'react-native-image-picker'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
