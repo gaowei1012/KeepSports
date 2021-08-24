@@ -6,6 +6,14 @@ import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/sports'
 import { GoBack } from '../../utils/goBack'
+import SportSuccess from './SportSuccess'
+
+const statusbar = {
+  backgroundColor: '#DEF2EA',
+  barStyle: 'dark-content',
+  translucent: false,
+  hidden: false
+}
 
 const ydData = [
   {
@@ -44,13 +52,9 @@ const ydDataStart = [
 ]
 
 const Sports = (props: any) => {
-  const statusbar = {
-    backgroundColor: '#DEF2EA',
-    barStyle: 'dark-content',
-    translucent: false,
-    hidden: false
-  }
+
   const [start, setStart] = useState<boolean>(false)
+  const [visible, setVisible] = useState<boolean>(true)
   // 开始运行
   const sport_start = () => {
     setStart(!start)
@@ -100,6 +104,7 @@ const Sports = (props: any) => {
           </TouchableOpacity>
         </View>
       </View>
+      <SportSuccess visible={visible} setVisible={setVisible}/>
     </SafeAreaView>
   )
 }

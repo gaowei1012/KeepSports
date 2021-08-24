@@ -90,6 +90,85 @@ export const styles = StyleSheet.create({
     color: '#fff',
     marginTop: px2dp(36),
     fontWeight: '800'
-  }
+  },
+  // modal
+  sports_modal_container: {
+    height: height,
+    width: width,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(0, 0, 0, .45)'
+  },
+  sports_modal_bg: {
+    width: px2dp(295),
+    height: px2dp(294)
+  },
+  sports_modal_top: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginLeft: px2dp(24),
+    marginRight: px2dp(36),
+    paddingBottom: px2dp(21),
+    borderBottomColor: '#D2D2D2',
+    borderBottomWidth: px2dp(1),
+  },
+  sports_modal_top_text: {
+    width: px2dp(99),
+    fontSize: px2dp(17),
+    color: '#fff',
+    fontWeight: '800',
+    marginTop: px2dp(20),
+    marginLeft: px2dp(10)
 
+  },
+  sports_modal_jb: {
+    marginTop: px2dp(27),
+    width: px2dp(62),
+    height: px2dp(70)
+  },
+  sports_modal_title: {
+    alignSelf: 'center',
+    color: '#fff',
+    marginTop: px2dp(20)
+  },
+  sports_modal_content: {
+    marginTop: px2dp(20),
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around'
+  },
+  sports_modal_bottom: {
+    marginTop: px2dp(30),
+    justifyContent: 'flex-end',
+    width: px2dp(295),
+    height: px2dp(52)
+  },
+  sports_modal_content_t: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  sports_modal_content_t1: {
+    color: '#fff',
+    fontSize: px2dp(11),
+    fontWeight: '500'
+  },
+  sports_modal_content_t2: {
+    color: '#fff',
+    fontSize: px2dp(19),
+    fontWeight: 'bold',
+    marginTop: px2dp(6)
+  },
+  sports_modal_bottom_c: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: px2dp(295),
+    height: px2dp(52)
+  },
+  sports_modal_bottom_t: {
+    color: '#fff',
+    fontSize: px2dp(17),
+    fontWeight: '800'
+  }
 })
