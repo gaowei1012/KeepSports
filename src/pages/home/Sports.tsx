@@ -54,10 +54,11 @@ const ydDataStart = [
 const Sports = (props: any) => {
 
   const [start, setStart] = useState<boolean>(false)
-  const [visible, setVisible] = useState<boolean>(true)
+  const [visible, setVisible] = useState<boolean>(false)
   // 开始运行
   const sport_start = () => {
     setStart(!start)
+    setVisible(true)
   }
   // 目标
   const go_target = () => {

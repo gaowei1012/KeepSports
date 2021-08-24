@@ -27,6 +27,7 @@ import MineInformation from '../pages/mine/MineInformation'
 import CareerChoice from '../pages/mine/CareerChoice'
 import HistoricalStatistics from '../pages/home/HistoricalStatistics'
 import DynamicDetail from '../pages/home/DynamicDetail'
+import Leaderboard from '../pages/home/Leaderboard'
 
 export const rootCom: string = 'Init'
 
@@ -180,6 +181,12 @@ const MainNavigator = createStackNavigator({
   },
   DynamicDetail: {
     screen: DynamicDetail,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Leaderboard: {
+    screen: Leaderboard,
     navigationOptions: {
       header: null
     }

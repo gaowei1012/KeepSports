@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Modal, Text, Image, ImageBackground, TouchableOpacity } from 'react-native'
 import { styles } from '../../styles/view-style/sports'
+import { NavigationUtil } from '../../navigation/NavigationUtil'
 
 const SportSuccess = (props: any) => {
   const { visible, setVisible } = props
@@ -8,10 +9,12 @@ const SportSuccess = (props: any) => {
     <Modal animationType='fade' transparent={true} visible={visible}>
       <View style={styles.sports_modal_container}>
         <ImageBackground style={styles.sports_modal_bg} source={require('../../assets/pages/sports/tcbj.png')}>
-          <View style={styles.sports_modal_top}>
+          <TouchableOpacity onPress={() =>{
+            NavigationUtil.goPage({}, 'Leaderboard')
+          }} style={styles.sports_modal_top}>
             <Text style={styles.sports_modal_top_text}>恭喜你完成了本次跑步</Text>
             <Image style={styles.sports_modal_jb} source={require('../../assets/pages/sports/jb.png')} />
-          </View>
+          </TouchableOpacity>
           <Text style={styles.sports_modal_title}>今日数值</Text>
           <View style={styles.sports_modal_content}>
             <View style={styles.sports_modal_content_t}>

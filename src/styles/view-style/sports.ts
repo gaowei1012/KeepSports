@@ -170,5 +170,10 @@ export const styles = StyleSheet.create({
     color: '#fff',
     fontSize: px2dp(17),
     fontWeight: '800'
+  },
+  // 排行榜
+  leaderboard_container: {
+    width: width,
+    height: px2dp(667)
   }
 })
