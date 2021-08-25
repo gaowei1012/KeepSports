@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
   },
   list_btn: {
     backgroundColor: '#fff',
-    height: px2dp(32),
+    height: px2dp(31),
     alignItems: 'center',
     justifyContent: 'center',
     width: px2dp(64)
@@ -34,7 +34,7 @@ export const styles = StyleSheet.create({
   },
   no_list_btn: {
     backgroundColor: '#24C789',
-    height: px2dp(32),
+    height: px2dp(31),
     alignItems: 'center',
     justifyContent: 'center',
     width: px2dp(64)
