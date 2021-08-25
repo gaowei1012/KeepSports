@@ -174,10 +174,10 @@ export const styles = StyleSheet.create({
     height: px2dp(67),
     alignSelf: 'flex-end',
     // marginRight: px2dp(18),
-    marginBottom: px2dp(20),
+    marginBottom: Platform.OS == 'android'?px2dp(5): px2dp(20),
     position: 'absolute',
     bottom: 0,
-    right: px2dp(18)
+    right: Platform.OS == 'android' ? px2dp(8): px2dp(8)
   },
   // add
   add_container: {
@@ -214,7 +214,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#24C789',
     position: 'absolute',
-    bottom: px2dp(20)
+    bottom: Platform.OS == 'android' ? px2dp(30): px2dp(20)
   },
   fabu_text: {
     color: '#fff',

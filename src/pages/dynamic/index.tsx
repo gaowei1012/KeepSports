@@ -84,7 +84,7 @@ const Dynamic = () => {
     <SafeAreaView style={styles.container}>
       <View style={styles.dynamic_top_switch}>
         {dynamicData.map((d) => (
-          <TouchableOpacity style={styles.dynamic_top_title} onPress={() => switchTab(d.type)}>
+          <TouchableOpacity activeOpacity={1} style={styles.dynamic_top_title} onPress={() => switchTab(d.type)}>
             <Text style={[type == d.type ? styles.action_title : styles.no_action_title]}>{d.title}</Text>
             {type == d.type ? <Image style={styles.dynamic_top_icon} source={require('../../assets/pages/dynamic/sle.png')} /> : <View style={styles.no_dynamic_top_icon} />}
           </TouchableOpacity>
@@ -142,7 +142,7 @@ const Dynamic = () => {
           ))}
         </View>
       </ScrollView>
-      <TouchableOpacity onPress={add_dynamic}>
+      <TouchableOpacity activeOpacity={1} style={styles.btn_add} onPress={add_dynamic}>
         <ImageBackground style={styles.btn_add} source={require('../../assets/pages/dynamic/add_dy.png')} />
       </TouchableOpacity>
     </SafeAreaView>
