@@ -7,7 +7,7 @@
  * @FilePath: /KeepSports/src/pages/discovery/intent.tsx
  */
 import React from 'react'
-import { View, Text, SafeAreaView, Image, ImageBackground, ScrollView, TouchableOpacity, StatusBar } from 'react-native'
+import { View, Text, SafeAreaView, Image, ImageBackground, ScrollView, TouchableOpacity, TextInput } from 'react-native'
 import * as ImagePicker from 'react-native-image-picker'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
@@ -33,11 +33,11 @@ const Intent = (props: any) => {
             <Text>公里</Text>
           </ImageBackground>
           <View style={styles.intent_list_content}>
-            <Text style={styles.date}>2</Text>
-            <Text style={styles.date}>2</Text>
+            {edit ? <TextInput style={styles.textinput} autoFocus /> : <Text style={styles.date}>2</Text>}
+            {edit ? <TextInput style={styles.textinput} /> : <Text style={styles.date}>2</Text>}
             <Text style={styles.date}>:</Text>
-            <Text style={styles.date}>0</Text>
-            <Text style={styles.date}>0</Text>
+            {edit ? <TextInput style={styles.textinput} /> : <Text style={styles.date}>0</Text>}
+            {edit ? <TextInput style={styles.textinput} /> : <Text style={styles.date}>0</Text>}
           </View>
           <TouchableOpacity
             activeOpacity={0.8}
@@ -45,7 +45,7 @@ const Intent = (props: any) => {
               setEdit(!edit)
             }}>
             <ImageBackground style={styles.intent_list_edit} source={edit ? require('../../assets/pages/discovery/edit.png') : require('../../assets/pages/discovery/save.png')}>
-              <Text style={styles.intent_list_text}>{edit ? '编辑' : '确认'}</Text>
+              <Text style={styles.intent_list_text}>{edit ? '确认' : '编辑'}</Text>
             </ImageBackground>
           </TouchableOpacity>
         </ImageBackground>

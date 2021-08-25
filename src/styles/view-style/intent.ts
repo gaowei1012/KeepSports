@@ -48,6 +48,16 @@ export const styles = StyleSheet.create({
     width: px2dp(22),
     height: px2dp(22),
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginLeft: px2dp(7)
+  },
+  textinput: {
+    width: px2dp(22),
+    height: px2dp(22),
+    backgroundColor: '#F7F7F7',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: px2dp(5),
+    paddingLeft: px2dp(10)
   }
 })
