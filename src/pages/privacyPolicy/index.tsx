@@ -14,9 +14,9 @@ import { GoBack } from '../../utils/goBack'
 
 const PrivacyPolicy = (props: any) => {
   const statusbar = {
-    backgroundColor: 'rgba(0, 0, 0, 0)',
+    backgroundColor: '#fff',
     barStyle: 'dark-content',
-    translucent: true,
+    translucent: false,
     hidden: false
   }
 

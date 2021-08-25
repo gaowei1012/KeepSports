@@ -154,9 +154,11 @@ export const styles = StyleSheet.create({
   sport__right: {
     alignItems: 'center'
   },
-
+  m_bg: {
+    width: width,
+    marginTop: px2dp(40),
+  },
   list_box: {
-    marginTop: px2dp(11.5),
     marginLeft: px2dp(15),
     marginRight: px2dp(15),
     paddingTop: px2dp(1),
@@ -165,7 +167,9 @@ export const styles = StyleSheet.create({
     paddingBottom: px2dp(16),
     backgroundColor: '#fff'
   },
-
+  list_item_box: {
+    backgroundColor: 'red'
+  },
   box: {
     flexDirection: 'row',
     alignItems: 'center',

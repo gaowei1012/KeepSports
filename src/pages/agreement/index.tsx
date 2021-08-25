@@ -14,12 +14,11 @@ import { GoBack } from '../../utils/goBack'
 
 const UserAgreement = (props: any) => {
   const statusbar = {
-    backgroundColor: 'rgba(0, 0, 0, 0)',
+    backgroundColor: '#fff',
     barStyle: 'dark-content',
-    translucent: true,
+    translucent: false,
     hidden: false
   }
-
   return (
     <SafeAreaView style={styles.container}>
       <TopNavigationBar leftButton={GoBack(props, true)} title={'用户协议'} statusBar={statusbar} />

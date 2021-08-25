@@ -59,71 +59,77 @@ const Mine = () => {
   }
 
   return (
-    <ImageBackground style={styles.mine_bg__container} source={require('../../assets/pages/home/home_bg.png')}>
-      <SafeAreaView>
-        <View style={styles.info_box}>
-          {/* 个人信息 */}
-          <View style={styles.information_box}>
-            <View style={styles.flex}>
-              <TouchableOpacity onPress={() => {
-                NavigationUtil.goPage({}, 'MineInformation')
-              }} style={styles.avatar_box}>
-                <Image style={styles.avatar} source={require('../../assets/pages/mine/avatar.png')} />
-              </TouchableOpacity>
+    <View>
+      <ImageBackground style={styles.mine_bg__container} source={require('../../assets/pages/home/home_bg.png')}>
+        <SafeAreaView>
+          <View style={styles.info_box}>
+            {/* 个人信息 */}
+            <View style={styles.information_box}>
+              <View style={styles.flex}>
+                <TouchableOpacity
+                  onPress={() => {
+                    NavigationUtil.goPage({}, 'MineInformation')
+                  }}
+                  style={styles.avatar_box}>
+                  <Image style={styles.avatar} source={require('../../assets/pages/mine/avatar.png')} />
+                </TouchableOpacity>
 
-              <View>
-                <View style={styles.nickname_box}>
-                  <Text style={styles.nickname}>打扰一下</Text>
-                </View>
-                <View style={styles.information}>
-                  <View style={styles.gender}>
-                    <Text style={styles.informationText}>女</Text>
+                <View>
+                  <View style={styles.nickname_box}>
+                    <Text style={styles.nickname}>打扰一下</Text>
                   </View>
-                  <View style={styles.age}>
-                    <Text style={styles.informationText}>24</Text>
-                  </View>
-                  <View style={styles.profession}>
-                    <Text style={styles.informationText}>设计师</Text>
+                  <View style={styles.information}>
+                    <View style={styles.gender}>
+                      <Text style={styles.informationText}>女</Text>
+                    </View>
+                    <View style={styles.age}>
+                      <Text style={styles.informationText}>24</Text>
+                    </View>
+                    <View style={styles.profession}>
+                      <Text style={styles.informationText}>设计师</Text>
+                    </View>
                   </View>
                 </View>
               </View>
+
+              <ImageBackground style={styles.right_bgc} source={require('../../assets/pages/mine/right_bgc.png')}>
+                <Image style={styles.right} source={require('../../assets/pages/mine/right.png')} />
+              </ImageBackground>
             </View>
 
-            <ImageBackground style={styles.right_bgc} source={require('../../assets/pages/mine/right_bgc.png')}>
-              <Image style={styles.right} source={require('../../assets/pages/mine/right.png')} />
-            </ImageBackground>
+            <View style={styles.sports_box}>
+              <View style={styles.sport__left}>
+                <Text style={styles.toady_step_num}>120.90公里</Text>
+                <Text style={styles.toady_step_desc}>累计运动(公里)</Text>
+              </View>
+              <View style={styles.sport__right}>
+                <Text style={styles.toady_step_num}>325.00</Text>
+                <Text style={styles.toady_step_desc}>积分(元)</Text>
+              </View>
+            </View>
           </View>
+        </SafeAreaView>
 
-          <View style={styles.sports_box}>
-            <View style={styles.sport__left}>
-              <Text style={styles.toady_step_num}>120.90公里</Text>
-              <Text style={styles.toady_step_desc}>累计运动(公里)</Text>
-            </View>
-            <View style={styles.sport__right}>
-              <Text style={styles.toady_step_num}>325.00</Text>
-              <Text style={styles.toady_step_desc}>积分(元)</Text>
-            </View>
-          </View>
-        </View>
-      </SafeAreaView>
-
-      <View style={styles.list_box}>
-        {listArr &&
-          listArr.map((item) => {
-            return (
-              <TouchableOpacity activeOpacity={1} onPress={() => onPress(item)} style={styles.box} key={item.id}>
-                <View style={styles.list_flex}>
-                  <Image style={styles.img} source={item.icon} />
-                  <Text style={styles.desc}>{item.name}</Text>
+        <LogOut visible={log_out} setLogOut={setLogOut} setLogSuccess={setLogSuccess} />
+        <LogSuccess visible={log_success} setLogSuccess={setLogSuccess} />
+      </ImageBackground>
+      <ImageBackground style={styles.m_bg} source={require('../../assets/pages/mine/mbg.png')}>
+        <View style={styles.list_box}>
+          {listArr &&
+            listArr.map((item) => (
+              <TouchableOpacity onPress={() => onPress(item)}>
+                <View style={styles.box} key={item.id}>
+                  <View style={styles.list_flex}>
+                    <Image style={styles.img} source={item.icon} />
+                    <Text style={styles.desc}>{item.name}</Text>
+                  </View>
+                  <Image style={styles.list_right} source={require('../../assets/pages/mine/list_right.png')} />
                 </View>
-                <Image style={styles.list_right} source={require('../../assets/pages/mine/list_right.png')} />
               </TouchableOpacity>
-            )
-          })}
-      </View>
-      <LogOut visible={log_out} setLogOut={setLogOut} setLogSuccess={setLogSuccess} />
-      <LogSuccess visible={log_success} setLogSuccess={setLogSuccess}/>
-    </ImageBackground>
+            ))}
+        </View>
+      </ImageBackground>
+    </View>
   )
 }
 
