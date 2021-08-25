@@ -217,18 +217,26 @@ export const styles = StyleSheet.create({
     fontSize: px2dp(11)
   },
   date_wrapper: {
-    width: px2dp(20),
-    height: px2dp(20),
+    width: px2dp(22),
+    height: px2dp(19.8),
     backgroundColor: '#fff',
     alignItems:'center',
     justifyContent: 'center'
   },
   no_date_wrapper: {
-    width: px2dp(20),
-    height: px2dp(20),
+    width: px2dp(22),
+    height: px2dp(19.8),
     backgroundColor: '#24C789',
     alignItems:'center',
     justifyContent: 'center'
+  },
+  no_date_wrapper_c: {
+    borderTopRightRadius: px2dp(10),
+    borderBottomRightRadius: px2dp(10)
+  },
+  no_date_wrapper_a: {
+    borderTopLeftRadius: px2dp(10),
+    borderBottomLeftRadius: px2dp(10)
   },
   date_text: {
     color: '#24C789',

@@ -188,9 +188,12 @@ const Home = () => {
               <Text style={styles.history_dw_text}>单位/km</Text>
               <Text style={styles.history_title_text}>历史数据</Text>
               <View style={styles.history_date_wrapper}>
-                {dateData.map((d: { type: number }) => (
-                  <TouchableOpacity activeOpacity={1} onPress={() => switchDateTabs(d.type)} style={[date !== d.type ? styles.date_wrapper : styles.no_date_wrapper]}>
-                    <Text style={[date !== d.type ? styles.date_text : styles.no_date_text]}>{d.type}</Text>
+                {dateData.map((d: { type: number; name: string }) => (
+                  <TouchableOpacity
+                    activeOpacity={1}
+                    onPress={() => switchDateTabs(d.type)}
+                    style={[date !== d.type ? styles.date_wrapper : styles.no_date_wrapper, d.type == 1 ? styles.no_date_wrapper_a : null, d.type == 3 ? styles.no_date_wrapper_c : null]}>
+                    <Text style={[date !== d.type ? styles.date_text : styles.no_date_text]}>{d.name}</Text>
                   </TouchableOpacity>
                 ))}
               </View>
