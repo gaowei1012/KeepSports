@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
   },
   sports_container: {
     height: height,
-    width: width,
+    width: width
   },
   sports_num_wrapper: {
     flexDirection: 'row',
@@ -111,7 +111,7 @@ export const styles = StyleSheet.create({
     marginRight: px2dp(36),
     paddingBottom: px2dp(21),
     borderBottomColor: '#D2D2D2',
-    borderBottomWidth: px2dp(1),
+    borderBottomWidth: px2dp(1)
   },
   sports_modal_top_text: {
     width: px2dp(99),
@@ -120,7 +120,6 @@ export const styles = StyleSheet.create({
     fontWeight: '800',
     marginTop: px2dp(20),
     marginLeft: px2dp(10)
-
   },
   sports_modal_jb: {
     marginTop: px2dp(27),
@@ -183,15 +182,51 @@ export const styles = StyleSheet.create({
     bottom: 0
   },
   top_switch_wrapper: {
-    width:px2dp(129),
+    width: px2dp(129 + 65),
     height: px2dp(33),
-    marginTop: px2dp(29),
-    marginBottom: px2dp(15)
+    marginTop: px2dp(19),
+    marginBottom: px2dp(19),
+    backgroundColor: '#24C789',
+    alignSelf: 'center',
+    borderRadius: px2dp(33 / 2),
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center'
+  },
+  tab_btn: {
+    backgroundColor: '#24C789',
+    height: px2dp(31),
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: px2dp(64)
+  },
+
+  tab_btn_a: {
+    borderTopLeftRadius: px2dp(34 / 2),
+    borderBottomLeftRadius: px2dp(34 / 2)
+  },
+
+  tab_btn_c: {
+    borderTopRightRadius: px2dp(34 / 2),
+    borderBottomRightRadius: px2dp(34 / 2)
+  },
+  no_tab_btn: {
+    backgroundColor: '#fff',
+    height: px2dp(31),
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: px2dp(64)
+  },
+  tab_btn_text: {
+    color: '#fff'
+  },
+  no_tab_btn_text: {
+    color: '#333'
   },
   top_wrapper: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent:'space-around'
+    justifyContent: 'space-around'
   },
   top_icon_wrapper: {
     flexDirection: 'column',
@@ -217,14 +252,14 @@ export const styles = StyleSheet.create({
     marginTop: px2dp(-10)
   },
   top_b_icon: {
-    width:px2dp(77),
+    width: px2dp(77),
     height: px2dp(18),
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: px2dp(-10)
   },
   top_b_icon_bj: {
-    width:px2dp(77),
+    width: px2dp(77),
     height: px2dp(18),
     alignItems: 'center',
     justifyContent: 'center',

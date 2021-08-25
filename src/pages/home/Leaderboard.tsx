@@ -63,8 +63,14 @@ const pmData = [
     id: 3
   }
 ]
+const dateData = [
+  { id: 1, type: 1, name: '周' },
+  { id: 2, type: 2, name: '月' },
+  { id: 3, type: 3, name: '年' }
+]
 
 const Leaderboard = (props: any) => {
+  const [type, setType] = useState<number>(1)
   return (
     <View>
       <ImageBackground style={styles.leaderboard_container} source={require('../../assets/pages/sports/phb.png')}>
@@ -72,12 +78,21 @@ const Leaderboard = (props: any) => {
           <TopNavigationBar title='排行榜' statusBar={statusbar} leftButton={GoBack(props, true)} />
         </SafeAreaView>
         <View style={styles.top_switch_wrapper}>
-          <Text>ss</Text>
+          {dateData.map((item) => (
+            <TouchableOpacity
+              activeOpacity={1}
+              onPress={() => {
+                setType(item.type)
+              }}
+              style={[type == item.type ? styles.tab_btn : styles.no_tab_btn, item.type == 1 ? styles.tab_btn_a : null, item.type == 3 ? styles.tab_btn_c : null]}>
+              <Text style={[type == item.type ? styles.tab_btn_text : styles.no_tab_btn_text]}>{item.name}</Text>
+            </TouchableOpacity>
+          ))}
         </View>
         <View style={styles.top_wrapper}>
           {pmData.map((item) => (
             <View style={styles.top_icon_wrapper} key={item.id}>
-              <Image style={item.id == 2 ? styles. top_h_icon_bj : styles.top_h_icon} source={item.h} />
+              <Image style={item.id == 2 ? styles.top_h_icon_bj : styles.top_h_icon} source={item.h} />
               <Image style={item.id == 2 ? styles.top_av_icon_bj : styles.top_av_icon} source={item.av} />
               <ImageBackground style={item.id == 2 ? styles.top_b_icon_bj : styles.top_b_icon} source={item.n}>
                 <Text>NO.{item.num}</Text>
