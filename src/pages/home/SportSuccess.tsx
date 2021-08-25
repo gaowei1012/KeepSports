@@ -9,7 +9,7 @@ const SportSuccess = (props: any) => {
     <Modal animationType='fade' transparent={true} visible={visible}>
       <View style={styles.sports_modal_container}>
         <ImageBackground style={styles.sports_modal_bg} source={require('../../assets/pages/sports/tcbj.png')}>
-          <TouchableOpacity onPress={() =>{
+          <TouchableOpacity activeOpacity={1} onPress={() =>{
             setVisible(false)
             NavigationUtil.goPage({}, 'Leaderboard')
           }} style={styles.sports_modal_top}>
@@ -32,7 +32,7 @@ const SportSuccess = (props: any) => {
             </View>
           </View>
           <ImageBackground style={styles.sports_modal_bottom} source={require('../../assets/pages/sports/btnbg.png')}>
-            <TouchableOpacity onPress={() => {
+            <TouchableOpacity activeOpacity={1} onPress={() => {
               setVisible(false)
             }} style={styles.sports_modal_bottom_c}>
               <Text style={styles.sports_modal_bottom_t}>确认</Text>

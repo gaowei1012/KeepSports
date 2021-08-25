@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Platform } from 'react-native'
 import { px2dp, width, height } from '../../utils/px2dp'
 
 export const styles = StyleSheet.create({
@@ -133,12 +133,13 @@ export const styles = StyleSheet.create({
   },
   sports_modal_content: {
     marginTop: px2dp(20),
+    marginBottom: Platform.OS == 'android' ? px2dp(18) : px2dp(30),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around'
   },
   sports_modal_bottom: {
-    marginTop: px2dp(30),
+    // Top: px2dp(30),
     justifyContent: 'flex-end',
     width: px2dp(295),
     height: px2dp(52)
