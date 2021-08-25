@@ -12,7 +12,7 @@ const statusbar = {
   backgroundColor: 'rgba(0, 0, 0, 0)',
   barStyle: 'dark-content',
   translucent: true,
-  hidden: false
+  hidden: true
 }
 const phData = [
   {
