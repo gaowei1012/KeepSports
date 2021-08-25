@@ -2,8 +2,8 @@ import React from 'react'
 import { View, Modal, Text, ImageBackground, TouchableOpacity } from 'react-native'
 import { styles } from '../../styles/view-style/mine'
 
-const LogOut = (props: { visible: boolean; setLogOut: any }) => {
-  const { visible, setLogOut } = props
+const LogOut = (props: { visible: boolean; setLogOut: any, setLogSuccess: any }) => {
+  const { visible, setLogOut, setLogSuccess } = props
   return (
     <Modal animationType='fade' transparent={true} visible={visible}>
       <View style={styles.logout_container}>
@@ -18,6 +18,9 @@ const LogOut = (props: { visible: boolean; setLogOut: any }) => {
             </TouchableOpacity>
             <TouchableOpacity onPress={() => {
               setLogOut(false)
+              setTimeout(() => {
+                setLogSuccess(true)
+              }, 200)
             }} style={styles.logout_bottom_l}>
               <Text style={styles.commen}>确认注销</Text>
             </TouchableOpacity>

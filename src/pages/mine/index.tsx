@@ -55,7 +55,7 @@ const Mine = () => {
 
   const onPress = (e: any) => {
     console.log(e)
-    e.name == '注销账号' ? setLogSuccess(true) : NavigationUtil.goPage({}, e.pages)
+    e.name == '注销账号' ? setLogOut(true) : NavigationUtil.goPage({}, e.pages)
   }
 
   return (
@@ -121,7 +121,7 @@ const Mine = () => {
             )
           })}
       </View>
-      <LogOut visible={log_out} setLogOut={setLogOut} />
+      <LogOut visible={log_out} setLogOut={setLogOut} setLogSuccess={setLogSuccess} />
       <LogSuccess visible={log_success} setLogSuccess={setLogSuccess}/>
     </ImageBackground>
   )
