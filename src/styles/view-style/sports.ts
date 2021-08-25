@@ -277,6 +277,12 @@ export const styles = StyleSheet.create({
     color: '#333',
     fontSize: px2dp(14),
     fontWeight: '800'
+  },
+  keep_start_flow: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  start_right_flow: {
+    marginLeft: px2dp(14)
   }
-
 })

@@ -52,13 +52,16 @@ const ydDataStart = [
 ]
 
 const Sports = (props: any) => {
-
   const [start, setStart] = useState<boolean>(false)
+  const [stop, setStop] = useState<boolean>(false)
   const [visible, setVisible] = useState<boolean>(false)
   // 开始运行
   const sport_start = () => {
-    setStart(!start)
-    setVisible(true)
+    setStart(true)
+    // setVisible(true)
+  }
+  const sport_stop = () => {
+    setStop(true)
   }
   // 目标
   const go_target = () => {
@@ -98,14 +101,52 @@ const Sports = (props: any) => {
               <Image style={styles.sports_mb_i} source={require('../../assets/pages/sports/r.png')} />
             </ImageBackground>
           </TouchableOpacity>
-          <TouchableOpacity activeOpacity={1} onPress={sport_start}>
-            <ImageBackground style={styles.sports_c_start} source={`${!start ? require('../../assets/pages/sports/start.png') : require('../../assets/pages/sports/end.png')}`}>
-              <Text style={styles.sports_c_start_text}>{`${!start ? '开始' : '暂停'}`}</Text>
-            </ImageBackground>
-          </TouchableOpacity>
+          {!stop ? (
+            <>
+              {!start ? (
+                <TouchableOpacity activeOpacity={1} onPress={sport_start}>
+                  <ImageBackground style={styles.sports_c_start} source={require('../../assets/pages/sports/start.png')}>
+                    <Text style={styles.sports_c_start_text}>开始</Text>
+                  </ImageBackground>
+                </TouchableOpacity>
+              ) : (
+                <TouchableOpacity activeOpacity={1} onPress={sport_stop}>
+                  <ImageBackground style={styles.sports_c_start} source={require('../../assets/pages/sports/end.png')}>
+                    <Text style={styles.sports_c_start_text}>暂停</Text>
+                  </ImageBackground>
+                </TouchableOpacity>
+              )}
+            </>
+          ) : null}
+
+          {stop ? (
+            <View style={styles.keep_start_flow}>
+              <TouchableOpacity
+                activeOpacity={1}
+                onPress={() => {
+                  setStart(false)
+                  setStop(false)
+                  setVisible(true)
+                }}>
+                <ImageBackground style={styles.sports_c_start} source={require('../../assets/pages/sports/zt.png')}>
+                  <Text style={styles.sports_c_start_text}>结束</Text>
+                </ImageBackground>
+              </TouchableOpacity>
+              <TouchableOpacity
+                activeOpacity={1}
+                style={styles.start_right_flow}
+                onPress={() => {
+                  setStop(false)
+                }}>
+                <ImageBackground style={styles.sports_c_start} source={require('../../assets/pages/sports/jx.png')}>
+                  <Text style={styles.sports_c_start_text}>继续</Text>
+                </ImageBackground>
+              </TouchableOpacity>
+            </View>
+          ) : null}
         </View>
       </View>
-      <SportSuccess visible={visible} setVisible={setVisible}/>
+      <SportSuccess visible={visible} setVisible={setVisible} />
     </SafeAreaView>
   )
 }
