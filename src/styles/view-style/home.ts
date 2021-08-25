@@ -475,5 +475,24 @@ export const styles = StyleSheet.create({
   dy_comment_botton: {
     flexDirection: 'row',
     alignItems: 'center'
+  },
+  textinput: {
+    width: px2dp(346),
+    height: px2dp(35),
+    borderRadius: px2dp(35/2),
+    backgroundColor: '#F7F7F7',
+    alignSelf: 'center',
+    paddingLeft: px2dp(15),
+    marginBottom: px2dp(36)
+  },
+  dy_comment_icon: {
+    width: px2dp(19),
+    height: px2dp(17)
+  },
+  dy_comment_num: {
+    marginLeft: px2dp(15),
+    color: '#333',
+    fontWeight: '500',
+    fontSize: px2dp(12)
   }
 })

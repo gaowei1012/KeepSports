@@ -8,7 +8,7 @@
  */
 import React from 'react'
 import { useState } from 'react'
-import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity } from 'react-native'
+import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity, TextInput } from 'react-native'
 import { CircularProgress, Dial } from '../../components/circle/index'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
@@ -16,6 +16,7 @@ import { styles } from '../../styles/view-style/home'
 import { GoBack } from '../../utils/goBack'
 import { ScrollView } from 'react-navigation'
 import { height } from '../../utils/px2dp'
+
 const statusbar = {
   backgroundColor: '#fff',
   barStyle: 'dark-content',
@@ -40,7 +41,7 @@ const DynamicDetail = (props: any) => {
   return (
     <SafeAreaView style={styles.dynamic_content_cotainer}>
       <TopNavigationBar statusBar={statusbar} title='详情' leftButton={GoBack(props, true)} style={{ backgroundColor: '#fff' }} />
-      <ScrollView >
+      <ScrollView>
         <View style={styles.dynamic_content_flow__wrapper}>
           {dylistData.map((list) => (
             <View style={styles.dynamic_content_flow}>
@@ -89,16 +90,17 @@ const DynamicDetail = (props: any) => {
           </View>
         </View>
       </ScrollView>
+      <TextInput placeholder='请输入评论:' placeholderTextColor='#999999' style={styles.textinput} />
       <View style={styles.dy_comment_botton_wrapper}>
-          <View style={styles.dy_comment_botton}>
-            <Text>icon</Text>
-            <Text>icon</Text>
-          </View>
-          <View style={styles.dy_comment_botton}>
-            <Text>icon</Text>
-            <Text>icon</Text>
-          </View>
+        <View style={styles.dy_comment_botton}>
+          <Image style={styles.dy_comment_icon} source={require('../../assets/pages/home/link.png')} />
+          <Text style={styles.dy_comment_num}>260</Text>
         </View>
+        <View style={styles.dy_comment_botton}>
+          <Image style={styles.dy_comment_icon} source={require('../../assets/pages/home/msg.png')} />
+          <Text style={styles.dy_comment_num}>925</Text>
+        </View>
+      </View>
     </SafeAreaView>
   )
 }
