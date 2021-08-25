@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity } from 'react-native'
 import { CircularProgress, Dial } from '../../components/circle/index'
+// import PercentageCircle from '../../components/cricle'
+import { AnimatedGaugeProgress, GaugeProgress } from 'react-native-simple-gauge'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/sports'
@@ -76,7 +78,24 @@ const Sports = (props: any) => {
           <Text style={styles.sports_num}>{!start ? '00.00' : '10.26'}</Text>
           <Text style={styles.sports_gl}>公里</Text>
         </View>
-        {/* </CircularProgress> */}
+        {start ? (
+          <AnimatedGaugeProgress
+            style={{
+              position: 'absolute',
+              alignSelf: 'center'
+            }}
+            size={290}
+            width={10}
+            fill={40}
+            rotation={91}
+            cropDegree={150}
+            tintColor='#24C789'
+            delay={0}
+            backgroundColor='#BDEEDB'
+            stroke={[2, 2]} //For a equaly dashed line
+            strokeCap='circle'
+          />
+        ) : null}
         <ImageBackground style={styles.sports_bg_container} source={require('../../assets/pages/sports/ydbg.png')}>
           {!start
             ? ydData.map((d) => (

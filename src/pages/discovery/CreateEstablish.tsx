@@ -62,7 +62,7 @@ const CreateEstablish = (props: any) => {
             {selData.map((c) => (
               <View key={c.type} style={styles.avatar_wrapper}>
                 <Image style={styles.avatar_icon} source={`${type == c.type ? require('../../assets/pages/establish/sr.png') : require('../../assets/pages/establish/nr.png')}`} />
-                <Text style={styles.avatar_text}>选择头像</Text>
+                <Text style={styles.avatar_text}>{c.title}</Text>
               </View>
             ))}
           </ImageBackground>
