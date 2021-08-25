@@ -18,7 +18,7 @@ import { useState } from 'react'
 const statusbar = {
   backgroundColor: 'rgba(0, 0, 0, 0)',
   barStyle: 'dark-content',
-  translucent: true,
+  translucent: false,
   hidden: false
 }
 
