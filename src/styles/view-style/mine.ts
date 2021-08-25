@@ -130,8 +130,8 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingLeft: px2dp(57),
-    paddingRight: px2dp(57)
+    paddingLeft: px2dp(27),
+    paddingRight: px2dp(27)
   },
 
   sport__left: {
