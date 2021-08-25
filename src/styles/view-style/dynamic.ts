@@ -6,7 +6,7 @@
  * @Description: In User Settings Edit
  * @FilePath: /KeepSports/src/styles/view-style/dynamic.ts
  */
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Platform } from 'react-native'
 import { px2dp, width, height } from '../../utils/px2dp'
 
 export const styles = StyleSheet.create({
@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
   },
   dynamic_top_switch: {
     width: px2dp(263),
+    marginTop: Platform.OS == 'android' ? px2dp(14) : px2dp(12),
     alignSelf: 'center',
     flexDirection: 'row',
     justifyContent: 'space-around'
