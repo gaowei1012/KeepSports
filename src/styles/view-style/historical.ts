@@ -21,10 +21,31 @@ export const styles = StyleSheet.create({
   },
   list_btn: {
     backgroundColor: '#fff',
-    height: px2dp(30),
+    height: px2dp(31),
     alignItems: 'center',
     justifyContent: 'center',
-    width: px2dp(230/4)
+    width: px2dp(64)
+  },
+  list_btn_text: {
+    color: '#24C789'
+  },
+  no_list_btn_text: {
+    color: '#fff',
+  },
+  no_list_btn: {
+    backgroundColor: '#24C789',
+    height: px2dp(31),
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: px2dp(64)
+  },
+  list_btn_a: {
+    borderTopLeftRadius: px2dp(34/2),
+    borderBottomLeftRadius: px2dp(34/2)
+  },
+  list_btn_b: {
+    borderTopRightRadius: px2dp(34/2),
+    borderBottomRightRadius: px2dp(34/2)
   },
   statistics_wrapper: {
     flexDirection: 'row',

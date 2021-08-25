@@ -16,7 +16,13 @@ import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/historical'
 import { GoBack } from '../../utils/goBack'
 
-const listArr = ['周', '月', '年', '总']
+const dateData = [
+  { id: 1, type: 1, name: '周' },
+  { id: 2, type: 2, name: '月' },
+  { id: 3, type: 3, name: '年' },
+  { id: 4, type: 4, name: '总' }
+]
+
 const zhouStatisticsData = [
   {
     icon: require('../../assets/pages/home/lj.png'),
@@ -46,25 +52,31 @@ const statusbar = {
   hidden: false
 }
 const HistoricalStatistics = (props: any) => {
+  const [type, setType] = useState<number>(1)
   return (
     <SafeAreaView>
       <TopNavigationBar statusBar={statusbar} title='历史统计' leftButton={GoBack(props, true)} style={{ backgroundColor: '#fff' }} />
       <View style={styles.container}>
         <View style={styles.history_list_wrapper}>
-          {listArr.map((item) => (
-            <TouchableOpacity style={styles.list_btn}>
-              <ImageBackground style={styles.list_btn} source={require('../../assets/pages/home/zhou.png')}>
-                <Text>{item}</Text>
-              </ImageBackground>
+          {dateData.map((item) => (
+            <TouchableOpacity
+              activeOpacity={1}
+              onPress={() => {
+                setType(item.type)
+              }}
+              style={[type !== item.type ? styles.list_btn : styles.no_list_btn, item.type == 1 ? styles.list_btn_a : null, item.type == 4 ? styles.list_btn_b : null]}>
+              <Text style={type !== item.type ? styles.list_btn_text : styles.no_list_btn_text}>{item.name}</Text>
             </TouchableOpacity>
           ))}
         </View>
-        <LineChart/>
+        <LineChart />
       </View>
       <View style={styles.statistics_wrapper}>
         <View style={styles.statistics_title_wrapper}>
           <View style={styles.list_line} />
-          <Text style={styles.statistics_title_text}>周总计</Text>
+          {dateData.map((item) => (
+            <>{type == item.type ? <Text style={styles.statistics_title_text}>{`${item.name}总计`}</Text> : null}</>
+          ))}
         </View>
         <Text style={styles.statistics_desc}>
           累计跑步<Text style={styles.statistics_desc_c}>8</Text>次

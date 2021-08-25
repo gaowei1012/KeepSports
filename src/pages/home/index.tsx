@@ -115,7 +115,7 @@ const Home = () => {
         <View style={styles.home__content_container}>
           <View style={styles.home__container_tab}>
             {tabs.map((tab: { name: string; type: number }) => (
-              <TouchableOpacity style={styles.home__container_tab_flow} activeOpacity={1} onPress={() => switchTabs(tab.name, tab.type)}>
+              <TouchableOpacity activeOpacity={1} style={styles.home__container_tab_flow} onPress={() => switchTabs(tab.name, tab.type)}>
                 <Text style={[styles.tab_default, top_menu === tab.type ? styles.actionText : styles.noActionText]}>{tab.name}</Text>
                 {top_menu == tab.type ? <Image style={styles.actionLine} source={require('../../assets/pages/home/sle.png')} resizeMode='center' /> : <View style={styles.noActionLine} />}
               </TouchableOpacity>
@@ -179,6 +179,7 @@ const Home = () => {
           </ImageBackground>
         </View>
         <TouchableOpacity
+          activeOpacity={1}
           onPress={() => {
             NavigationUtil.goPage({}, 'HistoricalStatistics')
           }}
@@ -216,7 +217,7 @@ const Home = () => {
           <View>
             {dData.map((d: any) => (
               <TouchableOpacity
-                activeOpacity={0.8}
+                activeOpacity={1}
                 onPress={() => {
                   NavigationUtil.goPage({}, 'DynamicDetail')
                 }}
