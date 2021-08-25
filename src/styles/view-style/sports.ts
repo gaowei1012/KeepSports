@@ -181,5 +181,102 @@ export const styles = StyleSheet.create({
     height: px2dp(370),
     position: 'absolute',
     bottom: 0
+  },
+  top_switch_wrapper: {
+    width:px2dp(129),
+    height: px2dp(33),
+    marginTop: px2dp(29),
+    marginBottom: px2dp(15)
+  },
+  top_wrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent:'space-around'
+  },
+  top_icon_wrapper: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  top_h_icon: {
+    width: px2dp(43),
+    height: px2dp(32)
+  },
+  top_h_icon_bj: {
+    width: px2dp(51),
+    height: px2dp(39)
+  },
+  top_av_icon: {
+    width: px2dp(68),
+    height: px2dp(68),
+    marginTop: px2dp(-10)
+  },
+  top_av_icon_bj: {
+    width: px2dp(78),
+    height: px2dp(78),
+    marginTop: px2dp(-10)
+  },
+  top_b_icon: {
+    width:px2dp(77),
+    height: px2dp(18),
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: px2dp(-10)
+  },
+  top_b_icon_bj: {
+    width:px2dp(77),
+    height: px2dp(18),
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: px2dp(-10)
+  },
+  leaderboard_content: {
+    alignSelf: 'center',
+    width: px2dp(345),
+    marginTop: px2dp(10)
+  },
+  leaderboard_wrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingBottom: px2dp(13),
+    marginTop: px2dp(10),
+    borderBottomColor: '#F2F2F2',
+    borderBottomWidth: px2dp(1)
+  },
+  left_flow: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  left_pm: {
+    color: '#666',
+    fontSize: px2dp(12),
+    fontWeight: '500'
+  },
+  left_avatar: {
+    width: px2dp(40),
+    height: px2dp(40),
+    marginLeft: px2dp(15),
+    marginRight: px2dp(11)
+  },
+  left_name: {
+    color: '#333333',
+    fontSize: px2dp(14),
+    fontWeight: 'normal'
+  },
+  right_flow: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  distance_num: {
+    color: '#24C789',
+    fontSize: px2dp(14),
+    fontWeight: '800'
+  },
+  distance_text: {
+    color: '#333',
+    fontSize: px2dp(14),
+    fontWeight: '800'
   }
+
 })

@@ -14,16 +14,95 @@ const statusbar = {
   translucent: true,
   hidden: false
 }
+const phData = [
+  {
+    icon: require('../../assets/pages/sports/ph1.png'),
+    pm: 5,
+    name: '马跳跳',
+    distance: 32
+  },
+  {
+    icon: require('../../assets/pages/sports/ph2.png'),
+    pm: 5,
+    name: '橘子汽水',
+    distance: 3
+  },
+  {
+    icon: require('../../assets/pages/sports/ph3.png'),
+    pm: 5,
+    name: '养乐多',
+    distance: 2
+  },
+  {
+    icon: require('../../assets/pages/sports/ph3.png'),
+    pm: 5,
+    name: '哈哈哈',
+    distance: 1
+  }
+]
+const pmData = [
+  {
+    av: require('../../assets/pages/sports/av2.png'),
+    n: require('../../assets/pages/sports/n2.png'),
+    h: require('../../assets/pages/sports/h2.png'),
+    num: 2,
+    id: 1
+  },
+  {
+    av: require('../../assets/pages/sports/av3.png'),
+    n: require('../../assets/pages/sports/n1.png'),
+    h: require('../../assets/pages/sports/h1.png'),
+    num: 1,
+    id: 2
+  },
+  {
+    av: require('../../assets/pages/sports/av3.png'),
+    n: require('../../assets/pages/sports/n3.png'),
+    h: require('../../assets/pages/sports/h3.png'),
+    num: 3,
+    id: 3
+  }
+]
 
 const Leaderboard = (props: any) => {
   return (
     <View>
       <ImageBackground style={styles.leaderboard_container} source={require('../../assets/pages/sports/phb.png')}>
         <SafeAreaView>
-          <TopNavigationBar title='排行榜' statusBar={statusbar} leftButton={GoBack(props, true)}/>
+          <TopNavigationBar title='排行榜' statusBar={statusbar} leftButton={GoBack(props, true)} />
         </SafeAreaView>
+        <View style={styles.top_switch_wrapper}>
+          <Text>ss</Text>
+        </View>
+        <View style={styles.top_wrapper}>
+          {pmData.map((item) => (
+            <View style={styles.top_icon_wrapper} key={item.id}>
+              <Image style={item.id == 2 ? styles. top_h_icon_bj : styles.top_h_icon} source={item.h} />
+              <Image style={item.id == 2 ? styles.top_av_icon_bj : styles.top_av_icon} source={item.av} />
+              <ImageBackground style={item.id == 2 ? styles.top_b_icon_bj : styles.top_b_icon} source={item.n}>
+                <Text>NO.{item.num}</Text>
+              </ImageBackground>
+            </View>
+          ))}
+        </View>
         <ImageBackground style={styles.leaderboard_container_bottom} source={require('../../assets/pages/sports/phbb.png')}>
-          <Text>内容</Text>
+          <ScrollView>
+            <View style={styles.leaderboard_content}>
+              {phData.map((item) => (
+                <View style={styles.leaderboard_wrapper}>
+                  <View style={styles.left_flow}>
+                    <Text style={styles.left_pm}>NO.{item.pm}</Text>
+                    <Image source={item.icon} style={styles.left_avatar} />
+                    <Text style={styles.left_name}>{item.name}</Text>
+                  </View>
+                  <View style={styles.right_flow}>
+                    <Text style={styles.distance_num}>{item.distance}</Text>
+                    <Text style={styles.distance_text}>公里</Text>
+                  </View>
+                </View>
+              ))}
+            </View>
+          </ScrollView>
         </ImageBackground>
       </ImageBackground>
     </View>
