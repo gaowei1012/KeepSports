@@ -487,12 +487,57 @@ export const styles = StyleSheet.create({
   },
   dy_comment_icon: {
     width: px2dp(19),
-    height: px2dp(17)
+    height: px2dp(17),
+    marginLeft: px2dp(10)
   },
   dy_comment_num: {
     marginLeft: px2dp(15),
     color: '#333',
     fontWeight: '500',
     fontSize: px2dp(12)
+  },
+  comment_content: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginLeft: px2dp(15),
+    marginRight: px2dp(15),
+    marginTop: px2dp(22)
+  },
+  comment_left_wrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  comment_icon: {
+    width: px2dp(44),
+    height: px2dp(44)
+  },
+  comment_content_icon_wrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: px2dp(34)
+  },
+  comment_left: {
+    marginLeft: px2dp(17),
+    flexDirection: 'column',
+    justifyContent: 'space-around'
+  },
+  name: {
+    color: '#555555',
+    fontSize: px2dp(14),
+    marginBottom: px2dp(9)
+  },
+  title: {
+    color: '#333',
+    fontSize: px2dp(18),
+    fontWeight: 'bold',
+    marginBottom: px2dp(9)
+  },
+  date: {
+    color: '#999',
+    fontSize: px2dp(10),
+    fontWeight: 'bold',
+    marginBottom: px2dp(9)
   }
 })

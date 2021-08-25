@@ -37,6 +37,38 @@ const dylistData = [
     ]
   }
 ]
+const commentData = [
+  {
+    icon: require('../../assets/pages/home/ca.png'),
+    name: '小点点',
+    title: '我要像你学习',
+    date: 17
+  },
+  {
+    icon: require('../../assets/pages/home/ca.png'),
+    name: '小点点',
+    title: '我要像你学习',
+    date: 17
+  },
+  {
+    icon: require('../../assets/pages/home/ca.png'),
+    name: '小点点',
+    title: '我要像你学习',
+    date: 17
+  },
+  {
+    icon: require('../../assets/pages/home/ca.png'),
+    name: '小点点',
+    title: '我要像你学习',
+    date: 17
+  },
+  {
+    icon: require('../../assets/pages/home/ca.png'),
+    name: '小点点',
+    title: '我要像你学习',
+    date: 17
+  }
+]
 const DynamicDetail = (props: any) => {
   return (
     <SafeAreaView style={styles.dynamic_content_cotainer}>
@@ -88,6 +120,24 @@ const DynamicDetail = (props: any) => {
             <Text style={styles.dy_comment_left_title}>赞</Text>
             <Text style={styles.dy_comment_left_mun}>6679</Text>
           </View>
+        </View>
+        <View>
+          {commentData.map(item => (
+            <View style={styles.comment_content}>
+              <View style={styles.comment_left_wrapper}>
+                <Image style={styles.comment_icon} source={item.icon}/>
+                <View style={styles.comment_left}>
+                  <Text style={styles.name}>{item.name}</Text>
+                  <Text style={styles.title}>{item.title}</Text>
+                  <Text style={styles.date}>{item.date}分钟前</Text>
+                </View>
+              </View>
+              <View style={styles.comment_content_icon_wrapper}>
+                <Image style={styles.dy_comment_icon} source={require('../../assets/pages/home/msg.png')}/>
+                <Image style={styles.dy_comment_icon} source={require('../../assets/pages/home/nlink.png')}/>
+              </View>
+            </View>
+          ))}
         </View>
       </ScrollView>
       <TextInput placeholder='请输入评论:' placeholderTextColor='#999999' style={styles.textinput} />
