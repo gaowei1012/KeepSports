@@ -17,7 +17,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',
     borderRadius: px2dp(34/2),
-    overflow: 'hidden'
+    overflow: 'hidden',
+    marginBottom: px2dp(17)
   },
   list_btn: {
     backgroundColor: '#fff',
