@@ -68,7 +68,7 @@ const Register = (props: any) => {
             </TouchableOpacity>
           </View>
           <View style={styles.user_tk_container}>
-            <CheckBox style={styles.checkbox} tintColors={{ true: true }} tintColor='#ddd' disabled={false} />
+            <CheckBox style={styles.checkbox} tintColors={{ true: true }} tintColor='#ddd' />
             <Text>
               <Text style={styles.futk}>已仔细阅读</Text>
               <TouchableOpacity

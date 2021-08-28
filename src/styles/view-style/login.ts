@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Platform } from 'react-native'
 import { px2dp, width, height } from '../../utils/px2dp'
 
 export const styles = StyleSheet.create({
@@ -63,8 +63,8 @@ export const styles = StyleSheet.create({
    marginLeft: px2dp(2)
   },
   checkbox: {
-    width: px2dp(16),
+    width:px2dp(16),
     height: px2dp(16),
-    marginRight: px2dp(8)
+    marginRight: Platform.OS === 'ios' ? px2dp(8) : px2dp(18)
   }
 })
