@@ -1,6 +1,6 @@
 import API from "../expand/api";
 import { request } from "../expand/request";
-import { IUserPostData } from '../interface/pages/user';
+import { IUserPostData, IGetUserInfo, ICheckPhone } from '../interface/pages/user';
 
 class UserModel {
   static login(data: IUserPostData) {
@@ -8,6 +8,18 @@ class UserModel {
   }
   static register(data: IUserPostData) {
     return request(API.register, data, 'POST', '')
+  }
+  static getUserInfo(data: IGetUserInfo, token: string) {
+    return request(API.getUserInfo, data, 'POST', token)
+  }
+  static checkPhone(data: ICheckPhone) {
+    return request(API.checkPhone, data, 'POST', '')
+  }
+  static resetPassword(data: IUserPostData, token: string) {
+    return request(API.checkPhone, data, 'POST', token)
+  }
+  static deleteUser(data: IGetUserInfo, token: string) {
+    return request(API.checkPhone, data, 'POST', token)
   }
 }
 
