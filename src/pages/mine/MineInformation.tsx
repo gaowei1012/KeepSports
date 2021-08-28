@@ -67,7 +67,7 @@ const MineInformation = (props: any) => {
       <TopNavigationBar statusBar={statusbar} leftButton={GoBack(props, true)} title='个人资料' />
       <View style={styles.mine_information_container}>
         {listArr.map(item => (
-          <TouchableOpacity onPress={() => {
+          <TouchableOpacity activeOpacity={1} onPress={() => {
             NavigationUtil.goPage({}, item.path)
           }} style={styles.list_wrapper}>
             <Text style={styles.left_name}>{item.name}</Text>
