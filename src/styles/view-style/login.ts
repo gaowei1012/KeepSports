@@ -41,7 +41,8 @@ export const styles = StyleSheet.create({
   user_tk_container: {
     marginTop: px2dp(37),
     flexDirection: 'row',
-    alignSelf: 'center'
+    alignSelf: 'center',
+    alignItems: 'center'
   },
   futk: {
     color: '#BCBBBB'
@@ -60,5 +61,10 @@ export const styles = StyleSheet.create({
    height: px2dp(20),
    marginRight: px2dp(11),
    marginLeft: px2dp(2)
+  },
+  checkbox: {
+    width: px2dp(16),
+    height: px2dp(16),
+    marginRight: px2dp(8)
   }
 })

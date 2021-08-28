@@ -96,7 +96,7 @@ const Mine = () => {
               <TouchableOpacity 
                 activeOpacity={1}
                 onPress={() => {
-                  NavigationUtil.goPage({}, 'Login')
+                  NavigationUtil.goPage({}, 'Register')
                 }}
               >
                 <ImageBackground style={styles.right_bgc} source={require('../../assets/pages/mine/right_bgc.png')}>
