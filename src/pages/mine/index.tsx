@@ -125,7 +125,7 @@ const Mine = () => {
         <View style={styles.list_box}>
           {listArr &&
             listArr.map((item) => (
-              <TouchableOpacity onPress={() => onPress(item)}>
+              <TouchableOpacity activeOpacity={1} onPress={() => onPress(item)}>
                 <View style={styles.box} key={item.id}>
                   <View style={styles.list_flex}>
                     <Image style={styles.img} source={item.icon} />
