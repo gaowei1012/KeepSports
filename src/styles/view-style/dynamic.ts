@@ -247,8 +247,8 @@ export const styles = StyleSheet.create({
     marginTop: px2dp(101),
   },
   establish_bg__content_photon: {
-    width: px2dp(120),
-    height: px2dp(120),
+    width: px2dp(79),
+    height: px2dp(79),
     justifyContent: 'center',
     alignItems: 'center'
   },
@@ -272,8 +272,8 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   p_content_container: {
-    marginLeft: px2dp(15),
-    marginTop: px2dp(20)
+    marginLeft: px2dp(10),
+    marginTop: px2dp(10)
   },
   // 个人界面
   center_container: {
@@ -422,5 +422,24 @@ export const styles = StyleSheet.create({
     height: px2dp(35),
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  upload_img_files_wrapper: {
+    flexDirection: 'row',
+    width: px2dp(365),
+    alignItems: 'center',
+    flexWrap: 'wrap',
+    alignSelf: 'center',
+  },
+  upload_img_files_content: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    // justifyContent: 'space-around',
+    flexWrap: 'wrap',
+  },
+  upload_img_files: {
+    width: px2dp(79),
+    height: px2dp(79),
+    marginLeft: px2dp(10),
+    marginTop: px2dp(10)
   }
 })
