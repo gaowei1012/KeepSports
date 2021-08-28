@@ -1,6 +1,12 @@
 const API = {
     base_url: '/',
-    login: '/login'
+    login: '/user/login',
+    register: '/user/register',
+    getUserInfo: '/user/getUserInfo',
+    checkPhone: '/user/checkPhone',
+    resetPwd: '/user/resetPassword',
+    delUser: '/user/deleteUser',
+    setting: '/index/setting'
 }
 
 
