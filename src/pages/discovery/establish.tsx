@@ -22,6 +22,7 @@ const Establish = (props: any) => {
         title={'我的运动团'}
         rightButton={
           <TouchableOpacity
+            activeOpacity={1}
             onPress={() => {
               NavigationUtil.goPage({}, 'CreateEstablish')
             }}
@@ -68,7 +69,7 @@ const Establish = (props: any) => {
                 <Text style={styles.content_km}>19km</Text>
               </View>
               <ImageBackground style={styles.content_gj} source={require('../../assets/pages/discovery/gj.png')}>
-                <Text style={styles.content_text}>高级</Text>
+                <Text style={styles.content_text}>初级</Text>
               </ImageBackground>
               <Text style={styles.content_desc}>坚持、信念、对运动有着永不放弃的执着....</Text>
             </View>
