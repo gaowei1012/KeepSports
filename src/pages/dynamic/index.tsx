@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, ScrollView, TouchableOpacity } from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/dynamic'
@@ -10,7 +11,7 @@ const dynamicData = [
   { title: '同城', type: 3 }
 ]
 
-const dylistData = [
+const _dylistData = [
   {
     title: '拯救地球李小姐',
     date: '57分钟前',
@@ -69,6 +70,20 @@ const dylistData = [
 
 const Dynamic = () => {
   const [type, setType] = useState<number>(1)
+  const [dylistData, setDylistData] = useState<any[]>(_dylistData)
+
+  useEffect(() => {
+    async function getStorage() {
+      const res: any = await AsyncStorage.getItem('dynamic')
+
+
+      const temp: any = [...dynamicData]
+      temp.push(temp)
+      //setDylistData(temp)
+      console.log(JSON.parse(res))
+    }
+    getStorage()
+  }, [])
 
   // 切换
   const switchTab = (type: number) => {
