@@ -9,5 +9,4 @@ const API = {
     setting: '/index/setting'
 }
 
-
 export default API
