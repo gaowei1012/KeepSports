@@ -39,7 +39,7 @@ const Establish = (props: any) => {
           </View>
           <TouchableOpacity onPress={() => {
             NavigationUtil.goPage({}, 'GroupInformation')
-          }} activeOpacity={.8}>
+          }} activeOpacity={1}>
             <ImageBackground source={require('../../assets/pages/discovery/cc.png')} style={styles.content_wrapper}>
               <Image style={styles.content_icon} source={require('../../assets/pages/discovery/ccc.png')} />
               <View style={styles.content_list_wrapper}>
