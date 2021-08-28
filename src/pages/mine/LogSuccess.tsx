@@ -15,7 +15,7 @@ const LogSuccess = (props: { visible: boolean; setLogSuccess: any }) => {
               <Text style={styles.l}>感谢您的使用与支持</Text>
             </View>
           </View>
-          <TouchableOpacity activeOpacity={.8} onPress={() => {
+          <TouchableOpacity activeOpacity={1} onPress={() => {
             setLogSuccess(false)
           }}>
             <ImageBackground style={styles.logout_btn_fl} source={require('../../assets/pages/mine/btn.png')}>

@@ -57,16 +57,16 @@ const CareerChoice = (props: any) => {
       <TopNavigationBar leftButton={GoBack(props, true)} title='选择职业' />
       <View style={styles.cc_wrapper}>
         {careerChoice.map((item) => (
-          <TouchableOpacity style={styles.cc_conter} onPress={() => selectTab(item.type)}>
+          <TouchableOpacity activeOpacity={1} style={styles.cc_conter} onPress={() => selectTab(item.type)}>
             <ImageBackground style={styles.cc_bg} source={type == item.type ? `${require('../../assets/pages/mine/c1.png')}` : `${require('../../assets/pages/mine/c2.png')}`}>
               <Text style={styles.cc_name}>{item.name}</Text>
             </ImageBackground>
           </TouchableOpacity>
         ))}
       </View>
-      <TouchableOpacity style={styles.cc_btn_wrapper}>
-          <Text style={styles.sele_text}>选择职业</Text>
-        </TouchableOpacity>
+      <TouchableOpacity activeOpacity={1} style={styles.cc_btn_wrapper}>
+        <Text style={styles.sele_text}>选择职业</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   )
 }

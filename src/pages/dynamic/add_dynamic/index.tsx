@@ -15,7 +15,7 @@ const AddDynamic = (props: any) => {
           <Text style={styles.textnum}>0/248</Text>
         </View>
       </View>
-      <TouchableOpacity style={styles.p_content_container} onPress={uploadFile}>
+      <TouchableOpacity activeOpacity={1} style={styles.p_content_container} onPress={uploadFile}>
         <ImageBackground source={require('../../../assets/pages/establish/pc.png')} style={styles.establish_bg__content_photon}>
           <Image style={styles.establish_bg__content_photon_icon} source={require('../../../assets/pages/establish/c.png')} />
         </ImageBackground>
@@ -24,7 +24,7 @@ const AddDynamic = (props: any) => {
         <Image style={styles.local_icon} source={require('../../../assets/pages/dynamic/l.png')} />
         <Text style={styles.local_text}>西安市</Text>
       </ImageBackground>
-      <TouchableOpacity style={styles.btn}>
+      <TouchableOpacity activeOpacity={1} style={styles.btn}>
         <Text style={styles.fabu_text}>发布</Text>
       </TouchableOpacity>
     </SafeAreaView>
