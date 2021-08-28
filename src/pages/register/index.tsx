@@ -59,12 +59,14 @@ const Register = (props: any) => {
             <Text>
               <Text style={styles.futk}>已仔细阅读</Text>
               <TouchableOpacity
+                activeOpacity={1}
                 onPress={() => {
                   NavigationUtil.goPage({}, 'UserAgreement')
                 }}>
                 <Text style={styles.fll}>《服务协议》</Text>
               </TouchableOpacity>
               <TouchableOpacity
+                activeOpacity={1}
                 onPress={() => {
                   NavigationUtil.goPage({}, 'PrivacyPolicy')
                 }}>
