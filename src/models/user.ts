@@ -16,10 +16,10 @@ class UserModel {
     return request(API.checkPhone, data, 'POST', '')
   }
   static resetPassword(data: IUserPostData, token: string) {
-    return request(API.checkPhone, data, 'POST', token)
+    return request(API.resetPwd, data, 'POST', token)
   }
   static deleteUser(data: IGetUserInfo, token: string) {
-    return request(API.checkPhone, data, 'POST', token)
+    return request(API.delUser, data, 'POST', token)
   }
 }
 
