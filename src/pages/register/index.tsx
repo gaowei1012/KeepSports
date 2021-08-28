@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { View, TextInput, Text, SafeAreaView, ImageBackground, TouchableOpacity, Image } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
+import { IUserPostData } from '../../interface/pages/user'
 import CheckBox from '@react-native-community/checkbox'
 import { styles } from '../../styles/view-style/login'
 import { GoBack } from '../../utils/goBack'
@@ -13,7 +14,7 @@ const Register = (props: any) => {
 
   // 注册
   const register_submit = () => {
-    const data: any = {
+    const data: IUserPostData = {
       username: user,
       password: pwd
     }

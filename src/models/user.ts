@@ -1,16 +1,12 @@
 import API from "../expand/api";
 import { request } from "../expand/request";
-
-interface IUserPostData {
-  username: string
-  password: string
-}
+import { IUserPostData } from '../interface/pages/user';
 
 class UserModel {
-  static login(data: any) {
+  static login(data: IUserPostData) {
     return request(API.login, data, 'POST', '')
   }
-  static register(data: any) {
+  static register(data: IUserPostData) {
     return request(API.register, data, 'POST', '')
   }
 }
