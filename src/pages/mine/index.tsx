@@ -5,12 +5,14 @@
  * @LastEditTime: 2021-08-24 17:11:14
  * @Description: 我的页面
  */
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, SafeAreaView, ImageBackground, Image, TouchableOpacity } from 'react-native'
-import { styles } from '../../styles/view-style/mine'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
-import LogOut from './LogOut'
+import { IGetUserInfo } from '../../interface/pages/user'
+import { styles } from '../../styles/view-style/mine'
+import UserModel from '../../models/user'
 import LogSuccess from './LogSuccess'
+import LogOut from './LogOut'
 
 const Mine = () => {
   const [log_out, setLogOut] = useState<boolean>(false)
@@ -52,6 +54,19 @@ const Mine = () => {
       icon: require('../../assets/pages/mine/loginout.png')
     }
   ]
+
+  useEffect(() => {
+    const data: IGetUserInfo = {
+      username: '执念'
+    }
+    UserModel.getUserInfo(data, '')
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, [])
 
   const onPress = (e: any) => {
     console.log(e)

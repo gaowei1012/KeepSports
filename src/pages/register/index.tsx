@@ -22,6 +22,7 @@ const Register = (props: any) => {
     UserModel.register(data)
       .then(res => {
         console.log(res)
+        // 登录成功，跳转个人中心页面
       })
       .catch(err => {
         console.log(err)
