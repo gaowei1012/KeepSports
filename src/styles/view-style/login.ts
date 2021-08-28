@@ -21,7 +21,9 @@ export const styles = StyleSheet.create({
     borderBottomColor: '#E8E8E8',
     borderBottomWidth: px2dp(1),
     paddingBottom: px2dp(16),
-    marginBottom: px2dp(28)
+    marginBottom: px2dp(28),
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   user_content_btn: {
     width: px2dp(345),
@@ -46,5 +48,17 @@ export const styles = StyleSheet.create({
   },
   fll: {
     color: '#FDAC53'
+  },
+  mine_pwd: {
+    width: px2dp(16),
+    height: px2dp(20),
+    marginRight: px2dp(11),
+    marginLeft: px2dp(2)
+  },
+  mine_phone: {
+   width: px2dp(16),
+   height: px2dp(20),
+   marginRight: px2dp(11),
+   marginLeft: px2dp(2)
   }
 })
