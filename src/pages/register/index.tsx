@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { View, TextInput, Text, SafeAreaView, ImageBackground, TouchableOpacity, Image } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
-import { IUserPostData } from '../../interface/pages/user'
+import { IUserPostData, IGetUserInfo } from '../../interface/pages/user'
 import CheckBox from '@react-native-community/checkbox'
 import { styles } from '../../styles/view-style/login'
 import { GoBack } from '../../utils/goBack'
@@ -19,10 +19,22 @@ const Register = (props: any) => {
       password: pwd
     }
 
-    UserModel.register(data)
+    // 检查手机号是否注册过
+    const checkData: IGetUserInfo = {
+      username: '127xxxxxx32'
+    }
+    UserModel.checkPhone(checkData)
       .then(res => {
-        console.log(res)
-        // 登录成功，跳转个人中心页面
+
+        // 手机号码没有注册，进行注册逻辑
+        UserModel.register(data)
+          .then(res => {
+            console.log(res)
+            // 登录成功，跳转个人中心页面
+          })
+          .catch(err => {
+            console.log(err)
+          })
       })
       .catch(err => {
         console.log(err)
