@@ -67,6 +67,7 @@ const Mine = () => {
             <View style={styles.information_box}>
               <View style={styles.flex}>
                 <TouchableOpacity
+                  activeOpacity={1}
                   onPress={() => {
                     NavigationUtil.goPage({}, 'MineInformation')
                   }}
@@ -92,9 +93,16 @@ const Mine = () => {
                 </View>
               </View>
 
-              <ImageBackground style={styles.right_bgc} source={require('../../assets/pages/mine/right_bgc.png')}>
-                <Image style={styles.right} source={require('../../assets/pages/mine/right.png')} />
-              </ImageBackground>
+              <TouchableOpacity 
+                activeOpacity={1}
+                onPress={() => {
+                  NavigationUtil.goPage({}, 'Login')
+                }}
+              >
+                <ImageBackground style={styles.right_bgc} source={require('../../assets/pages/mine/right_bgc.png')}>
+                  <Image style={styles.right} source={require('../../assets/pages/mine/right.png')} />
+                </ImageBackground>
+              </TouchableOpacity>
             </View>
 
             <View style={styles.sports_box}>
