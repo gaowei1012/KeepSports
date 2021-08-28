@@ -30,7 +30,7 @@ const selData = [
 
 const CreateEstablish = (props: any) => {
   const [type, setType] = useState<number>(1)
-  const [response, setResponse] = React.useState<any>(null)
+  const [response, setResponse] = React.useState<any[]>([])
   // upload file
   const uploadFile = () => {
     const options:any = {
@@ -39,19 +39,15 @@ const CreateEstablish = (props: any) => {
       storageOptions: {
         skipBackup: true,
         path: 'images'
-      }
+      },
+      includeBase64: true
       //noData: true, // 是否启用base64
     }
-    ImagePicker.launchImageLibrary(options, function(response) {
-      setResponse(response)
-      console.log('response', response)
+    ImagePicker.launchImageLibrary(options, function(value: any) {
+      const temp = [...response]
+      temp.push(value.assets[0])
+      setResponse(temp)
     })
-    // ImagePicker.showImagePicker(options, (response) => {
-    //   // 当不选择图片时
-    //   if (response.didCancel !== true) {
-    //     console.log('图片', response)
-    //   }
-    // })
   }
   return (
     <View>
