@@ -5,7 +5,7 @@ import { NavigationUtil } from '../../navigation/NavigationUtil'
 import CheckBox from '@react-native-community/checkbox'
 import { styles } from '../../styles/view-style/login'
 import { GoBack } from '../../utils/goBack'
-
+import UserModel from '../../models/user'
 
 const Login = (props: any) => {
   const [user, setName] = useState<string>('')
@@ -18,6 +18,13 @@ const Login = (props: any) => {
       password: pwd
     }
 
+    UserModel.register(data)
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
     console.log(data)
   }
 
@@ -38,11 +45,11 @@ const Login = (props: any) => {
           <View style={styles.user_content_container}>
             <View style={styles.user_content_flow}>
               <Image style={styles.mine_phone} source={require('../../assets/pages/mine/phone.png')} />
-              <TextInput placeholder='请输入账号' />
+              <TextInput onChangeText={handle_user} placeholder='请输入账号' />
             </View>
             <View style={styles.user_content_flow}>
               <Image style={styles.mine_pwd} source={require('../../assets/pages/mine/pwd.png')} />
-              <TextInput secureTextEntry={true} placeholder='请输入密码' />
+              <TextInput onChangeText={handle_pwd} secureTextEntry={true} placeholder='请输入密码' />
             </View>
             <TouchableOpacity style={styles.user_content_btn} onPress={login_submit}>
               <Text style={styles.user_content_btn_text}>登录</Text>

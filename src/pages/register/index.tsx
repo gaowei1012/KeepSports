@@ -5,6 +5,7 @@ import { NavigationUtil } from '../../navigation/NavigationUtil'
 import CheckBox from '@react-native-community/checkbox'
 import { styles } from '../../styles/view-style/login'
 import { GoBack } from '../../utils/goBack'
+import UserModel from '../../models/user'
 
 const Register = (props: any) => {
   const [user, setName] = useState<string>('')
@@ -17,7 +18,13 @@ const Register = (props: any) => {
       password: pwd
     }
 
-    console.log(data)
+    UserModel.register(data)
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   const handle_user = (e: any) => {
@@ -47,7 +54,7 @@ const Register = (props: any) => {
             </TouchableOpacity>
           </View>
           <View style={styles.user_tk_container}>
-            <CheckBox style={styles.checkbox} tintColors={{true: true}} tintColor='#ddd' disabled={false}/>
+            <CheckBox style={styles.checkbox} tintColors={{ true: true }} tintColor='#ddd' disabled={false} />
             <Text>
               <Text style={styles.futk}>已仔细阅读</Text>
               <TouchableOpacity

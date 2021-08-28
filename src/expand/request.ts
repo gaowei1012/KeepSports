@@ -7,16 +7,17 @@ interface IRequstBody {
     method: any
 }
 
-export function request(body: IRequstBody) {
+export function request(url: string, data: any, method: any, token: string) {
     return new Promise((resolve, reject) => {
         axios({
-            url: body.url,
+            url: url,
             baseURL: API.base_url,
             headers: {
                 'Content-Type': 'application/json',
-                token: body.token ? body.token : ''
+                token: token ? token : ''
             },
-            method: body.method,
+            data: data,
+            method: method,
         })
             .then(res => {
                 resolve(res)
