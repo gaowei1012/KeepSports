@@ -1,11 +1,3 @@
-/*
- * @Author: 执念
- * @Date: 2021-08-11 13:40:03
- * @LastEditTime: 2021-08-18 19:16:41
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /KeepSports/src/navigation/DynamicTabNavigator.tsx
- */
 import { connect } from 'react-redux'
 import { Image } from 'react-native'
 import React, { Component } from 'react'
@@ -94,7 +86,7 @@ class DynamicTabNavigator extends Component {
   }
 }
 
-const TabBarItem = (props: any) => <Image style={{ tintColor: props.tintColor, width: 25, height: 25 }} source={props.focused ? props.selectedImage : props.normalImage} />
+const TabBarItem = (props: any) => <Image resizeMode='contain' style={{ tintColor: props.tintColor, width: 25, height: 25 }} source={props.focused ? props.selectedImage : props.normalImage} />
 
 class TabBarComponent extends React.Component {
   constructor(props: any) {
