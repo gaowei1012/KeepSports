@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, ScrollView, TouchableOpacity } from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/dynamic'
 
@@ -76,11 +75,10 @@ const Dynamic = () => {
     async function getStorage() {
       const res: any = await AsyncStorage.getItem('dynamic')
 
-
       const temp: any = [...dynamicData]
       temp.push(temp)
       //setDylistData(temp)
-      console.log(JSON.parse(res))
+      console.log('res ==>>', JSON.parse(res))
     }
     getStorage()
   }, [])
@@ -94,12 +92,12 @@ const Dynamic = () => {
   const add_dynamic = () => {
     NavigationUtil.goPage({}, 'AddDynamic')
   }
-  
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.dynamic_top_switch}>
         {dynamicData.map((d) => (
-          <TouchableOpacity activeOpacity={1} style={styles.dynamic_top_title} onPress={() => switchTab(d.type)}>
+          <TouchableOpacity key={`i+${d}`} activeOpacity={1} style={styles.dynamic_top_title} onPress={() => switchTab(d.type)}>
             <Text style={[type == d.type ? styles.action_title : styles.no_action_title]}>{d.title}</Text>
             {type == d.type ? <Image style={styles.dynamic_top_icon} source={require('../../assets/pages/dynamic/sle.png')} /> : <View style={styles.no_dynamic_top_icon} />}
           </TouchableOpacity>
@@ -108,10 +106,10 @@ const Dynamic = () => {
       <ScrollView style={styles.dynamic_content_scrollview}>
         <View style={styles.dynamic_content_flow__wrapper}>
           {dylistData.map((list) => (
-            <View style={styles.dynamic_content_flow}>
+            <View key={`l-${list}`} style={styles.dynamic_content_flow}>
               <View style={styles.dy_top_avatar_wrapper}>
                 {/* 头像 */}
-                <TouchableOpacity onPress={() => {
+                <TouchableOpacity activeOpacity={1} onPress={() => {
                   NavigationUtil.goPage({}, 'DynamicCenter')
                 }} style={styles.dy_top_left_wrapper}>
                   <Image source={require('../../assets/pages/dynamic/a1.png')} style={styles.avatar} />
@@ -120,8 +118,8 @@ const Dynamic = () => {
                     <Text style={styles.avatar_desc}>{list.date}</Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity>
-                  <ImageBackground source={require('../../assets/pages/dynamic/gz.png')} style={styles.dy_top_right_wrapper}>
+                <TouchableOpacity activeOpacity={1}>
+                  <ImageBackground resizeMode='contain' source={require('../../assets/pages/dynamic/gz.png')} style={styles.dy_top_right_wrapper}>
                     <Image source={require('../../assets/pages/dynamic/add.png')} style={styles.dy_top_right_add} />
                     <Text style={styles.dy_top_right_add_text}>关注</Text>
                   </ImageBackground>
@@ -130,26 +128,26 @@ const Dynamic = () => {
               <View style={styles.dy_content_wrapper}>
                 <Text>{list.content}</Text>
                 <View style={styles.content_img_wrapper}>
-                  {list.icon_list.map(img => (
-                    <Image source={img.icon} style={styles.content_img}/>
+                  {list.icon_list.map((img: any) => (
+                    <Image key={`i-${img}`} source={img.icon} style={styles.content_img} />
                   ))}
                 </View>
-                <ImageBackground style={styles.dy_comment_new_icon} source={require('../../assets/pages/dynamic/pl.png')}>
+                <ImageBackground resizeMode='contain' style={styles.dy_comment_new_icon} source={require('../../assets/pages/dynamic/pl.png')}>
                   <Text style={styles.dy_comment_text}>最新评论</Text>
                 </ImageBackground>
-                <ImageBackground style={styles.dy_comment_wrapper} source={require("../../assets/pages/dynamic/commentbg.png")}>
+                <ImageBackground resizeMode='contain' style={styles.dy_comment_wrapper} source={require("../../assets/pages/dynamic/commentbg.png")}>
                   <Text style={styles.comment_name}>{list.comment_name}:</Text>
                   <Text style={styles.comment_content}>{list.comment}</Text>
                 </ImageBackground>
               </View>
               <View style={styles.dy_bottom_wrapper}>
                 <View style={styles.dy_flow}>
-                  <Image style={styles.btn_icon} source={require('../../assets/pages/dynamic/dz.png')}/>
+                  <Image style={styles.btn_icon} source={require('../../assets/pages/dynamic/dz.png')} />
                   <Text style={styles.btn_text}>12</Text>
                 </View>
-                <Image style={styles.dy_line} source={require('../../assets/pages/dynamic/line.png')}/>
+                <Image style={styles.dy_line} source={require('../../assets/pages/dynamic/line.png')} />
                 <View style={styles.dy_flow}>
-                  <Image style={styles.btn_icon} source={require('../../assets/pages/dynamic/ly.png')}/>
+                  <Image style={styles.btn_icon} source={require('../../assets/pages/dynamic/ly.png')} />
                   <Text style={styles.btn_text}>9</Text>
                 </View>
               </View>
