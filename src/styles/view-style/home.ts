@@ -6,7 +6,7 @@
  * @Description: In User Settings Edit
  * @FilePath: /KeepSports/src/styles/view-style/home.ts
  */
-import { StyleSheet } from 'react-native'
+import { Platform, StyleSheet } from 'react-native'
 import { px2dp, width, height } from '../../utils/px2dp'
 
 export const styles = StyleSheet.create({
@@ -80,7 +80,7 @@ export const styles = StyleSheet.create({
     // justifyContent: 'center'
   },
   home__sport_container: {
-    height: px2dp(185),
+    height: px2dp(200),
   },
   sport__flow: {
     marginTop: px2dp(37),
@@ -123,7 +123,7 @@ export const styles = StyleSheet.create({
     height: px2dp(38),
     width: px2dp(255),
     alignSelf: 'center',
-    marginTop: px2dp(20),
+    marginTop: Platform.OS == 'ios' ? px2dp(20) : px2dp(10),
     borderRadius: px2dp(18),
     justifyContent: 'center',
     flexDirection: 'row'
