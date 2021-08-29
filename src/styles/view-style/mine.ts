@@ -139,6 +139,7 @@ export const styles = StyleSheet.create({
   },
 
   toady_step_desc: {
+    width: '100%',
     fontSize: px2dp(12),
     fontWeight: '400',
     color: '#666'

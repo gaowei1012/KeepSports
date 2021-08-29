@@ -19,6 +19,7 @@ import LogOut from './LogOut'
 const Mine = () => {
   const [log_out, setLogOut] = useState<boolean>(false)
   const [log_success, setLogSuccess] = useState<boolean>(false)
+  const [username, setUserName] = useState<string>('')
   const listArr = [
     {
       id: 0,
@@ -59,37 +60,41 @@ const Mine = () => {
 
   useEffect(() => {
     DeviceEventEmitter.addListener('login', (event: any) => {
-      console.log('login event==>>', event);
+      if (event.success==true) {
+        setUserName(event.user)
+        _getUserInfo()
+      }
     })
 
     DeviceEventEmitter.addListener('register', (event: any) => {
       console.log('register event===>>', event)
+      if (event.success == true) {
+        _getUserInfo()
+      }
     })
   }, [])
 
-  useEffect(() => {
-    const data: IGetUserInfo = {
-      username: '执念'
-    }
-
-    async function _getUserInfo() {
-      const result: any = await AsyncStorage.getItem('UserInfo')
-      console.log('result ==>>>', result.token)
-      if (JSON.parse(result) != '{}') {
-        UserModel.getUserInfo(data, result.token)
-          .then((res: any) => {
-            if (res.data.code == 401) {
-              RootToast.showToast(res.data.msg)
-            }
-            console.log(res)
-          })
-          .catch(err => {
-            console.log(err)
-          })
+  // 获取用户信息
+  const _getUserInfo = async () => {
+    const result: any = await AsyncStorage.getItem('UserInfo')
+    if (JSON.parse(result) != '{}') {
+      const data: IGetUserInfo = {
+        username,
       }
+      const {token} = JSON.parse(result)
+      UserModel.getUserInfo(data, token)
+        .then((res: any) => {
+          if (res.data.code == 200) {
+            setUserName(res.data.data.username)
+          } else if (res.data.code == 401) {
+            RootToast.showToast(res.data.msg)
+          }
+        })
+        .catch(err => {
+          RootToast.showToast(JSON.stringify(err))
+        })
     }
-    _getUserInfo()
-  }, [])
+  }
 
   const onPress = (e: any) => {
     console.log(e)
@@ -115,7 +120,7 @@ const Mine = () => {
 
                 <View>
                   <View style={styles.nickname_box}>
-                    <Text style={styles.nickname}>打扰一下</Text>
+                    <Text style={styles.nickname}>{username}</Text>
                   </View>
                   <View style={styles.information}>
                     <View style={styles.gender}>

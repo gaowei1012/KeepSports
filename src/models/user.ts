@@ -10,6 +10,7 @@ class UserModel {
     return request(API.register, data, 'POST', '')
   }
   static getUserInfo(data: IGetUserInfo, token: string) {
+    console.log('token', token)
     return request(API.getUserInfo, data, 'POST', token)
   }
   static checkPhone(data: ICheckPhone) {

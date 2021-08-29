@@ -30,8 +30,8 @@ const Login = (props: any) => {
           // 登录成功，返回上一页
           setTimeout(() => {
             NavigationUtil.goBack(props.navigation)
-          }, 300)
-          DeviceEventEmitter.emit('login', { success: true })
+          }, 800)
+          DeviceEventEmitter.emit('login', { success: true, user: user })
         } else if (res.data.code == '204') {
           RootToast.showToast(res.data.msg)
         } else if (res.data.code == 205) {
