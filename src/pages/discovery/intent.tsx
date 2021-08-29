@@ -58,7 +58,6 @@ const Intent = (props: any) => {
             <Text>1</Text>
             <Text>公里</Text>
           </ImageBackground>
-          {console.log('date_obj==>>', date_obj)}
           <View style={styles.intent_list_content}>
             {edit ? <TextInput style={styles.textinput} onChangeText={handle_date_o} autoFocus maxLength={1} /> : <Text style={styles.date}>{date_obj.dateO}</Text>}
             {edit ? <TextInput style={styles.textinput} onChangeText={handle_date_t} maxLength={1} /> : <Text style={styles.date}>{date_obj.dateT}</Text>}
