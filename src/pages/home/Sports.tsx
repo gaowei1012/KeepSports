@@ -1,14 +1,11 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity, ScrollView } from 'react-native'
-import { CircularProgress, Dial } from '../../components/circle/index'
 import { AnimatedGaugeProgress } from 'react-native-simple-gauge'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/sports'
 import { GoBack } from '../../utils/goBack'
 import SportSuccess from './SportSuccess'
-import useInterval from '../../hooks/useInterval'
 
 const statusbar = {
   backgroundColor: '#DEF2EA',
@@ -57,14 +54,31 @@ const Sports = (props: any) => {
   const [start, setStart] = useState<boolean>(false)
   const [stop, setStop] = useState<boolean>(false)
   const [visible, setVisible] = useState<boolean>(false)
+  const [count, setCount] = useState<number>(0)
+  const [delay, setDelay] = useState<boolean>(false)
+
+  useEffect(() => {
+    let timer: any = null
+    if (delay) {
+      timer = setTimeout(() => {
+        const counter = count + 1
+        setCount(counter)
+      }, 1000)
+      return () => clearTimeout(timer)
+    } else {
+      clearTimeout(timer)
+    }
+  }, [count, delay])
 
   // 开始运行
   const sport_start = () => {
     setStart(true)
+    setDelay(true)
   }
   // 停止运动
   const sport_stop = () => {
     setStop(true)
+    setDelay(false)
   }
   // 目标
   const go_target = () => {
@@ -109,7 +123,7 @@ const Sports = (props: any) => {
               : ydDataStart.map((d) => (
                 <View style={styles.sports_c_w}>
                   <Image style={styles.sports_c_i} source={d.icon} />
-                  <Text style={styles.sports_c_sum}>{d.sum}</Text>
+                  {d.desc !== '用时' ? <Text style={styles.sports_c_sum}>{d.sum}</Text> : <Text style={styles.sports_c_sum}>{count}</Text>}
                   <Text style={styles.desc}>{d.desc}</Text>
                 </View>
               ))}
