@@ -33,7 +33,7 @@ const AddDynamic = (props: any) => {
   }
 
   // 保存动态
-  const submit_upload_file = async () => {
+  const submit_upload_file = () => {
     const data: any = {
       title: '测试',
       comment_name: '暂无',
@@ -42,11 +42,16 @@ const AddDynamic = (props: any) => {
       content: text,
       icon_list: [{icon: response[0].base64 }]
     }
-    await AsyncStorage.setItem('dynamic', JSON.stringify(data))
-    DeviceEventEmitter.emit('dynamic', { success: true })
+    save_stroage(data)
     setTimeout(() => {
+      DeviceEventEmitter.emit('dynamic', { success: true })
       NavigationUtil.goBack(props.navigation)
     }, 500)
+  }
+
+  // 保存数据
+  const save_stroage = async (data: any) => {
+    await AsyncStorage.setItem('dynamic', JSON.stringify(data))
   }
 
   return (
@@ -74,7 +79,7 @@ const AddDynamic = (props: any) => {
         <Image style={styles.local_icon} source={require('../../../assets/pages/dynamic/l.png')} />
         <Text style={styles.local_text}>西安市</Text>
       </ImageBackground>
-      <TouchableOpacity onPress={submit_upload_file} activeOpacity={1} style={styles.btn}>
+      <TouchableOpacity activeOpacity={1} onPress={submit_upload_file} style={styles.btn}>
         <Text style={styles.fabu_text}>发布</Text>
       </TouchableOpacity>
     </SafeAreaView>
