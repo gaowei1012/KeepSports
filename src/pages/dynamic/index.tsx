@@ -57,7 +57,6 @@ const Dynamic = () => {
     DeviceEventEmitter.addListener('dynamic', (event: any) => {
       if (event.success) {
         getStorage()
-        console.log('event', event)
       }
     })
   }, [])
@@ -84,7 +83,7 @@ const Dynamic = () => {
     <SafeAreaView style={styles.container}>
       <View style={styles.dynamic_top_switch}>
         {dynamicData.map((d) => (
-          <TouchableOpacity key={`i+${d}`} activeOpacity={1} style={styles.dynamic_top_title} onPress={() => switchTab(d.type)}>
+          <TouchableOpacity activeOpacity={1} style={styles.dynamic_top_title} onPress={() => switchTab(d.type)}>
             <Text style={[type == d.type ? styles.action_title : styles.no_action_title]}>{d.title}</Text>
             {type == d.type ? <Image style={styles.dynamic_top_icon} source={require('../../assets/pages/dynamic/sle.png')} /> : <View style={styles.no_dynamic_top_icon} />}
           </TouchableOpacity>
@@ -93,7 +92,7 @@ const Dynamic = () => {
       <ScrollView style={styles.dynamic_content_scrollview}>
         <View style={styles.dynamic_content_flow__wrapper}>
           {dylistData.map((list) => (
-            <View key={`l-${list}`} style={styles.dynamic_content_flow}>
+            <View style={styles.dynamic_content_flow}>
               <View style={styles.dy_top_avatar_wrapper}>
                 {/* 头像 */}
                 <TouchableOpacity activeOpacity={1} onPress={() => {
