@@ -3,12 +3,12 @@ import { View, TextInput, Text, SafeAreaView, ImageBackground, TouchableOpacity,
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { IUserPostData, IGetUserInfo } from '../../interface/pages/user'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import CheckBox from '@react-native-community/checkbox'
 import { styles } from '../../styles/view-style/login'
 import { GoBack } from '../../utils/goBack'
 import UserModel from '../../models/user'
-import API from '../../expand/api'
-import axios from 'axios'
+import RootToast from '../../utils/Toast'
 
 const Register = (props: any) => {
   const [user, setName] = useState<string>('')
@@ -26,30 +26,25 @@ const Register = (props: any) => {
       username: user
     }
 
-    axios.post(API.base_url + API.register, data)
-      .then(res => {
-        console.log('return response===>>>', res)
+    UserModel.register(data)
+      .then((res: any) => {
+        if (res.data.code == '200') {
+          RootToast.showToast('注册成功!')
+          save_stroage(res.data.data)
+          // NavigationUtil.goPage({}, 'Mine')
+        } else if (res.data.code == '204') {
+          RootToast.showToast(res.data.msg)
+        }
+        console.log(',,,', res.data);
       })
       .catch(err => {
         console.log(err)
       })
+  }
 
-    // UserModel.checkPhone(checkData)
-    //   .then(res => {
-    //     console.log('login run', res)
-    //     // 手机号码没有注册，进行注册逻辑
-    //     UserModel.register(data)
-    //       .then(res => {
-    //         console.log(res)
-    //         // 登录成功，跳转个人中心页面
-    //       })
-    //       .catch(err => {
-    //         console.log(err)
-    //       })
-    //   })
-    //   .catch(err => {
-    //     console.log(err)
-    //   })
+  // 保存token
+  const save_stroage = async (args: any) => {
+    await AsyncStorage.setItem('UserInfo', JSON.stringify(args))
   }
 
   const handle_user = (e: any) => {
@@ -68,11 +63,11 @@ const Register = (props: any) => {
           <View style={styles.user_content_container}>
             <View style={styles.user_content_flow}>
               <Image style={styles.mine_phone} source={require('../../assets/pages/mine/phone.png')} />
-              <TextInput style={{color: '#333'}} maxLength={11} keyboardType='numeric' onChangeText={handle_user} placeholderTextColor={Platform.OS == 'ios' ? '' : '#ddd'} placeholder='请输入账号' />
+              <TextInput style={{ color: '#333' }} maxLength={11} keyboardType='numeric' onChangeText={handle_user} placeholderTextColor={Platform.OS == 'ios' ? '' : '#ddd'} placeholder='请输入账号' />
             </View>
             <View style={styles.user_content_flow}>
               <Image style={styles.mine_pwd} source={require('../../assets/pages/mine/pwd.png')} />
-              <TextInput style={{color: '#333'}} onChangeText={handle_pwd} placeholderTextColor={Platform.OS == 'ios' ? '' : '#ddd'} secureTextEntry={true} placeholder='请输入密码' />
+              <TextInput style={{ color: '#333' }} onChangeText={handle_pwd} placeholderTextColor={Platform.OS == 'ios' ? '' : '#ddd'} secureTextEntry={true} placeholder='请输入密码' />
             </View>
             <TouchableOpacity activeOpacity={1} style={styles.user_content_btn} onPress={register_submit}>
               <Text style={styles.user_content_btn_text}>注册</Text>
