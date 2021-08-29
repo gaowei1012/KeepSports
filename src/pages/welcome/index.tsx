@@ -24,14 +24,14 @@ const Welcome = (props: { navigation: any }) => {
               请你务必审慎阅读，充分理解“服务协议”和“隐私政策”各条款，以帮助您了解维护自己隐私权的方式我们希望通过本《隐私条款》
               向您说明，在使用我们的服务时以及我们为您提供的访问、更新、控制和保护这些信息方式。你可阅读
               <TouchableOpacity
-                activeOpacity={0.8}
+                activeOpacity={1}
                 onPress={() => {
                   NavigationUtil.goPage({}, 'UserAgreement')
                 }}>
                 <Text>《服务协议》</Text>
               </TouchableOpacity>
               <TouchableOpacity
-                activeOpacity={0.8}
+                activeOpacity={1}
                 onPress={() => {
                   NavigationUtil.goPage({}, 'PrivacyPolicy')
                 }}>
@@ -41,6 +41,7 @@ const Welcome = (props: { navigation: any }) => {
             </Text>
             <View style={styles.logout_bottom}>
               <TouchableOpacity
+                activeOpacity={1}
                 onPress={() => {
                   setVisible(false)
                 }}
@@ -48,6 +49,7 @@ const Welcome = (props: { navigation: any }) => {
                 <Text style={styles.concel}>暂不使用</Text>
               </TouchableOpacity>
               <TouchableOpacity
+                activeOpacity={1}
                 onPress={() => {
                   NavigationUtil.restToHomePage({
                     navigation: props.navigation
