@@ -125,7 +125,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center'
   },
   dy_comment_text: {
-    marginTop: Platform.OS == 'ios' ? px2dp(7) : px2dp(3),
+    marginTop: Platform.OS == 'ios' ? px2dp(5) : px2dp(3),
     color: '#FC9422',
     fontSize: px2dp(13)
   },
