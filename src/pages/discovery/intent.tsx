@@ -6,14 +6,12 @@
  * @Description: In User Settings Edit
  * @FilePath: /KeepSports/src/pages/discovery/intent.tsx
  */
-import React from 'react'
-import { View, Text, SafeAreaView, Image, ImageBackground, ScrollView, TouchableOpacity, TextInput } from 'react-native'
-import * as ImagePicker from 'react-native-image-picker'
+import React, { useState } from 'react'
+import { View, Text, SafeAreaView, ImageBackground, ScrollView, TouchableOpacity, TextInput } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/intent'
 import { GoBack } from '../../utils/goBack'
-import { useState } from 'react'
 const statusbar = {
   backgroundColor: '#DEF2EA',
   barStyle: 'dark-content',
@@ -23,6 +21,34 @@ const statusbar = {
 
 const Intent = (props: any) => {
   const [edit, setEdit] = useState<boolean>(false)
+  const [date_obj, setDateObj] = useState<any>({ dateO: '1', dateT: '2', dateS: '0', dateF: '0' })
+
+  /**
+    * useState({}) 赋值为对象时，改变值UI不会渲染，
+    * 原因：对象改变值，值仍然指向之前的同一个内存地址。
+    * 解决方案：使用对象深拷贝 Object.assign({}, obj)，改变内存地址即可
+    */
+  // 处理赋值问题
+  const del_with = (key: string, value: any) => {
+    const _obj = Object.assign({}, date_obj)
+    _obj[key] = value
+    setDateObj(_obj)
+  }
+
+  // 获取输入值
+  const handle_date_o = (e: string) => {
+    del_with('dateO', e)
+  }
+  const handle_date_t = (e: string) => {
+    del_with('dateT', e)
+  }
+  const handle_date_s = (e: string) => {
+    del_with('dateS', e)
+  }
+  const handle_date_f = (e: string) => {
+    del_with('dateF', e)
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <TopNavigationBar leftButton={GoBack(props, true)} title={'我的目标'} statusBar={statusbar} />
@@ -32,12 +58,13 @@ const Intent = (props: any) => {
             <Text>1</Text>
             <Text>公里</Text>
           </ImageBackground>
+          {console.log('date_obj==>>', date_obj)}
           <View style={styles.intent_list_content}>
-            {edit ? <TextInput style={styles.textinput} autoFocus /> : <Text style={styles.date}>2</Text>}
-            {edit ? <TextInput style={styles.textinput} /> : <Text style={styles.date}>2</Text>}
+            {edit ? <TextInput style={styles.textinput} onChangeText={handle_date_o} autoFocus maxLength={1} /> : <Text style={styles.date}>{date_obj.dateO}</Text>}
+            {edit ? <TextInput style={styles.textinput} onChangeText={handle_date_t} maxLength={1} /> : <Text style={styles.date}>{date_obj.dateT}</Text>}
             <Text style={styles.date}>:</Text>
-            {edit ? <TextInput style={styles.textinput} /> : <Text style={styles.date}>0</Text>}
-            {edit ? <TextInput style={styles.textinput} /> : <Text style={styles.date}>0</Text>}
+            {edit ? <TextInput style={styles.textinput} onChangeText={handle_date_s} maxLength={1} /> : <Text style={styles.date}>{date_obj.dateO}</Text>}
+            {edit ? <TextInput style={styles.textinput} onChangeText={handle_date_f} maxLength={1} /> : <Text style={styles.date}>{date_obj.dateF}</Text>}
           </View>
           <TouchableOpacity
             activeOpacity={0.8}

@@ -41,7 +41,6 @@ const CreateEstablish = (props: any) => {
         path: 'images'
       },
       includeBase64: true
-      //noData: true, // 是否启用base64
     }
     ImagePicker.launchImageLibrary(options, function(value: any) {
       const temp = [...response]
