@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, TextInput, Text, SafeAreaView, ImageBackground, TouchableOpacity, Image } from 'react-native'
+import { View, TextInput, Platform, Text, SafeAreaView, ImageBackground, TouchableOpacity, Image } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { IUserPostData } from '../../interface/pages/user'
@@ -46,11 +46,11 @@ const Login = (props: any) => {
           <View style={styles.user_content_container}>
             <View style={styles.user_content_flow}>
               <Image style={styles.mine_phone} source={require('../../assets/pages/mine/phone.png')} />
-              <TextInput onChangeText={handle_user} placeholder='请输入账号' />
+              <TextInput style={{color: '#333'}} placeholderTextColor={Platform.OS == 'ios' ? '' : '#ddd'} onChangeText={handle_user} placeholder='请输入账号' />
             </View>
             <View style={styles.user_content_flow}>
               <Image style={styles.mine_pwd} source={require('../../assets/pages/mine/pwd.png')} />
-              <TextInput onChangeText={handle_pwd} secureTextEntry={true} placeholder='请输入密码' />
+              <TextInput style={{color: '#333'}} onChangeText={handle_pwd} placeholderTextColor={Platform.OS == 'ios' ? '' : '#ddd'} secureTextEntry={true} placeholder='请输入密码' />
             </View>
             <TouchableOpacity style={styles.user_content_btn} onPress={login_submit}>
               <Text style={styles.user_content_btn_text}>登录</Text>
