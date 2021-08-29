@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { Platform, StyleSheet } from 'react-native'
 import { px2dp, width, height } from '../../utils/px2dp'
 
 export const styles = StyleSheet.create({
@@ -249,7 +249,7 @@ export const styles = StyleSheet.create({
   },
   group_run_text: {
     color: '#FD4538',
-    fontSize: px2dp(14)
+    fontSize: Platform.OS == 'ios' ? px2dp(14) : px2dp(10)
   },
   group_t_tips_img: {
     width: px2dp(32),

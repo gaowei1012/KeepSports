@@ -31,7 +31,7 @@ const GroupInformation = (props: any) => {
               <View style={styles.group_top_content_wrapper}>
                 <Text style={styles.group_top_content}>
                   <Text style={styles.group_title}>团说明:</Text> 坚持、信念、对健身永不放弃的精神，是我们 团体每个人的信念和最初的坚定，每一
-                  <TouchableOpacity>
+                  <TouchableOpacity activeOpacity={1}>
                     <Text style={styles.group_more}>查看更多</Text>
                   </TouchableOpacity>
                 </Text>
@@ -49,7 +49,7 @@ const GroupInformation = (props: any) => {
                 <Image style={styles.group_t_tips_img} source={require('../../assets/pages/discovery/gr.png')} />
               </View>
             </ImageBackground>
-            <TouchableOpacity activeOpacity={.8} style={styles.exit_wrapper}>
+            <TouchableOpacity activeOpacity={1} style={styles.exit_wrapper}>
               <Text style={styles.exit_text}>退出该团</Text>
             </TouchableOpacity>
           </ScrollView>
