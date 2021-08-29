@@ -35,15 +35,12 @@ const Register = (props: any) => {
             NavigationUtil.goBack(props.navigation)
           }, 300)
           DeviceEventEmitter.emit('register', { success: true })
-          // NavigationUtil.goPage({}, 'Mine')
         } else if (res.data.code == '204') {
           RootToast.showToast(res.data.msg)
         }
-        console.log(',,,', res.data);
       })
       .catch(err => {
         RootToast.showToast(JSON.stringify(err))
-        console.log(err)
       })
   }
 

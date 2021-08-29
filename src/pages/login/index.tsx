@@ -23,7 +23,6 @@ const Login = (props: any) => {
 
     UserModel.login(data)
       .then((res: any) => {
-        console.log('login res', res)
         if (res.data.code == '200') {
           RootToast.showToast('登录成功!')
           save_stroage(res.data.data)
