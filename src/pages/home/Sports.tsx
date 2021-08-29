@@ -9,6 +9,7 @@ import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/sports'
 import { GoBack } from '../../utils/goBack'
 import SportSuccess from './SportSuccess'
+import useInterval from '../../hooks/useInterval'
 
 const statusbar = {
   backgroundColor: '#DEF2EA',
@@ -57,10 +58,25 @@ const Sports = (props: any) => {
   const [start, setStart] = useState<boolean>(false)
   const [stop, setStop] = useState<boolean>(false)
   const [visible, setVisible] = useState<boolean>(false)
+  const [fill, setFill] = useState<number>(0)
   // 开始运行
   const sport_start = () => {
     setStart(true)
-    // setVisible(true)
+    // setInterval(() => {
+    //   setFill(fill+1)
+    //   console.log(fill+1)
+    // }, 1000)
+    let interval: any;
+
+    interval = setInterval(() => {
+      console.log(fill)
+      setFill(fill+1)
+      console.log('setInterval')
+    }, 1000)
+    // } else {
+    //   clearInterval(interval)
+    // }
+    // return () => clearInterval(interval)
   }
   // 停止运动
   const sport_stop = () => {
@@ -80,6 +96,7 @@ const Sports = (props: any) => {
             <Text style={styles.sports_num}>{!start ? '00.00' : '10.26'}</Text>
             <Text style={styles.sports_gl}>公里</Text>
           </View>
+          {console.log('log==>>', fill)}
           {start ? (
             <AnimatedGaugeProgress
               style={{
@@ -88,7 +105,7 @@ const Sports = (props: any) => {
               }}
               size={290}
               width={10}
-              fill={40}
+              fill={fill}
               rotation={91}
               cropDegree={150}
               tintColor='#24C789'
