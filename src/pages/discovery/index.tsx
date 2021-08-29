@@ -25,8 +25,8 @@ const DiscoveryData: any = [
 
 const DiscoveryContentData: any = [
   { icon: require('../../assets/pages/discovery/js.png'), icon_b: require('../../assets/pages/discovery/mb.png'), desc: '山西健身体操团队' },
-  { icon: require('../../assets/pages/discovery/js.png'), icon_b: require('../../assets/pages/discovery/mb.png'), desc: '武汉健身体操团队' },
-  { icon: require('../../assets/pages/discovery/js.png'), icon_b: require('../../assets/pages/discovery/mb.png'), desc: '北京健身体操团队' },
+  { icon: require('../../assets/pages/discovery/wh.png'), icon_b: require('../../assets/pages/discovery/mb.png'), desc: '武汉健身体操团队' },
+  { icon: require('../../assets/pages/discovery/bj.png'), icon_b: require('../../assets/pages/discovery/mb.png'), desc: '北京健身体操团队' },
   { icon: require('../../assets/pages/discovery/js.png'), icon_b: require('../../assets/pages/discovery/mb.png'), desc: '山东健身体操团队' }
 ]
 
