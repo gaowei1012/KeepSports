@@ -94,7 +94,7 @@ const Dynamic = () => {
   const add_dynamic = () => {
     NavigationUtil.goPage({}, 'AddDynamic')
   }
-
+  
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.dynamic_top_switch}>
