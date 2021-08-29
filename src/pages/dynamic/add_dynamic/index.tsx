@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity, TextInput } from 'react-native'
+import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity, TextInput, DeviceEventEmitter } from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import TopNavigationBar from '../../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../../navigation/NavigationUtil'
@@ -32,17 +32,21 @@ const AddDynamic = (props: any) => {
     setText(e)
   }
 
+  // 保存动态
   const submit_upload_file = async () => {
     const data: any = {
       title: '测试',
-      comment_name: '',
+      comment_name: '暂无',
       date: '1分钟前',
-      comment: '',
+      comment: '暂无评论',
       content: text,
       icon_list: [{icon: response[0].base64 }]
     }
     await AsyncStorage.setItem('dynamic', JSON.stringify(data))
-    NavigationUtil.goPage({}, 'Dynamic')
+    DeviceEventEmitter.emit('dynamic', { success: true })
+    setTimeout(() => {
+      NavigationUtil.goBack(props.navigation)
+    }, 500)
   }
 
   return (
