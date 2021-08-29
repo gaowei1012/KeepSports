@@ -1,11 +1,3 @@
-/*
- * @Author: 执念
- * @Date: 2021-08-11 13:46:28
- * @LastEditTime: 2021-08-19 11:32:58
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /KeepSports/src/pages/home/index.tsx
- */
 import React from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity, ScrollView } from 'react-native'
 import { styles } from '../../styles/view-style/home'

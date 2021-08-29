@@ -1,11 +1,3 @@
-/*
- * @Author: 执念
- * @Date: 2021-08-13 21:35:50
- * @LastEditTime: 2021-08-18 21:42:04
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /KeepSports/src/styles/view-style/home.ts
- */
 import { Platform, StyleSheet } from 'react-native'
 import { px2dp, width, height } from '../../utils/px2dp'
 
