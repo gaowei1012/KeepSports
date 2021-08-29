@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, TextInput, Text, SafeAreaView, ImageBackground, TouchableOpacity, Image, Platform } from 'react-native'
+import { View, TextInput, Text, SafeAreaView, ImageBackground, TouchableOpacity, Image, Platform, DeviceEventEmitter } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { IUserPostData, IGetUserInfo } from '../../interface/pages/user'
@@ -31,6 +31,10 @@ const Register = (props: any) => {
         if (res.data.code == '200') {
           RootToast.showToast('注册成功!')
           save_stroage(res.data.data)
+          setTimeout(() => {
+            NavigationUtil.goBack(props.navigation)
+          }, 300)
+          DeviceEventEmitter.emit('register', { success: true })
           // NavigationUtil.goPage({}, 'Mine')
         } else if (res.data.code == '204') {
           RootToast.showToast(res.data.msg)
@@ -38,6 +42,7 @@ const Register = (props: any) => {
         console.log(',,,', res.data);
       })
       .catch(err => {
+        RootToast.showToast(JSON.stringify(err))
         console.log(err)
       })
   }

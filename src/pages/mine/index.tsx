@@ -6,10 +6,12 @@
  * @Description: 我的页面
  */
 import React, { useState, useEffect } from 'react'
-import { View, Text, SafeAreaView, ImageBackground, Image, TouchableOpacity } from 'react-native'
+import { View, Text, SafeAreaView, ImageBackground, Image, TouchableOpacity, DeviceEventEmitter } from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { IGetUserInfo } from '../../interface/pages/user'
 import { styles } from '../../styles/view-style/mine'
+import RootToast from '../../utils/Toast'
 import UserModel from '../../models/user'
 import LogSuccess from './LogSuccess'
 import LogOut from './LogOut'
@@ -56,16 +58,37 @@ const Mine = () => {
   ]
 
   useEffect(() => {
+    DeviceEventEmitter.addListener('login', (event: any) => {
+      console.log('login event==>>', event);
+    })
+
+    DeviceEventEmitter.addListener('register', (event: any) => {
+      console.log('register event===>>', event)
+    })
+  }, [])
+
+  useEffect(() => {
     const data: IGetUserInfo = {
       username: '执念'
     }
-    UserModel.getUserInfo(data, '')
-      .then(res => {
-        console.log(res)
-      })
-      .catch(err => {
-        console.log(err)
-      })
+
+    async function _getUserInfo() {
+      const result: any = await AsyncStorage.getItem('UserInfo')
+      console.log('result ==>>>', result.token)
+      if (JSON.parse(result) != '{}') {
+        UserModel.getUserInfo(data, result.token)
+          .then((res: any) => {
+            if (res.data.code == 401) {
+              RootToast.showToast(res.data.msg)
+            }
+            console.log(res)
+          })
+          .catch(err => {
+            console.log(err)
+          })
+      }
+    }
+    _getUserInfo()
   }, [])
 
   const onPress = (e: any) => {
@@ -108,10 +131,10 @@ const Mine = () => {
                 </View>
               </View>
 
-              <TouchableOpacity 
+              <TouchableOpacity
                 activeOpacity={1}
                 onPress={() => {
-                  NavigationUtil.goPage({}, 'Register')
+                  NavigationUtil.goPage({}, 'Login')
                 }}
               >
                 <ImageBackground style={styles.right_bgc} source={require('../../assets/pages/mine/right_bgc.png')}>

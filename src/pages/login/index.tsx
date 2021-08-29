@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, TextInput, Platform, Text, SafeAreaView, ImageBackground, TouchableOpacity, Image } from 'react-native'
+import { View, TextInput, Platform, Text, SafeAreaView, ImageBackground, TouchableOpacity, Image, DeviceEventEmitter } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { IUserPostData } from '../../interface/pages/user'
@@ -23,18 +23,25 @@ const Login = (props: any) => {
 
     UserModel.login(data)
       .then((res: any) => {
+        console.log('login res', res)
         if (res.data.code == '200') {
           RootToast.showToast('登录成功!')
           save_stroage(res.data.data)
-          // NavigationUtil.goPage({}, 'Mine')
+          // 登录成功，返回上一页
+          setTimeout(() => {
+            NavigationUtil.goBack(props.navigation)
+          }, 300)
+          DeviceEventEmitter.emit('login', { success: true })
         } else if (res.data.code == '204') {
+          RootToast.showToast(res.data.msg)
+        } else if (res.data.code == 205) {
           RootToast.showToast(res.data.msg)
         }
       })
       .catch(err => {
+        RootToast.showToast(JSON.stringify(err))
         console.log(err)
       })
-    console.log(data)
   }
 
   // 保存token
@@ -65,7 +72,7 @@ const Login = (props: any) => {
               <Image style={styles.mine_pwd} source={require('../../assets/pages/mine/pwd.png')} />
               <TextInput style={{ color: '#333' }} onChangeText={handle_pwd} placeholderTextColor={Platform.OS == 'ios' ? '' : '#ddd'} secureTextEntry={true} placeholder='请输入密码' />
             </View>
-            <TouchableOpacity style={styles.user_content_btn} onPress={login_submit}>
+            <TouchableOpacity activeOpacity={1} style={styles.user_content_btn} onPress={login_submit}>
               <Text style={styles.user_content_btn_text}>登录</Text>
             </TouchableOpacity>
           </View>
