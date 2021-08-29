@@ -1,5 +1,5 @@
 const API = {
-    base_url: '/',
+    base_url: 'http://127.0.0.1:3000', // 本地代理
     login: '/user/login',
     register: '/user/register',
     getUserInfo: '/user/getUserInfo',

@@ -1,13 +1,9 @@
 import axios from 'axios'
 import API from './api'
 
-interface IRequstBody {
-    url: string
-    token?: string
-    method: any
-}
-
 export function request(url: string, data: any, method: any, token: string) {
+    console.log('base url', API.base_url);
+    
     return new Promise((resolve, reject) => {
         axios({
             url: url,
