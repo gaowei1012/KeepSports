@@ -1,9 +1,8 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity, ScrollView } from 'react-native'
 import { CircularProgress, Dial } from '../../components/circle/index'
-// import PercentageCircle from '../../components/cricle'
-import { AnimatedGaugeProgress, GaugeProgress } from 'react-native-simple-gauge'
+import { AnimatedGaugeProgress } from 'react-native-simple-gauge'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/sports'
@@ -39,12 +38,12 @@ const ydData = [
 const ydDataStart = [
   {
     desc: '平均配速',
-    sum: '19‘20‘‘',
+    sum: '10‘00‘‘',
     icon: require('../../assets/pages/sports/time.png')
   },
   {
     desc: '用时',
-    sum: '16:20',
+    sum: '00:01',
     icon: require('../../assets/pages/sports/pb.png')
   },
   {
@@ -58,25 +57,10 @@ const Sports = (props: any) => {
   const [start, setStart] = useState<boolean>(false)
   const [stop, setStop] = useState<boolean>(false)
   const [visible, setVisible] = useState<boolean>(false)
-  const [fill, setFill] = useState<number>(0)
+
   // 开始运行
   const sport_start = () => {
     setStart(true)
-    // setInterval(() => {
-    //   setFill(fill+1)
-    //   console.log(fill+1)
-    // }, 1000)
-    let interval: any;
-
-    interval = setInterval(() => {
-      console.log(fill)
-      setFill(fill+1)
-      console.log('setInterval')
-    }, 1000)
-    // } else {
-    //   clearInterval(interval)
-    // }
-    // return () => clearInterval(interval)
   }
   // 停止运动
   const sport_stop = () => {
@@ -91,12 +75,10 @@ const Sports = (props: any) => {
       <TopNavigationBar title={`${start ? '跑步进行中' : ''}`} statusBar={statusbar} leftButton={GoBack(props, true)} style={{ backgroundColor: '#DEF2EA' }} />
       <ScrollView>
         <View style={styles.sports_container}>
-          {/* <CircularProgress width={300} progress={(270 / 360) * 100} progressIndicator='circle' strokeColor={{ background: '#F7F7F9', foreground: ['#FF8F2C', '#F84238'] }}> */}
           <View style={styles.sports_num_wrapper}>
             <Text style={styles.sports_num}>{!start ? '00.00' : '10.26'}</Text>
             <Text style={styles.sports_gl}>公里</Text>
           </View>
-          {console.log('log==>>', fill)}
           {start ? (
             <AnimatedGaugeProgress
               style={{
@@ -105,7 +87,7 @@ const Sports = (props: any) => {
               }}
               size={290}
               width={10}
-              fill={fill}
+              fill={1}
               rotation={91}
               cropDegree={150}
               tintColor='#24C789'
@@ -156,7 +138,6 @@ const Sports = (props: any) => {
                 )}
               </>
             ) : null}
-
             {stop ? (
               <View style={styles.keep_start_flow}>
                 <TouchableOpacity
