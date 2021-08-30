@@ -13,6 +13,7 @@ import RootToast from '../../utils/Toast'
 const Login = (props: any) => {
   const [user, setName] = useState<string>('')
   const [pwd, setPwd] = useState<string>('')
+  const [disabled, setDisabled] = useState<boolean>(true)
 
   // 登录
   const login_submit = () => {
@@ -56,6 +57,10 @@ const Login = (props: any) => {
     setPwd(e)
   }
 
+  const hadle_checkbox = (e: any) => {
+    setDisabled(e)
+  }
+
 
   return (
     <View style={styles.container}>
@@ -71,12 +76,12 @@ const Login = (props: any) => {
               <Image style={styles.mine_pwd} source={require('../../assets/pages/mine/pwd.png')} />
               <TextInput style={{ color: '#333' }} onChangeText={handle_pwd} placeholderTextColor={Platform.OS == 'ios' ? '' : '#ddd'} secureTextEntry={true} placeholder='请输入密码' />
             </View>
-            <TouchableOpacity activeOpacity={1} style={styles.user_content_btn} onPress={login_submit}>
+            <TouchableOpacity disabled={disabled} activeOpacity={1} style={[!disabled ? styles.no_user_content_btn : styles.user_content_btn]} onPress={login_submit}>
               <Text style={styles.user_content_btn_text}>登录</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.user_tk_container}>
-            <CheckBox style={styles.checkbox} tintColors={{ true: true }} tintColor='#ddd' disabled={false} />
+            <CheckBox style={styles.checkbox} onValueChange={hadle_checkbox} tintColors={{ true: true }} tintColor='#ddd' />
             <Text>
               <Text style={styles.futk}>已仔细阅读</Text>
               <TouchableOpacity

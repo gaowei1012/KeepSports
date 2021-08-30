@@ -33,6 +33,14 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
+  no_user_content_btn: {
+    width: px2dp(345),
+    height: px2dp(44),
+    borderRadius: px2dp(22),
+    backgroundColor: '#ddd',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
   user_content_btn_text: {
     fontSize: px2dp(17),
     color: '#fff',

@@ -13,7 +13,7 @@ import RootToast from '../../utils/Toast'
 const Register = (props: any) => {
   const [user, setName] = useState<string>('')
   const [pwd, setPwd] = useState<string>('')
-
+  const [disabled, setDisabled] = useState<boolean>(true)
   // 注册
   const register_submit = () => {
     const data: IUserPostData = {
@@ -57,6 +57,11 @@ const Register = (props: any) => {
     setPwd(e)
   }
 
+  const hadle_checkbox = (e: any) => {
+    setDisabled(e)
+  }
+
+
   return (
     <View style={styles.container}>
       <SafeAreaView>
@@ -71,12 +76,12 @@ const Register = (props: any) => {
               <Image style={styles.mine_pwd} source={require('../../assets/pages/mine/pwd.png')} />
               <TextInput style={{ color: '#333' }} onChangeText={handle_pwd} placeholderTextColor={Platform.OS == 'ios' ? '' : '#ddd'} secureTextEntry={true} placeholder='请输入密码' />
             </View>
-            <TouchableOpacity activeOpacity={1} style={styles.user_content_btn} onPress={register_submit}>
+            <TouchableOpacity activeOpacity={1} disabled={disabled} style={[!disabled ? styles.no_user_content_btn : styles.user_content_btn]} onPress={register_submit}>
               <Text style={styles.user_content_btn_text}>注册</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.user_tk_container}>
-            <CheckBox style={styles.checkbox} tintColors={{ true: true }} tintColor='#ddd' />
+            <CheckBox style={styles.checkbox} tintColors={{ true: true }} onValueChange={hadle_checkbox} tintColor='#ddd' />
             <Text>
               <Text style={styles.futk}>已仔细阅读</Text>
               <TouchableOpacity
