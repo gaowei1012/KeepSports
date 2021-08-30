@@ -1,12 +1,16 @@
 import React from 'react'
-import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity, ScrollView } from 'react-native'
+import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity, ScrollView, DeviceEventEmitter } from 'react-native'
 import { styles } from '../../styles/view-style/home'
 import { Bottom } from '../../components/index'
 import { px2dp } from '../../utils/px2dp'
 import Swiper from 'react-native-swiper'
 import { LineChart } from '../../containers/charts'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
-import { useState } from 'react'
+import AsyncStorage from '@react-native-community/async-storage'
+import { useState, useEffect } from 'react'
+import { IGetUserInfo } from '../../interface/pages/user'
+import UserModel from '../../models/user'
+import RootToast from '../../utils/Toast'
 
 const bannerData: any[] = [
   { icon: require('../../assets/pages/home/banner.png'), id: 1 },
@@ -63,11 +67,49 @@ const dateData = [
 const Home = () => {
   const [top_menu, setTableMenu] = useState<number>(1)
   const [date, setDate] = useState<number>(1)
+  const [username, setUserName] = useState<string>('暂未登录')
+
+  useEffect(() => {
+    DeviceEventEmitter.addListener('login', (event: any) => {
+      if (event.success == true) {
+        setUserName(event.user)
+        _getUserInfo()
+      }
+    })
+  }, [])
+
+  // 获取用户信息
+  const _getUserInfo = async () => {
+    const result: any = await AsyncStorage.getItem('UserInfo')
+    if (JSON.parse(result) != '{}') {
+      const data: IGetUserInfo = {
+        username,
+      }
+      const { token } = JSON.parse(result)
+      UserModel.getUserInfo(data, token)
+        .then((res: any) => {
+          if (res.data.code == 200) {
+            setUserName(res.data.data.username)
+          } else if (res.data.code == 401) {
+            RootToast.showToast(res.data.msg)
+          }
+        })
+        .catch(err => {
+          RootToast.showToast(JSON.stringify(err))
+        })
+    }
+  }
+
   const switchTabs = (name: string, type: number) => {
     setTableMenu(type)
   }
   const switchDateTabs = (date: number) => {
     setDate(date)
+  }
+  const hanlde_userinfo = () => {
+    if (username == '暂未登录') {
+      NavigationUtil.goPage({}, 'Login')
+    }
   }
 
   return (
@@ -75,22 +117,24 @@ const Home = () => {
       <ScrollView>
         <ImageBackground style={styles.home_bg__container} source={require('../../assets/pages/home/home_bg.png')}>
           <SafeAreaView>
-            <View style={styles.home_title__container}>
-              <Image style={styles.title__avatar} source={require('../../assets/pages/home/avatar.png')} />
-              <View style={styles.title__flow}>
-                <Text style={styles.title__name}>遗失的美好</Text>
-                <Text style={styles.title__desc}>北京运动达人对</Text>
+            <TouchableOpacity activeOpacity={1} onPress={hanlde_userinfo}>
+              <View style={styles.home_title__container}>
+                <Image style={styles.title__avatar} source={require('../../assets/pages/home/avatar.png')} />
+                <View style={styles.title__flow}>
+                  <Text style={styles.title__name}>{username}</Text>
+                  {username == '暂未登录' ? <Text style={styles.title__desc}>暂无排名</Text> : <Text style={styles.title__desc}>北京运动达人</Text>}
+                </View>
+                {username !== '暂未登录' ? <Bottom
+                  activeOpacity={1}
+                  text='高级'
+                  propStyles={{
+                    marginLeft: px2dp(21),
+                    marginTop: px2dp(-14)
+                  }}
+                  onPress={() => { }}
+                /> : null}
               </View>
-              <Bottom
-                activeOpacity={1}
-                text='高级'
-                propStyles={{
-                  marginLeft: px2dp(21),
-                  marginTop: px2dp(-14)
-                }}
-                onPress={() => { }}
-              />
-            </View>
+            </TouchableOpacity>
           </SafeAreaView>
         </ImageBackground>
         <View style={styles.swipple__flow}>
