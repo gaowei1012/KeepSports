@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { View, TextInput, Platform, Text, SafeAreaView, ImageBackground, TouchableOpacity, Image, DeviceEventEmitter } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
-import { IUserPostData } from '../../interface/pages/user'
+import { IUserPostData, ICheckPhone } from '../../interface/pages/user'
 import CheckBox from '@react-native-community/checkbox'
 import AsyncStorage from '@react-native-community/async-storage'
 import { styles } from '../../styles/view-style/login'
@@ -21,6 +21,18 @@ const Login = (props: any) => {
       username: user,
       password: pwd
     }
+
+    // const checkData: ICheckPhone = {
+    //   username: user,
+    // }
+
+    // UserModel.checkPhone(checkData)
+    //   .then(res => {
+    //     console.log('check', res)
+    //   })
+    //   .catch(err => {
+    //     console.log(err)
+    //   })
 
     UserModel.login(data)
       .then((res: any) => {
