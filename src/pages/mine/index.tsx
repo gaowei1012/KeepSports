@@ -19,7 +19,7 @@ import LogOut from './LogOut'
 const Mine = () => {
   const [log_out, setLogOut] = useState<boolean>(false)
   const [log_success, setLogSuccess] = useState<boolean>(false)
-  const [username, setUserName] = useState<string>('')
+  const [username, setUserName] = useState<string>('暂未登录')
   const listArr = [
     {
       id: 0,
