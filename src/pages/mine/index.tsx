@@ -59,6 +59,16 @@ const Mine = () => {
   ]
 
   useEffect(() => {
+    async function getStorage() {
+      const result: any = await AsyncStorage.getItem('UserInfo')
+      if (JSON.parse(result) != '{}') {
+        _getUserInfo()
+      }
+    }
+    getStorage()
+  }, [])
+
+  useEffect(() => {
     DeviceEventEmitter.addListener('login', (event: any) => {
       if (event.success==true) {
         setUserName(event.user)
