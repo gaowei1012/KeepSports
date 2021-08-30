@@ -13,7 +13,7 @@ import RootToast from '../../utils/Toast'
 const Register = (props: any) => {
   const [user, setName] = useState<string>('')
   const [pwd, setPwd] = useState<string>('')
-  const [disabled, setDisabled] = useState<boolean>(true)
+  const [disabled, setDisabled] = useState<boolean>(false)
   // 注册
   const register_submit = () => {
     const data: IUserPostData = {
@@ -76,7 +76,7 @@ const Register = (props: any) => {
               <Image style={styles.mine_pwd} source={require('../../assets/pages/mine/pwd.png')} />
               <TextInput style={{ color: '#333' }} onChangeText={handle_pwd} placeholderTextColor={Platform.OS == 'ios' ? '' : '#ddd'} secureTextEntry={true} placeholder='请输入密码' />
             </View>
-            <TouchableOpacity activeOpacity={1} disabled={disabled} style={[!disabled ? styles.no_user_content_btn : styles.user_content_btn]} onPress={register_submit}>
+            <TouchableOpacity activeOpacity={1} disabled={!disabled} style={[!disabled ? styles.no_user_content_btn : styles.user_content_btn]} onPress={register_submit}>
               <Text style={styles.user_content_btn_text}>注册</Text>
             </TouchableOpacity>
           </View>

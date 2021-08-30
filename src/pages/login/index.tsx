@@ -13,7 +13,7 @@ import RootToast from '../../utils/Toast'
 const Login = (props: any) => {
   const [user, setName] = useState<string>('')
   const [pwd, setPwd] = useState<string>('')
-  const [disabled, setDisabled] = useState<boolean>(true)
+  const [disabled, setDisabled] = useState<boolean>(false)
 
   // 登录
   const login_submit = () => {
@@ -58,6 +58,7 @@ const Login = (props: any) => {
   }
 
   const hadle_checkbox = (e: any) => {
+    console.log('checkbox', e)
     setDisabled(e)
   }
 
@@ -76,7 +77,7 @@ const Login = (props: any) => {
               <Image style={styles.mine_pwd} source={require('../../assets/pages/mine/pwd.png')} />
               <TextInput style={{ color: '#333' }} onChangeText={handle_pwd} placeholderTextColor={Platform.OS == 'ios' ? '' : '#ddd'} secureTextEntry={true} placeholder='请输入密码' />
             </View>
-            <TouchableOpacity disabled={disabled} activeOpacity={1} style={[!disabled ? styles.no_user_content_btn : styles.user_content_btn]} onPress={login_submit}>
+            <TouchableOpacity disabled={!disabled} activeOpacity={1} style={[!disabled ? styles.no_user_content_btn : styles.user_content_btn]} onPress={login_submit}>
               <Text style={styles.user_content_btn_text}>登录</Text>
             </TouchableOpacity>
           </View>
