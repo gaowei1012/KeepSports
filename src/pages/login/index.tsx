@@ -4,7 +4,7 @@ import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { IUserPostData } from '../../interface/pages/user'
 import CheckBox from '@react-native-community/checkbox'
-import AsyncStorage from '@react-native-async-storage/async-storage'
+import AsyncStorage from '@react-native-community/async-storage'
 import { styles } from '../../styles/view-style/login'
 import { GoBack } from '../../utils/goBack'
 import UserModel from '../../models/user'
@@ -30,7 +30,7 @@ const Login = (props: any) => {
           setTimeout(() => {
             NavigationUtil.goBack(props.navigation)
           }, 800)
-          DeviceEventEmitter.emit('login', { success: true, user: user })
+          DeviceEventEmitter.emit('login', { success: true, user: user, data: JSON.stringify(res.data.data) })
         } else if (res.data.code == '204') {
           RootToast.showToast(res.data.msg)
         } else if (res.data.code == 205) {

@@ -29,14 +29,12 @@ export const styles = StyleSheet.create({
     marginLeft: px2dp(10)
   },
   title__name: {
-    // fontFamily: 'SourceHanSansCN-Regular',
     fontSize: px2dp(14),
     marginBottom: px2dp(6),
     fontWeight: '600',
     color: '#fff'
   },
   title__desc: {
-    // fontFamily: 'SourceHanSansCN-Regular',
     fontSize: px2dp(10),
     fontWeight: '500',
     color: '#fff'
@@ -46,9 +44,6 @@ export const styles = StyleSheet.create({
     height: px2dp(153),
     alignSelf: 'center',
     marginTop: px2dp(-100),
-    // overflow: 'hidden',
-    // position: 'relative',
-    // top: -100,
     borderRadius: px2dp(6)
   },
   swipple_image: {
@@ -68,8 +63,7 @@ export const styles = StyleSheet.create({
   home__container_tab_flow: {
     flexDirection: 'column',
     alignItems: 'center',
-    marginRight: px2dp(31),
-    // justifyContent: 'center'
+    marginRight: px2dp(31)
   },
   home__sport_container: {
     height: px2dp(200),

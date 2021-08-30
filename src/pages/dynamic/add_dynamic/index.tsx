@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity, TextInput, DeviceEventEmitter } from 'react-native'
-import AsyncStorage from '@react-native-async-storage/async-storage'
+import AsyncStorage from '@react-native-community/async-storage'
 import TopNavigationBar from '../../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../../navigation/NavigationUtil'
 import { styles } from '../../../styles/view-style/dynamic'
