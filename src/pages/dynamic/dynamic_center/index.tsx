@@ -8,7 +8,6 @@ const cData = [{ icon: require('../../../assets/pages/dynamic/c1.png') }, { icon
 
 const DynamicCenter = (props: any) => {
   const { data } = props.navigation.state.params
-  console.log('data', data)
   return (
     <ImageBackground style={styles.center_container} source={require('../../../assets/pages/dynamic/centerw.png')}>
       <SafeAreaView style={styles.scrollview}>

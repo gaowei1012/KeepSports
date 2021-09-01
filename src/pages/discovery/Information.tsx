@@ -23,7 +23,7 @@ const GroupInformation = (props: any) => {
           <ScrollView>
             <ImageBackground style={styles.information_top_container} source={require('../../assets/pages/discovery/group.png')}>
               <View style={styles.information_avatar_wrapper}>
-                <Image style={styles.information_avatar_img} source={data.icon} />
+                <Image style={styles.information_avatar_img} source={{uri: `data:image/png;base64,${data.icon}`}} />
                 <View style={styles.information_avatar_name}>
                   <Text style={styles.information_t_t}>{data.title}</Text>
                   <Text style={styles.information_t_h}>团号：{data.bh}</Text>

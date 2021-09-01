@@ -1,4 +1,4 @@
-import { Platform, StyleSheet } from 'react-native'
+import { Platform, StyleSheet, PixelRatio } from 'react-native'
 import { px2dp, width, height } from '../../utils/px2dp'
 
 export const styles = StyleSheet.create({
@@ -10,25 +10,89 @@ export const styles = StyleSheet.create({
     width: width,
     height: px2dp(247)
   },
-  establish_bg__top: {
+  establish_bg__top_wrapper: {
     width: px2dp(346),
     height: px2dp(112),
-    alignSelf: 'center',
+    alignSelf: 'center'
+  },
+  establish_bg__top: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     marginTop: px2dp(29)
+  },
+  establish_line_left: {
+    width: px2dp(80),
+    height: 2,
+    position: 'absolute',
+    top: '38%',
+    left: '22%',
+  },
+  establish_line_right: {
+    width: px2dp(80),
+    height: 2,
+    position: 'absolute',
+    top: '38%',
+    left: '56%',
+  },
+  xz_container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: px2dp(345),
+    justifyContent: 'space-between',
+    alignSelf: 'center',
+    marginTop: px2dp(10),
+    marginBottom: px2dp(160)
+  },
+  xz_r_text: {
+    color: '#999'
+  },
+  t_s_w: {
+    width: px2dp(345),
+    alignSelf: 'center'
+  },
+  textinput: {
+    color: '#333',
+    width: px2dp(345),
+    height: px2dp(45),
+    marginTop: px2dp(18),
+    backgroundColor: '#F9F9F9',
+    paddingHorizontal: px2dp(10)
+  },
+  textinput_l: {
+    color: '#333',
+    height: px2dp(118),
+    width: px2dp(345),
+    marginTop: px2dp(18), 
+    backgroundColor: '#F9F9F9',
+    paddingHorizontal: px2dp(10)
+  },
+  text_num: {
+    alignSelf: 'flex-end',
+    marginTop: px2dp(-23),
+    marginRight: px2dp(8),
+    color: '#999',
+  },
+  xz_arrow_w: {
+    alignItems: 'center',
+    flexDirection: 'row'
+  },
+  arrow: {
+    width: px2dp(7),
+    height: px2dp(12),
+    marginLeft: px2dp(3)
   },
   establish_bg__content: {
     width: width,
     height: px2dp(454),
     alignItems: 'center',
-    marginTop: px2dp(101)
+    // marginTop: px2dp(101)
   },
   establish_bg__content_photon: {
     width: px2dp(120),
     height: px2dp(120),
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: px2dp(101)
   },
   establish_bg__content_photon_icon: {
     width: px2dp(39),
@@ -56,7 +120,15 @@ export const styles = StyleSheet.create({
   },
   avatar_icon: {
     width: px2dp(27),
-    height: px2dp(27)
+    height: px2dp(27),
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  bz: {
+    color: '#fff',
+  },
+  ac_bz: {
+    color: '#333'
   },
   avatar_text: {
     color: '#333333',
@@ -115,8 +187,9 @@ export const styles = StyleSheet.create({
     marginLeft: px2dp(10)
   },
   content_list_top: {
+    width: px2dp(220),
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   content_icon: {
     width: px2dp(82),
@@ -168,7 +241,7 @@ export const styles = StyleSheet.create({
   information_avatar_img: {
     width: px2dp(55),
     height: px2dp(55),
-    borderRadius: px2dp(55/2)
+    borderRadius: px2dp(55 / 2)
   },
   information_avatar_name: {
     flexDirection: 'column',
@@ -198,9 +271,9 @@ export const styles = StyleSheet.create({
     paddingLeft: px2dp(8)
   },
   information_t_t: {
-   color: '#333333',
-   fontSize: px2dp(16),
-  fontWeight: 'normal'
+    color: '#333333',
+    fontSize: px2dp(16),
+    fontWeight: 'normal'
   },
   information_t_h: {
     color: '#666666',
