@@ -21,32 +21,39 @@ const statusbar = {
 
 const Intent = (props: any) => {
   const [edit, setEdit] = useState<boolean>(false)
-  const [date_obj, setDateObj] = useState<any>({ dateO: '1', dateT: '2', dateS: '0', dateF: '0' })
-
+  // const [date_obj, setDateObj] = useState<any>({ dateO: '1', dateT: '2', dateS: '0', dateF: '0' })
+  const [date_o, setDateO] = useState<string>('1')
+  const [date_t, setDateT] = useState<string>('2')
+  const [date_s, setDateS] = useState<string>('0')
+  const [date_f, setDateF] = useState<string>('2')
   /**
     * useState({}) 赋值为对象时，改变值UI不会渲染，
     * 原因：对象改变值，值仍然指向之前的同一个内存地址。
     * 解决方案：使用对象深拷贝 Object.assign({}, obj)，改变内存地址即可
     */
   // 处理赋值问题
-  const del_with = (key: string, value: any) => {
-    const _obj = Object.assign({}, date_obj)
-    _obj[key] = value
-    setDateObj(_obj)
-  }
+  // const del_with = (key: string, value: any) => {
+  //   const _obj = Object.assign({}, date_obj)
+  //   _obj[key] = value
+  //   // setDateObj(_obj)
+  // }
 
   // 获取输入值
   const handle_date_o = (e: string) => {
-    del_with('dateO', e)
+    setDateO(e)
+    // del_with('dateO', e)
   }
   const handle_date_t = (e: string) => {
-    del_with('dateT', e)
+    setDateT(e)
+    // del_with('dateT', e)
   }
   const handle_date_s = (e: string) => {
-    del_with('dateS', e)
+    setDateS(e)
+    // del_with('dateS', e)
   }
   const handle_date_f = (e: string) => {
-    del_with('dateF', e)
+    setDateF(e)
+    // del_with('dateF', e)
   }
 
   return (
@@ -59,11 +66,11 @@ const Intent = (props: any) => {
             <Text>公里</Text>
           </ImageBackground>
           <View style={styles.intent_list_content}>
-            {edit ? <TextInput style={styles.textinput} onChangeText={handle_date_o} autoFocus maxLength={1} /> : <Text style={styles.date}>{date_obj.dateO}</Text>}
-            {edit ? <TextInput style={styles.textinput} onChangeText={handle_date_t} maxLength={1} /> : <Text style={styles.date}>{date_obj.dateT}</Text>}
+            {edit ? <TextInput keyboardType='numeric' style={styles.textinput} onChangeText={handle_date_o} autoFocus maxLength={1} /> : <Text style={styles.date}>{date_o}</Text>}
+            {edit ? <TextInput keyboardType='numeric' style={styles.textinput} onChangeText={handle_date_t} maxLength={1} /> : <Text style={styles.date}>{date_t}</Text>}
             <Text style={styles.date}>:</Text>
-            {edit ? <TextInput style={styles.textinput} onChangeText={handle_date_s} maxLength={1} /> : <Text style={styles.date}>{date_obj.dateO}</Text>}
-            {edit ? <TextInput style={styles.textinput} onChangeText={handle_date_f} maxLength={1} /> : <Text style={styles.date}>{date_obj.dateF}</Text>}
+            {edit ? <TextInput keyboardType='numeric' style={styles.textinput} onChangeText={handle_date_s} maxLength={1} /> : <Text style={styles.date}>{date_s}</Text>}
+            {edit ? <TextInput keyboardType='numeric' style={styles.textinput} onChangeText={handle_date_f} maxLength={1} /> : <Text style={styles.date}>{date_f}</Text>}
           </View>
           <TouchableOpacity
             activeOpacity={0.8}
