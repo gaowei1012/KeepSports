@@ -8,8 +8,9 @@
  */
 import React from 'react'
 import { useState } from 'react'
-import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity, TextInput } from 'react-native'
+import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity, TextInput, DeviceEventEmitter } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
+import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/targetdistance'
 import { GoBack } from '../../utils/goBack'
 const statusbar = {
@@ -35,13 +36,27 @@ const TargetDistance = (props: any) => {
   const [default_type, setDefaultType] = useState<number>(1)
   const [edit, setEdit] = useState<boolean>(false)
   const [lc_num, setLcNum] = useState<number>(0.9)
+
   const switchTab = (sum: number, type: number) => {
     setDefaultType(type)
     setLcNum(sum)
   }
 
   const handle_lc_num = (e: any) => {
-    setLcNum(e)
+    if (parseInt(e)!= NaN) {
+      setLcNum(parseInt(e))
+    }
+  }
+
+  //选择编辑保存
+  const click_save = () => {
+    NavigationUtil.goBack(props.navigation)
+    DeviceEventEmitter.emit('sports', { success: true, data: lc_num })
+  }
+  const edit_click_save = () => {
+    setEdit(false)
+    NavigationUtil.goBack(props.navigation)
+    DeviceEventEmitter.emit('sports', { success: true, data: lc_num })
   }
 
   return (
@@ -55,9 +70,7 @@ const TargetDistance = (props: any) => {
           <View>
             {edit ? (
               <TouchableOpacity
-                onPress={() => {
-                  setEdit(false)
-                }}>
+                onPress={edit_click_save}>
                 <Text>确认</Text>
               </TouchableOpacity>
             ) : null}
@@ -67,7 +80,7 @@ const TargetDistance = (props: any) => {
       <View style={styles.content}>
         <View style={styles.target_top_jl}>
           {edit ? (
-            <TextInput onChangeText={handle_lc_num} style={styles.textinput} />
+            <TextInput keyboardType='numeric' onChangeText={handle_lc_num} style={styles.textinput} />
           ) : (
             <TouchableOpacity
               onPress={() => {
@@ -80,7 +93,7 @@ const TargetDistance = (props: any) => {
         </View>
         <View style={styles.target_content}>
           {jldata.map((j) => (
-            <TouchableOpacity activeOpacity={0.8} onPress={() => switchTab(j.sum, j.type)}>
+            <TouchableOpacity activeOpacity={1} onPress={() => switchTab(j.sum, j.type)}>
               <ImageBackground source={`${default_type !== j.type ? require('../../assets/pages/sports/nxz.png') : require('../../assets/pages/sports/xz.png')}`} style={styles.target_content_bg}>
                 {j.sum > 20 ? (
                   <ImageBackground style={styles.tl} source={require('../../assets/pages/sports/tl.png')}>
@@ -93,7 +106,7 @@ const TargetDistance = (props: any) => {
           ))}
         </View>
         {!edit ? (
-          <TouchableOpacity style={styles.target_c} onPress={() => {}}>
+          <TouchableOpacity style={styles.target_c} onPress={click_save}>
             <Text style={styles.target_c_text}>确定</Text>
           </TouchableOpacity>
         ) : null}
