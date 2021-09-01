@@ -11,7 +11,9 @@ import { useState, useEffect } from 'react'
 import { IGetUserInfo } from '../../interface/pages/user'
 import UserModel from '../../models/user'
 import RootToast from '../../utils/Toast'
+import ChartData from '../../config/charts'
 
+const { yearData, weekData, methodData } = ChartData
 const bannerData: any[] = [
   { icon: require('../../assets/pages/home/banner.png'), id: 1 },
   { icon: require('../../assets/pages/home/banner.png'), id: 2 },
@@ -68,6 +70,7 @@ const Home = () => {
   const [top_menu, setTableMenu] = useState<number>(1)
   const [date, setDate] = useState<number>(1)
   const [username, setUserName] = useState<string>('暂未登录')
+  const [chart_data, setChartData] = useState<any>(null)
 
   useEffect(() => {
     DeviceEventEmitter.addListener('login', (event: any) => {
@@ -100,6 +103,7 @@ const Home = () => {
     }
   }
 
+  // 切换年月
   const switchTabs = (name: string, type: number) => {
     setTableMenu(type)
   }
@@ -256,8 +260,9 @@ const Home = () => {
                 ))}
               </View>
             </View>
-            {console.log([1, 2, 3][date])}
-            <LineChart />
+            {date == 1 ? <LineChart data={weekData} /> : null}
+            {date == 2 ? <LineChart data={methodData} /> : null}
+            {date == 3 ? <LineChart data={yearData} /> : null}
           </ImageBackground>
         </TouchableOpacity>
         <View style={styles.city__container}>

@@ -1,5 +1,5 @@
 /*
- * @Author: your name
+ * @Author: 执念
  * @Date: 2021-08-23 20:57:34
  * @LastEditTime: 2021-08-24 16:48:05
  * @LastEditors: your name
@@ -8,14 +8,13 @@
  */
 import React from 'react'
 import { useState } from 'react'
-import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity } from 'react-native'
-import { CircularProgress, Dial } from '../../components/circle/index'
+import { View, Text, SafeAreaView, Image, TouchableOpacity } from 'react-native'
 import { LineChart } from '../../containers/charts'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
-import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/historical'
 import { GoBack } from '../../utils/goBack'
-
+import ChartData from '../../config/charts'
+const { yearData, weekData, methodData, summaryData } = ChartData
 const dateData = [
   { id: 1, type: 1, name: '周' },
   { id: 2, type: 2, name: '月' },
@@ -69,7 +68,10 @@ const HistoricalStatistics = (props: any) => {
             </TouchableOpacity>
           ))}
         </View>
-        <LineChart />
+        {type == 1 ? <LineChart data={weekData} /> : null}
+        {type == 2 ? <LineChart data={methodData} /> : null}
+        {type == 3 ? <LineChart data={yearData} /> : null}
+        {type == 4 ? <LineChart data={summaryData} />: null}
       </View>
       <View style={styles.statistics_wrapper}>
         <View style={styles.statistics_title_wrapper}>

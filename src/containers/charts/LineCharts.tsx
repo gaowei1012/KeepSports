@@ -1,24 +1,12 @@
 import React from 'react'
 import { View } from 'react-native'
-import { px2dp, width } from '../../utils/px2dp'
+import { px2dp } from '../../utils/px2dp'
 import { LineChart } from 'react-native-chart-kit'
 
-const data = {
-  labels: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
-  datasets: [
-    {
-      data: [0, 2.0, 4.0, 5.0, 2.0],
-      color: (opacity = 1) => `rgba(134, 65, 244, ${opacity})`, // optional
-      strokeWidth: 3 // optional
-    }
-  ]
-  // legend: ['Rainy Days'] // optional
-}
-
-const KeepLineChart = () => {
+const KeepLineChart = (props: {data: any}) => {
   return (
     <LineChart
-      data={data}
+      data={props.data}
       width={px2dp(345)}
       height={220}
       yAxisInterval={1}
