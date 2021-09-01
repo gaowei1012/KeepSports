@@ -44,7 +44,14 @@ const AddDynamic = (props: any) => {
         date: '1分钟前',
         comment: '暂无评论',
         content: text,
-        icon_list: [{ icon: response[0].base64 }]
+        icon_list: [{ icon: response[0].base64 }],
+        archives: '健康运动，健康身体',
+        address: 'xxx',
+        gzlist: [
+          { num: 16 },
+          { num: 77 },
+          { num: 31 }
+        ]
       }
       save_stroage(data)
       setTimeout(() => {
