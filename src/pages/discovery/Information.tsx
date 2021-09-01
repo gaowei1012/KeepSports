@@ -47,7 +47,7 @@ const GroupInformation = (props: any) => {
               </View>
               <View style={styles.group_t_tips}>
                 <Text style={styles.group_t_tips_title}>团主</Text>
-                <Image style={styles.group_t_tips_img} source={require('../../assets/pages/discovery/gr.png')} />
+                <Image style={styles.group_t_tips_img} source={{uri: `data:image/png;base64,${data.icon}`}} />
               </View>
             </ImageBackground>
             <TouchableOpacity activeOpacity={1} style={styles.exit_wrapper}>

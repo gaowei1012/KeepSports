@@ -64,6 +64,7 @@ export const styles = StyleSheet.create({
     width: px2dp(345),
     marginTop: px2dp(18), 
     backgroundColor: '#F9F9F9',
+    alignSelf: 'flex-start',
     paddingHorizontal: px2dp(10)
   },
   text_num: {

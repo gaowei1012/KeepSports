@@ -6,7 +6,7 @@
  * @Description: In User Settings Edit
  * @FilePath: /KeepSports/src/styles/view-style/info.ts
  */
-import { StyleSheet } from 'react-native'
+import { Platform, StyleSheet } from 'react-native'
 import { px2dp, width, height } from '../../utils/px2dp'
 
 export const styles = StyleSheet.create({
@@ -53,7 +53,8 @@ export const styles = StyleSheet.create({
   },
   textinput: {
     width: px2dp(22),
-    height: px2dp(22),
+    height: Platform.OS == 'ios' ? px2dp(22) : px2dp(22),
+    padding: Platform.OS == 'android' ? px2dp(0): 0,
     backgroundColor: '#F7F7F7',
     alignItems: 'center',
     justifyContent: 'center',
