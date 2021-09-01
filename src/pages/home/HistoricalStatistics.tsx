@@ -26,24 +26,94 @@ const zhouStatisticsData = [
   {
     icon: require('../../assets/pages/home/lj.png'),
     title: '累计跑量 (公里)',
-    time: '0.00'
+    time: '120.10'
   },
   {
     icon: require('../../assets/pages/home/ps.png'),
     title: '平均配速',
-    time: '0‘.00”'
+    time: '7‘.23”'
   },
   {
     icon: require('../../assets/pages/home/zys.png'),
     title: '总用时',
-    time: '0:00:00'
+    time: '80:11:23'
   },
   {
     icon: require('../../assets/pages/home/zrl.png'),
     title: '总热量 (千卡)',
-    time: '0'
+    time: '18290'
   }
 ]
+
+const weekStatisticsData = [
+  {
+    icon: require('../../assets/pages/home/lj.png'),
+    title: '累计跑量 (公里)',
+    time: '8.00'
+  },
+  {
+    icon: require('../../assets/pages/home/ps.png'),
+    title: '平均配速',
+    time: '10‘.00”'
+  },
+  {
+    icon: require('../../assets/pages/home/zys.png'),
+    title: '总用时',
+    time: '1:40:10'
+  },
+  {
+    icon: require('../../assets/pages/home/zrl.png'),
+    title: '总热量 (千卡)',
+    time: '2000'
+  }
+]
+
+const methodStatisticsData = [
+  {
+    icon: require('../../assets/pages/home/lj.png'),
+    title: '累计跑量 (公里)',
+    time: '10.00'
+  },
+  {
+    icon: require('../../assets/pages/home/ps.png'),
+    title: '平均配速',
+    time: '6‘.00”'
+  },
+  {
+    icon: require('../../assets/pages/home/zys.png'),
+    title: '总用时',
+    time: '5:10:20'
+  },
+  {
+    icon: require('../../assets/pages/home/zrl.png'),
+    title: '总热量 (千卡)',
+    time: '4230'
+  }
+]
+
+const yearStatisticsData = [
+  {
+    icon: require('../../assets/pages/home/lj.png'),
+    title: '累计跑量 (公里)',
+    time: '89.00'
+  },
+  {
+    icon: require('../../assets/pages/home/ps.png'),
+    title: '平均配速',
+    time: '8‘.10”'
+  },
+  {
+    icon: require('../../assets/pages/home/zys.png'),
+    title: '总用时',
+    time: '65:20:31'
+  },
+  {
+    icon: require('../../assets/pages/home/zrl.png'),
+    title: '总热量 (千卡)',
+    time: '8000'
+  }
+]
+
 const statusbar = {
   backgroundColor: '#fff',
   barStyle: 'dark-content',
@@ -71,29 +141,64 @@ const HistoricalStatistics = (props: any) => {
         {type == 1 ? <LineChart data={weekData} /> : null}
         {type == 2 ? <LineChart data={methodData} /> : null}
         {type == 3 ? <LineChart data={yearData} /> : null}
-        {type == 4 ? <LineChart data={summaryData} />: null}
+        {type == 4 ? <LineChart data={summaryData} /> : null}
       </View>
       <View style={styles.statistics_wrapper}>
         <View style={styles.statistics_title_wrapper}>
           <View style={styles.list_line} />
           {dateData.map((item) => (
-            <>{type == item.type ? <Text style={styles.statistics_title_text}>{`${item.name}总计`}</Text> : null}</>
+            <>{type == item.type ? <Text style={styles.statistics_title_text}>{`${item.name}统计`}</Text> : null}</>
           ))}
         </View>
         <Text style={styles.statistics_desc}>
-          累计跑步<Text style={styles.statistics_desc_c}>8</Text>次
+          累计跑步<Text style={styles.statistics_desc_c}>{Math.round(Math.random() * 10)}</Text>次
         </Text>
       </View>
       <View>
-        {zhouStatisticsData.map((item) => (
-          <View style={styles.statistics_content}>
-            <View style={styles.statistics_list}>
-              <Image style={styles.statistics_icon} source={item.icon} />
-              <Text style={styles.statistics_content_title}>{item.title}</Text>
+        {type == 1 ? <>
+          {weekStatisticsData.map((item) => (
+            <View style={styles.statistics_content}>
+              <View style={styles.statistics_list}>
+                <Image style={styles.statistics_icon} source={item.icon} />
+                <Text style={styles.statistics_content_title}>{item.title}</Text>
+              </View>
+              <Text style={styles.statistics_content_r}>{item.time}</Text>
             </View>
-            <Text style={styles.statistics_content_r}>{item.time}</Text>
-          </View>
-        ))}
+          ))}
+        </> : null}
+        {type == 2 ? <>
+          {methodStatisticsData.map((item) => (
+            <View style={styles.statistics_content}>
+              <View style={styles.statistics_list}>
+                <Image style={styles.statistics_icon} source={item.icon} />
+                <Text style={styles.statistics_content_title}>{item.title}</Text>
+              </View>
+              <Text style={styles.statistics_content_r}>{item.time}</Text>
+            </View>
+          ))}
+        </> : null}
+        {type == 3 ? <>
+          {yearStatisticsData.map((item) => (
+            <View style={styles.statistics_content}>
+              <View style={styles.statistics_list}>
+                <Image style={styles.statistics_icon} source={item.icon} />
+                <Text style={styles.statistics_content_title}>{item.title}</Text>
+              </View>
+              <Text style={styles.statistics_content_r}>{item.time}</Text>
+            </View>
+          ))}
+        </> : null}
+        {type == 4 ? <>
+          {zhouStatisticsData.map((item) => (
+            <View style={styles.statistics_content}>
+              <View style={styles.statistics_list}>
+                <Image style={styles.statistics_icon} source={item.icon} />
+                <Text style={styles.statistics_content_title}>{item.title}</Text>
+              </View>
+              <Text style={styles.statistics_content_r}>{item.time}</Text>
+            </View>
+          ))}
+        </> : null}
       </View>
     </SafeAreaView>
   )
