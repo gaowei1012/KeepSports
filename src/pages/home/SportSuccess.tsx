@@ -4,7 +4,8 @@ import { styles } from '../../styles/view-style/sports'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 
 const SportSuccess = (props: any) => {
-  const { visible, setVisible } = props
+  const { visible, setVisible, sportsDataOrg, restartSports } = props
+  console.log(sportsDataOrg)
   return (
     <Modal animationType='fade' transparent={true} visible={visible}>
       <View style={styles.sports_modal_container}>
@@ -20,20 +21,21 @@ const SportSuccess = (props: any) => {
           <View style={styles.sports_modal_content}>
             <View style={styles.sports_modal_content_t}>
               <Text style={styles.sports_modal_content_t1}>时长</Text>
-              <Text style={styles.sports_modal_content_t2}>0分</Text>
+              <Text style={styles.sports_modal_content_t2}>{sportsDataOrg.count}分</Text>
             </View>
             <View style={styles.sports_modal_content_t}>
               <Text style={styles.sports_modal_content_t1}>公里</Text>
-              <Text style={styles.sports_modal_content_t2}>0km</Text>
+              <Text style={styles.sports_modal_content_t2}>{sportsDataOrg.lc_num}km</Text>
             </View>
             <View style={styles.sports_modal_content_t}>
               <Text style={styles.sports_modal_content_t1}>消耗</Text>
-              <Text style={styles.sports_modal_content_t2}>0千卡</Text>
+              <Text style={styles.sports_modal_content_t2}>{sportsDataOrg.calories}千卡</Text>
             </View>
           </View>
           <ImageBackground style={styles.sports_modal_bottom} source={require('../../assets/pages/sports/btnbg.png')}>
             <TouchableOpacity activeOpacity={1} onPress={() => {
               setVisible(false)
+              restartSports()
             }} style={styles.sports_modal_bottom_c}>
               <Text style={styles.sports_modal_bottom_t}>确认</Text>
             </TouchableOpacity>
