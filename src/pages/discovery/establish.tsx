@@ -16,7 +16,7 @@ const statusbar = {
 
 const establishData = [
   {
-    label: '我创建的团',
+    lable: '我创建的团',
     title: '陕西健身体操团队',
     jl: 14,
     desc: '坚持、信念、对运动有着永不放弃的执着',
