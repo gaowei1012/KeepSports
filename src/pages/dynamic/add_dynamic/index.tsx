@@ -50,7 +50,7 @@ const AddDynamic = (props: any) => {
       setTimeout(() => {
         DeviceEventEmitter.emit('dynamic', { success: true })
         NavigationUtil.goBack(props.navigation)
-      }, 500)
+      }, 100)
     } else {
       RootToast.showToast('请填写内容，并上传图片!')
     }

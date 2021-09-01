@@ -63,7 +63,7 @@ const Dynamic = () => {
 
   async function getStorage() {
     const res: any = await AsyncStorage.getItem('dynamic')
-
+    console.log(JSON.parse(res))
     const temp: any = [...dylistData]
     temp.push(JSON.parse(res))
     setDylistData(temp)
