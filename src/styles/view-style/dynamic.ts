@@ -104,12 +104,13 @@ export const styles = StyleSheet.create({
   content_img_wrapper: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-around',
+    justifyContent: 'flex-start',
     marginVertical: px2dp(15)
   },
   content_img: {
     width: px2dp(112),
-    height: px2dp(115)
+    height: px2dp(115),
+    marginHorizontal: px2dp(1)
   },
   dy_comment_wrapper: {
     width: px2dp(346),
