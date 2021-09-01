@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, SafeAreaView, Image, ImageBackground, ScrollView, TouchableOpacity, StatusBar, DeviceEventEmitter } from 'react-native'
+import { View, Text, SafeAreaView, Image, ImageBackground, ScrollView, TouchableOpacity, DeviceEventEmitter } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/establish'
