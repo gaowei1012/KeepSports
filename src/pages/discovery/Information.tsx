@@ -1,6 +1,5 @@
-import React from 'react'
-import { View, Text, SafeAreaView, Image, ImageBackground, ScrollView, TouchableOpacity, StatusBar } from 'react-native'
-import * as ImagePicker from 'react-native-image-picker'
+import React, { useState, useEffect } from 'react'
+import { View, Text, SafeAreaView, Image, ImageBackground, ScrollView, TouchableOpacity, DeviceEventEmitter } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/establish'
@@ -14,6 +13,8 @@ const statusbar = {
 }
 
 const GroupInformation = (props: any) => {
+  const {data} =  props.navigation.state.params
+  
   return (
     <View style={styles.group_container}>
       <ImageBackground style={styles.establish_bg__container} source={require('../../assets/pages/establish/bg.png')}>
@@ -24,13 +25,13 @@ const GroupInformation = (props: any) => {
               <View style={styles.information_avatar_wrapper}>
                 <Image style={styles.information_avatar_img} source={require('../../assets/pages/discovery/gr.png')} />
                 <View style={styles.information_avatar_name}>
-                  <Text style={styles.information_t_t}>陕西健身体操团队</Text>
-                  <Text style={styles.information_t_h}>团号：20210819</Text>
+                  <Text style={styles.information_t_t}>{data.title}</Text>
+                  <Text style={styles.information_t_h}>团号：{data.bh}</Text>
                 </View>
               </View>
               <View style={styles.group_top_content_wrapper}>
                 <Text style={styles.group_top_content}>
-                  <Text style={styles.group_title}>团说明:</Text> 坚持、信念、对健身永不放弃的精神，是我们 团体每个人的信念和最初的坚定，每一
+                  <Text style={styles.group_title}>团说明:</Text> {data.desc}
                   <TouchableOpacity activeOpacity={1}>
                     <Text style={styles.group_more}>查看更多</Text>
                   </TouchableOpacity>
