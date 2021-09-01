@@ -21,7 +21,8 @@ const establishData = [
     jl: 14,
     desc: '坚持、信念、对运动有着永不放弃的执着',
     jb: '高级',
-    bh: '2090329839283'
+    bh: '2090329839283',
+    icon: require('../../assets/pages/discovery/ccc.png')
   },
   {
     lable: '我加入的团',
@@ -29,7 +30,8 @@ const establishData = [
     jl: 13,
     desc: '坚持、信念、对运动有着永不放弃的执着',
     jb: '初级',
-    bh: '120329839283'
+    bh: '120329839283',
+    icon: require('../../assets/pages/discovery/ccc.png')
   }
 ]
 
@@ -63,7 +65,7 @@ const Establish = (props: any) => {
             NavigationUtil.goPage({data: item}, 'GroupInformation')
           }} activeOpacity={1}>
             <ImageBackground source={require('../../assets/pages/discovery/cc.png')} style={styles.content_wrapper}>
-              <Image style={styles.content_icon} source={require('../../assets/pages/discovery/ccc.png')} />
+              <Image style={styles.content_icon} source={item.icon} />
               <View style={styles.content_list_wrapper}>
                 <View style={styles.content_list_top}>
                   <Text>{item.title}</Text>

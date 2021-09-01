@@ -24,10 +24,10 @@ const DiscoveryData: any = [
 ]
 
 const DiscoveryContentData: any = [
-  { icon: require('../../assets/pages/discovery/js.png'), icon_b: require('../../assets/pages/discovery/mb.png'), desc: '山西健身体操团队' },
-  { icon: require('../../assets/pages/discovery/wh.png'), icon_b: require('../../assets/pages/discovery/mb.png'), desc: '武汉健身体操团队' },
-  { icon: require('../../assets/pages/discovery/bj.png'), icon_b: require('../../assets/pages/discovery/mb.png'), desc: '北京健身体操团队' },
-  { icon: require('../../assets/pages/discovery/js.png'), icon_b: require('../../assets/pages/discovery/mb.png'), desc: '山东健身体操团队' }
+  { icon: require('../../assets/pages/discovery/js.png'), icon_b: require('../../assets/pages/discovery/mb.png'), title: '山西健身体操团队', jl: 12, jb: '高级', desc: '坚持、信念、对运动有着永不放弃的执着', bh: '2090329839283' },
+  { icon: require('../../assets/pages/discovery/wh.png'), icon_b: require('../../assets/pages/discovery/mb.png'), title: '武汉健身体操团队', jl: 3, jb: '初级', desc: '坚持、信念、对运动有着永不放弃的执着', bh: '2090329839283' },
+  { icon: require('../../assets/pages/discovery/bj.png'), icon_b: require('../../assets/pages/discovery/mb.png'), title: '北京健身体操团队', jl: 10, jb: '中级', desc: '坚持、信念、对运动有着永不放弃的执着', bh: '2090329839283' },
+  { icon: require('../../assets/pages/discovery/js.png'), icon_b: require('../../assets/pages/discovery/mb.png'), title: '山东健身体操团队', jl: 33, jb: '高级', desc: '坚持、信念、对运动有着永不放弃的执着', bh: '2090329839283' }
 ]
 
 const Discovery = () => {
@@ -75,13 +75,13 @@ const Discovery = () => {
           </View>
         </View>
         <View style={styles.bottom_content}>
-          {DiscoveryContentData.map((item: { icon: any; icon_b: any; desc: string }) => (
+          {DiscoveryContentData.map((item: { icon: any; icon_b: any; title: string }) => (
             <TouchableOpacity activeOpacity={1} onPress={() => {
-              NavigationUtil.goPage({}, 'GroupInformation')
+              NavigationUtil.goPage({data: item}, 'GroupInformation')
             }}>
               <ImageBackground style={styles.bottom_content_flow} source={item.icon}>
                 <ImageBackground style={styles.bottom_content_c} source={item.icon_b}>
-                  <Text style={styles.b_c_desc}>{item.desc}</Text>
+                  <Text style={styles.b_c_desc}>{item.title}</Text>
                 </ImageBackground>
               </ImageBackground>
             </TouchableOpacity>

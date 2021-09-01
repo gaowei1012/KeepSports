@@ -167,7 +167,8 @@ export const styles = StyleSheet.create({
   },
   information_avatar_img: {
     width: px2dp(55),
-    height: px2dp(55)
+    height: px2dp(55),
+    borderRadius: px2dp(55/2)
   },
   information_avatar_name: {
     flexDirection: 'column',
