@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
-import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity, TextInput, DeviceEventEmitter } from 'react-native'
+import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity, TextInput, DeviceEventEmitter, Platform, TouchableNativeFeedback } from 'react-native'
 import AsyncStorage from '@react-native-community/async-storage'
 import TopNavigationBar from '../../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../../navigation/NavigationUtil'
 import { styles } from '../../../styles/view-style/dynamic'
 import * as ImagePicker from 'react-native-image-picker'
 import { GoBack } from '../../../utils/goBack'
+import RootToast from '../../../utils/Toast'
 
 const AddDynamic = (props: any) => {
   const [response, setResponse] = React.useState<any[]>([])
   const [text, setText] = useState<any>(null)
+  const [text_num, setTextNum] = useState<number>(0)
   // upload files
   const uploadFile = () => {
     const options: any = {
@@ -25,28 +27,33 @@ const AddDynamic = (props: any) => {
       const temp = [...response]
       temp.push(value.assets[0])
       setResponse(temp)
-    })  
+    })
   }
 
   const change_text = (e: any) => {
+    setTextNum(Array.from(e).length)
     setText(e)
   }
 
   // 保存动态
   const submit_upload_file = () => {
-    const data: any = {
-      title: '测试',
-      comment_name: '暂无',
-      date: '1分钟前',
-      comment: '暂无评论',
-      content: text,
-      icon_list: [{icon: response[0].base64 }]
+    if (response.length > 0) {
+      const data: any = {
+        title: '测试',
+        comment_name: '暂无',
+        date: '1分钟前',
+        comment: '暂无评论',
+        content: text,
+        icon_list: [{ icon: response[0].base64 }]
+      }
+      save_stroage(data)
+      setTimeout(() => {
+        DeviceEventEmitter.emit('dynamic', { success: true })
+        NavigationUtil.goBack(props.navigation)
+      }, 500)
+    } else {
+      RootToast.showToast('请填写内容，并上传图片!')
     }
-    save_stroage(data)
-    setTimeout(() => {
-      DeviceEventEmitter.emit('dynamic', { success: true })
-      NavigationUtil.goBack(props.navigation)
-    }, 500)
   }
 
   // 保存数据
@@ -58,9 +65,9 @@ const AddDynamic = (props: any) => {
     <SafeAreaView style={styles.add_container}>
       <TopNavigationBar leftButton={GoBack(props, false)} />
       <View style={styles.add_text_dynamic}>
-        <TextInput onChangeText={change_text} style={styles.textinput} multiline={true} placeholder='发布动态默认' placeholderTextColor='#999999' />
+        <TextInput maxLength={248} onChangeText={change_text} style={styles.textinput} multiline={true} keyboardType='default' placeholder='发布动态默认' placeholderTextColor='#999999' />
         <View style={styles.textnum_container}>
-          <Text style={styles.textnum}>0/248</Text>
+          <Text style={styles.textnum}>{text_num}/248</Text>
         </View>
       </View>
       <View style={styles.upload_img_files_wrapper}>
@@ -79,9 +86,12 @@ const AddDynamic = (props: any) => {
         <Image style={styles.local_icon} source={require('../../../assets/pages/dynamic/l.png')} />
         <Text style={styles.local_text}>西安市</Text>
       </ImageBackground>
-      <TouchableOpacity activeOpacity={1} onPress={submit_upload_file} style={styles.btn}>
+      {Platform.OS == 'ios' ? <TouchableOpacity activeOpacity={1} onPress={submit_upload_file} style={styles.btn}>
         <Text style={styles.fabu_text}>发布</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> : <TouchableNativeFeedback onPress={submit_upload_file} style={styles.btn}>
+        <Text style={styles.fabu_text}>发布</Text>
+      </TouchableNativeFeedback>}
+
     </SafeAreaView>
   )
 }

@@ -181,7 +181,9 @@ export const styles = StyleSheet.create({
     marginTop: px2dp(18)
   },
   textinput: {
-    height: px2dp(97)
+    height: px2dp(97),
+    fontSize: px2dp(14),
+    color: '#000'
   },
   upload_file: {
     width: px2dp(345),
@@ -265,7 +267,8 @@ export const styles = StyleSheet.create({
   },
   p_content_container: {
     marginLeft: px2dp(10),
-    marginTop: px2dp(10)
+    marginTop: px2dp(10),
+    marginBottom: Platform.OS == 'ios' ? 0 : px2dp(10)
   },
   // 个人界面
   center_container: {
