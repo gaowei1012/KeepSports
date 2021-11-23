@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { View, Text, SafeAreaView, Modal, ImageBackground, TouchableOpacity } from 'react-native'
 import { NavigationUtil } from '../../navigation/NavigationUtil'

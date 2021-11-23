@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
-import { View, Text, SafeAreaView, TouchableOpacity, Image, ImageBackground } from 'react-native'
+import { useState } from 'react'
+import { View, Text, SafeAreaView, TouchableOpacity, ImageBackground } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
-import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/mine'
 import { GoBack } from '../../utils/goBack'
 
@@ -56,13 +55,16 @@ const CareerChoice = (props: any) => {
     <SafeAreaView>
       <TopNavigationBar leftButton={GoBack(props, true)} title='选择职业' />
       <View style={styles.cc_wrapper}>
-        {careerChoice.map((item) => (
-          <TouchableOpacity activeOpacity={1} style={styles.cc_conter} onPress={() => selectTab(item.type)}>
-            <ImageBackground style={styles.cc_bg} source={type == item.type ? `${require('../../assets/pages/mine/c1.png')}` : `${require('../../assets/pages/mine/c2.png')}`}>
-              <Text style={styles.cc_name}>{item.name}</Text>
-            </ImageBackground>
-          </TouchableOpacity>
-        ))}
+        {careerChoice.map((item) => {
+          const source: any = type == item.type ? `${require('../../assets/pages/mine/c1.png')}` : `${require('../../assets/pages/mine/c2.png')}`
+          return (
+            <TouchableOpacity activeOpacity={1} style={styles.cc_conter} onPress={() => selectTab(item.type)}>
+              <ImageBackground style={styles.cc_bg} source={source}>
+                <Text style={styles.cc_name}>{item.name}</Text>
+              </ImageBackground>
+            </TouchableOpacity>
+          )
+        })}
       </View>
       <TouchableOpacity activeOpacity={1} style={styles.cc_btn_wrapper}>
         <Text style={styles.sele_text}>选择职业</Text>

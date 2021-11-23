@@ -6,8 +6,8 @@
  * @Description: In User Settings Edit
  * @FilePath: /KeepSports/src/pages/information/user/index.tsx
  */
-import React, { useState } from 'react'
-import { View, SafeAreaView, Text, Image, Switch, TouchableOpacity } from 'react-native'
+import { useState } from 'react'
+import { View, SafeAreaView, Text, Image, Switch } from 'react-native'
 import TopNavigationBar from '../../../navigation/TopNavigationBar'
 import { styles } from '../../../styles/view-style/info'
 import { GoBack } from '../../../utils/goBack'

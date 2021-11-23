@@ -1,4 +1,3 @@
-import React from 'react'
 import { View, Modal, Text, Image, ImageBackground, TouchableOpacity } from 'react-native'
 import { styles } from '../../styles/view-style/mine'
 

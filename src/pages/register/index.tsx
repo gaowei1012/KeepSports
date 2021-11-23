@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { View, TextInput, Text, SafeAreaView, ImageBackground, TouchableOpacity, Image, Platform, DeviceEventEmitter } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'

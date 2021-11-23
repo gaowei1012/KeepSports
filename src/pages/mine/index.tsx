@@ -5,7 +5,7 @@
  * @LastEditTime: 2021-08-24 17:11:14
  * @Description: 我的页面
  */
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { View, Text, SafeAreaView, ImageBackground, Image, TouchableOpacity, DeviceEventEmitter } from 'react-native'
 import AsyncStorage from '@react-native-community/async-storage'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
@@ -70,7 +70,7 @@ const Mine = () => {
 
   useEffect(() => {
     DeviceEventEmitter.addListener('login', (event: any) => {
-      if (event.success==true) {
+      if (event.success == true) {
         setUserName(event.user)
         _getUserInfo()
       }
@@ -91,7 +91,7 @@ const Mine = () => {
       const data: IGetUserInfo = {
         username,
       }
-      const {token} = JSON.parse(result)
+      const { token } = JSON.parse(result)
       UserModel.getUserInfo(data, token)
         .then((res: any) => {
           if (res.data.code == 200) {

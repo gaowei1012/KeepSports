@@ -6,7 +6,6 @@
  * @Description: 隐私政策
  */
 
-import React from 'react'
 import { View, Text, SafeAreaView, ScrollView } from 'react-native'
 import { styles } from '../../styles/view-style/privacyPolicy'
 import TopNavigationBar from '../../navigation/TopNavigationBar'

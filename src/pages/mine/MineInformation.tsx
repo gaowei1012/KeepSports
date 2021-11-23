@@ -6,7 +6,6 @@
  * @Description: In User Settings Edit
  * @FilePath: /KeepSports/src/pages/mine/MineInformation.tsx
  */
-import React from 'react'
 import { View, Text, SafeAreaView, TouchableOpacity, Image } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
@@ -73,7 +72,7 @@ const MineInformation = (props: any) => {
             <Text style={styles.left_name}>{item.name}</Text>
             <View style={styles.arrow_wrapper}>
               <Text style={styles.arrow_text}>{item.arrow_text}</Text>
-              <Image style={item.status ? styles.arrow_avatar_img : styles.arrow_avatar_icon} source={item.icon}/>
+              <Image style={item.status ? styles.arrow_avatar_img : styles.arrow_avatar_icon} source={item.icon} />
             </View>
           </TouchableOpacity>
         ))}

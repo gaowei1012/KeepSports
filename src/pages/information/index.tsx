@@ -6,7 +6,7 @@
  * @Description: In User Settings Edit
  * @FilePath: /KeepSports/src/pages/information/index.tsx
  */
-import React from 'react'
+
 import { View, Text, SafeAreaView, Image, TouchableOpacity } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
@@ -39,7 +39,7 @@ const Information = () => {
     hidden: false
   }
 
-  const go_to_page = (item: {id: number}) => {
+  const go_to_page = (item: { id: number }) => {
     console.log('item', item)
     if (item.id == 1) {
       NavigationUtil.goPage({}, "UserInformation")
