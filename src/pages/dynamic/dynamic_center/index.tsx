@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, ScrollView, TouchableOpacity, TextInput } from 'react-native'
 import TopNavigationBar from '../../../navigation/TopNavigationBar'
 import { styles } from '../../../styles/view-style/dynamic'
@@ -22,7 +21,7 @@ const DynamicCenter = (props: any) => {
           </View>
           <View style={styles.center_fans_flow}>
             {data.gzlist.map((gz: any) => (
-              <View style={{flexDirection: 'column', alignItems: 'center'}}>
+              <View style={{ flexDirection: 'column', alignItems: 'center' }}>
                 <Text>{gz.num}</Text>
                 <Text>{gz.text}</Text>
               </View>

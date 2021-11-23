@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity, TextInput, DeviceEventEmitter, Platform, TouchableNativeFeedback } from 'react-native'
 import AsyncStorage from '@react-native-community/async-storage'
 import TopNavigationBar from '../../../navigation/TopNavigationBar'
@@ -9,7 +9,7 @@ import { GoBack } from '../../../utils/goBack'
 import RootToast from '../../../utils/Toast'
 
 const AddDynamic = (props: any) => {
-  const [response, setResponse] = React.useState<any[]>([])
+  const [response, setResponse] = useState<any[]>([])
   const [text, setText] = useState<any>(null)
   const [text_num, setTextNum] = useState<number>(0)
   // upload files

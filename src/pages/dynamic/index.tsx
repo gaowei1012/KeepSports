@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, ScrollView, TouchableOpacity, DeviceEventEmitter } from 'react-native'
 import AsyncStorage from '@react-native-community/async-storage'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
@@ -32,9 +32,9 @@ const _dylistData = [
     archives: '健康运动，健康身体',
     address: '丰和路怡和花园',
     gzlist: [
-      {num: 10, text: '关注'},
-      {num: 70, text: '关注'},
-      {num: 10, text: '关注'}
+      { num: 10, text: '关注' },
+      { num: 70, text: '关注' },
+      { num: 10, text: '关注' }
     ]
   },
   {
@@ -58,9 +58,9 @@ const _dylistData = [
     archives: '健康运动，健康身体',
     address: '丰和路怡和花园',
     gzlist: [
-      {num: 90, text: '关注'},
-      {num: 10, text: '关注'},
-      {num: 30, text: '关注'}
+      { num: 90, text: '关注' },
+      { num: 10, text: '关注' },
+      { num: 30, text: '关注' }
     ]
   }
 ]
@@ -112,7 +112,7 @@ const Dynamic = () => {
               <View style={styles.dy_top_avatar_wrapper}>
                 {/* 头像 */}
                 <TouchableOpacity activeOpacity={1} onPress={() => {
-                  NavigationUtil.goPage({data: list}, 'DynamicCenter')
+                  NavigationUtil.goPage({ data: list }, 'DynamicCenter')
                 }} style={styles.dy_top_left_wrapper}>
                   <Image source={list.av} style={styles.avatar} />
                   <View style={styles.avatar_right_wrapper}>
@@ -131,7 +131,7 @@ const Dynamic = () => {
                 <Text>{list.content}</Text>
                 <View style={styles.content_img_wrapper}>
                   {list.icon_list.map((img: any) => (
-                    <Image source={{uri: `data:image/png;base64,${img.icon}`}} style={styles.content_img} />
+                    <Image source={{ uri: `data:image/png;base64,${img.icon}` }} style={styles.content_img} />
                   ))}
                 </View>
                 <ImageBackground resizeMode='contain' style={styles.dy_comment_new_icon} source={require('../../assets/pages/dynamic/pl.png')}>
