@@ -1,4 +1,3 @@
-import React from 'react'
 import { styles } from '../../styles/components/bottom'
 import { TouchableOpacity, Text, ButtonProps } from 'react-native'
 
