@@ -6,11 +6,11 @@
  * @Description: In User Settings Edit
  * @FilePath: /KeepSports/src/pages/discovery/index.tsx
  */
-import React, { useEffect } from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, ScrollView, TouchableOpacity } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/discovery'
+
 const statusbar = {
   backgroundColor: '#FAFAFA',
   barStyle: 'dark-content',

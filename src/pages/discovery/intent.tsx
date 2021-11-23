@@ -6,12 +6,12 @@
  * @Description: In User Settings Edit
  * @FilePath: /KeepSports/src/pages/discovery/intent.tsx
  */
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { View, Text, SafeAreaView, ImageBackground, ScrollView, TouchableOpacity, TextInput } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
-import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/intent'
 import { GoBack } from '../../utils/goBack'
+
 const statusbar = {
   backgroundColor: '#DEF2EA',
   barStyle: 'dark-content',
