@@ -1,4 +1,3 @@
-import React from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity, ScrollView, DeviceEventEmitter } from 'react-native'
 import { styles } from '../../styles/view-style/home'
 import { Bottom } from '../../components/index'
@@ -129,6 +128,7 @@ const Home = () => {
                   {username == '暂未登录' ? <Text style={styles.title__desc}>暂无排名</Text> : <Text style={styles.title__desc}>北京运动达人</Text>}
                 </View>
                 {username !== '暂未登录' ? <Bottom
+                  title=""
                   activeOpacity={1}
                   text='高级'
                   propStyles={{

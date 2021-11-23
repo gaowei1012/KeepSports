@@ -1,13 +1,10 @@
-import React from 'react'
 import { useState } from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity } from 'react-native'
-import { CircularProgress, Dial } from '../../components/circle/index'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
-import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/sports'
 import { GoBack } from '../../utils/goBack'
 import { ScrollView } from 'react-navigation'
-import { height } from '../../utils/px2dp'
+
 const statusbar = {
   backgroundColor: 'rgba(0, 0, 0, 0)',
   barStyle: 'dark-content',

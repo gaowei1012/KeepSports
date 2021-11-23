@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity, ScrollView, DeviceEventEmitter } from 'react-native'
 import { AnimatedGaugeProgress } from 'react-native-simple-gauge'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
@@ -205,7 +205,7 @@ const Sports = (props: any) => {
                     setStart(false)
                     setStop(false)
                     setVisible(true)
-                    setSportsDataOrg({count,lc_num,calories})
+                    setSportsDataOrg({ count, lc_num, calories })
                   }}>
                   <ImageBackground style={styles.sports_c_start} source={require('../../assets/pages/sports/zt.png')}>
                     <Text style={styles.sports_c_start_text}>结束</Text>

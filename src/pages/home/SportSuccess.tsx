@@ -1,4 +1,3 @@
-import React from 'react'
 import { View, Modal, Text, Image, ImageBackground, TouchableOpacity } from 'react-native'
 import { styles } from '../../styles/view-style/sports'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
@@ -10,7 +9,7 @@ const SportSuccess = (props: any) => {
     <Modal animationType='fade' transparent={true} visible={visible}>
       <View style={styles.sports_modal_container}>
         <ImageBackground style={styles.sports_modal_bg} source={require('../../assets/pages/sports/tcbj.png')}>
-          <TouchableOpacity activeOpacity={1} onPress={() =>{
+          <TouchableOpacity activeOpacity={1} onPress={() => {
             setVisible(false)
             NavigationUtil.goPage({}, 'Leaderboard')
           }} style={styles.sports_modal_top}>

@@ -6,7 +6,6 @@
  * @Description: In User Settings Edit
  * @FilePath: /KeepSports/src/pages/home/HistoricalStatistics.tsx
  */
-import React from 'react'
 import { useState } from 'react'
 import { View, Text, SafeAreaView, Image, TouchableOpacity } from 'react-native'
 import { LineChart } from '../../containers/charts'
@@ -14,6 +13,7 @@ import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { styles } from '../../styles/view-style/historical'
 import { GoBack } from '../../utils/goBack'
 import ChartData from '../../config/charts'
+
 const { yearData, weekData, methodData, summaryData } = ChartData
 const dateData = [
   { id: 1, type: 1, name: '周' },

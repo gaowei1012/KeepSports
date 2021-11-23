@@ -6,9 +6,8 @@
  * @Description: In User Settings Edit
  * @FilePath: /KeepSports/src/pages/home/TargetDistance.tsx
  */
-import React from 'react'
 import { useState } from 'react'
-import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity, TextInput, DeviceEventEmitter } from 'react-native'
+import { View, Text, SafeAreaView, ImageBackground, TouchableOpacity, TextInput, DeviceEventEmitter } from 'react-native'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/targetdistance'
@@ -43,7 +42,7 @@ const TargetDistance = (props: any) => {
   }
 
   const handle_lc_num = (e: any) => {
-    if (parseInt(e)!= NaN) {
+    if (parseInt(e) != NaN) {
       setLcNum(parseInt(e))
     }
   }
@@ -92,18 +91,21 @@ const TargetDistance = (props: any) => {
           <Text style={styles.target_top_text}>距离步行公里</Text>
         </View>
         <View style={styles.target_content}>
-          {jldata.map((j) => (
-            <TouchableOpacity activeOpacity={1} onPress={() => switchTab(j.sum, j.type)}>
-              <ImageBackground source={`${default_type !== j.type ? require('../../assets/pages/sports/nxz.png') : require('../../assets/pages/sports/xz.png')}`} style={styles.target_content_bg}>
-                {j.sum > 20 ? (
-                  <ImageBackground style={styles.tl} source={require('../../assets/pages/sports/tl.png')}>
-                    <Text style={styles.c}>{j.c}</Text>
-                  </ImageBackground>
-                ) : null}
-                <Text style={[default_type !== j.type ? styles.target_sum_text : styles.ac_target_sum_text]}>{j.sum}</Text>
-              </ImageBackground>
-            </TouchableOpacity>
-          ))}
+          {jldata.map((j) => {
+            const source: any = `${default_type !== j.type ? require('../../assets/pages/sports/nxz.png') : require('../../assets/pages/sports/xz.png')}`
+            return (
+              <TouchableOpacity activeOpacity={1} onPress={() => switchTab(j.sum, j.type)}>
+                <ImageBackground source={source} style={styles.target_content_bg}>
+                  {j.sum > 20 ? (
+                    <ImageBackground style={styles.tl} source={require('../../assets/pages/sports/tl.png')}>
+                      <Text style={styles.c}>{j.c}</Text>
+                    </ImageBackground>
+                  ) : null}
+                  <Text style={[default_type !== j.type ? styles.target_sum_text : styles.ac_target_sum_text]}>{j.sum}</Text>
+                </ImageBackground>
+              </TouchableOpacity>
+            )
+          })}
         </View>
         {!edit ? (
           <TouchableOpacity style={styles.target_c} onPress={click_save}>

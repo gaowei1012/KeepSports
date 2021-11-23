@@ -6,16 +6,13 @@
  * @Description: In User Settings Edit
  * @FilePath: /KeepSports/src/pages/home/DynamicDetail.tsx
  */
-import React from 'react'
-import { useState } from 'react'
+
 import { View, Text, SafeAreaView, Image, ImageBackground, TouchableOpacity, TextInput } from 'react-native'
-import { CircularProgress, Dial } from '../../components/circle/index'
 import TopNavigationBar from '../../navigation/TopNavigationBar'
 import { NavigationUtil } from '../../navigation/NavigationUtil'
 import { styles } from '../../styles/view-style/home'
 import { GoBack } from '../../utils/goBack'
 import { ScrollView } from 'react-navigation'
-import { height } from '../../utils/px2dp'
 
 const statusbar = {
   backgroundColor: '#fff',
@@ -125,7 +122,7 @@ const DynamicDetail = (props: any) => {
           {commentData.map(item => (
             <View style={styles.comment_content}>
               <View style={styles.comment_left_wrapper}>
-                <Image style={styles.comment_icon} source={item.icon}/>
+                <Image style={styles.comment_icon} source={item.icon} />
                 <View style={styles.comment_left}>
                   <Text style={styles.name}>{item.name}</Text>
                   <Text style={styles.title}>{item.title}</Text>
@@ -133,8 +130,8 @@ const DynamicDetail = (props: any) => {
                 </View>
               </View>
               <View style={styles.comment_content_icon_wrapper}>
-                <Image style={styles.dy_comment_icon} source={require('../../assets/pages/home/msg.png')}/>
-                <Image style={styles.dy_comment_icon} source={require('../../assets/pages/home/nlink.png')}/>
+                <Image style={styles.dy_comment_icon} source={require('../../assets/pages/home/msg.png')} />
+                <Image style={styles.dy_comment_icon} source={require('../../assets/pages/home/nlink.png')} />
               </View>
             </View>
           ))}
